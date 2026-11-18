@@ -1,30 +1,149 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI FDE / Architect Roadmap</title>
-<style>body{font-family:system-ui,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1f2937}h1{margin-bottom:0}.sub{color:#6b7280}.tracks{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:24px}.card{border:1px solid #e5e7eb;border-radius:10px;padding:14px}.card b{display:block}.status{font-size:.85em;color:#9ca3af}</style>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:true});</script>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI FDE / Architect Roadmap · AI FDE Roadmap</title>
+<meta name="description" content="A branched, interlinked roadmap for the Lead FDE / AI Architect path: 40 concept topics with sources and animations."><meta property="og:title" content="AI FDE / Architect Roadmap"><meta property="og:description" content="A branched, interlinked roadmap for the Lead FDE / AI Architect path: 40 concept topics with sources and animations."><meta property="og:type" content="article">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="assets/style.css">
 </head><body>
-<h1>AI FDE / Architect Roadmap</h1><p class="sub">From MVP to production systems: system design, agentic AI, RAG, cloud. Built one branch at a time, starting 15 Nov 2026.</p>
-<pre class="mermaid">
-graph LR
-  A[System design basics] --> B[Design patterns]
-  A --> C[Architecture patterns]
-  A --> D[Caching & queues]
-  E[Agents & tool calling] --> F[MCP & Azure agents]
-  G[RAG evals & improvement] --> H[Beyond RAG]
-  I[Cloud IAM & billing] --> J[Logging & containers]
-  J --> K[Host an AI app end to end]
-  C --> K
-  D --> K
-  F --> K
-</pre>
-<div class="tracks">
-<div class="card"><b>1. System design fundamentals</b><span class="status">Not started</span></div>
-<div class="card"><b>2. Engineering & architecture patterns</b><span class="status">Not started</span></div>
-<div class="card"><b>3. AI / LLM systems & RAG</b><span class="status">Not started</span></div>
-<div class="card"><b>4. Agentic systems & MCP</b><span class="status">Not started</span></div>
-<div class="card"><b>5. Cloud: Azure, AWS, GCP</b><span class="status">Not started</span></div>
-<div class="card"><b>6. Production & ops</b><span class="status">Not started</span></div>
-<div class="card"><b>7. FDE craft & interviews</b><span class="status">Not started</span></div>
-<div class="card"><b>8. Reading Java / TS code</b><span class="status">Not started</span></div>
-<div class="card"><b>9. Computer vision in production</b><span class="status">Not started</span></div>
-</div></body></html>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><a class="brand" href="index.html"><span class="logo">◈</span> AI FDE Roadmap</a><nav><a href="index.html" aria-current=page>Hub</a><a href="path.html">Start here</a><a href="tracks/index.html">Tracks</a><a href="drops/index.html">Drops</a><a href="watch.html">Watch</a><a href="glossary/index.html">Glossary</a></nav><button id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button></header>
+<main id="main"><section class="hero"><h1>AI FDE / Architect Roadmap</h1>
+<p class="lede">From MVP to production systems: system design, agentic AI, RAG, cloud and the FDE craft. Concepts, not syntax: every topic has a metaphor, a real company example, when to use it and when not to, trade-offs, diagrams, a glossary, an interview angle, sources, and things to watch or play with.</p>
+<div class="stats"><div><b>40</b><span>topics</span></div><div><b>10</b><span>drops</span></div><div><b>9</b><span>tracks</span></div><div><b>152</b><span>videos, visualisers &amp; guides</span></div><div><b>597</b><span>glossary terms</span></div></div>
+<p><a class="btn" href="path.html">Start here: suggested order →</a> <a class="btn alt" href="watch.html">Watch / see it move</a> <a class="btn alt" href="glossary/index.html">Glossary A–Z</a></p>
+<div class="search"><label for="q" class="sr">Search topics and glossary</label><input id="q" type="search" placeholder="Search topics and glossary (e.g. saga, token bucket, MCP)" autocomplete="off"><ul id="results" hidden></ul></div></section>
+<section><h2>Branch map</h2><p class="muted">Click any track or topic (scroll sideways on small screens). Read left to right along a branch; the <a href="path.html">suggested path</a> interleaves the branches.</p><div class="mapwrap"><pre class="mermaid" data-keep="1">flowchart LR
+  root((AI FDE&lt;br/&gt;Roadmap))
+  root --&gt; k0([&quot;1. System design fundamentals&quot;])
+  click k0 &quot;tracks/system-design.html&quot; _self
+  k0 --&gt; k0t0[&quot;System design from zero&quot;]
+  click k0t0 &quot;topics/system-design-basics.html&quot; _self
+  k0t0 --&gt; k0t1[&quot;Load balancing and consistent hashing&quot;]
+  click k0t1 &quot;topics/load-balancing-hashing.html&quot; _self
+  k0t1 --&gt; k0t2[&quot;Caching in a real system&quot;]
+  click k0t2 &quot;topics/caching.html&quot; _self
+  k0t2 --&gt; k0t3[&quot;Message queues by use case&quot;]
+  click k0t3 &quot;topics/message-queues.html&quot; _self
+  k0t3 --&gt; k0t4[&quot;Rate limiting and background jobs&quot;]
+  click k0t4 &quot;topics/rate-limiting-jobs.html&quot; _self
+  k0t4 --&gt; k0t5[&quot;Choosing a database&quot;]
+  click k0t5 &quot;topics/choosing-a-database.html&quot; _self
+  k0t5 --&gt; k0t6[&quot;Multi-tenancy for SaaS and AI apps&quot;]
+  click k0t6 &quot;topics/multi-tenancy.html&quot; _self
+  classDef c0 fill:#cae0f5,stroke:#326599,color:#111
+  class k0,k0t0,k0t1,k0t2,k0t3,k0t4,k0t5,k0t6 c0
+  root --&gt; k1([&quot;2. Engineering &amp;amp; architecture patterns&quot;])
+  click k1 &quot;tracks/architecture-patterns.html&quot; _self
+  k1 --&gt; k1t0[&quot;API gateway, circuit breaker, retry with back…&quot;]
+  click k1t0 &quot;topics/gateway-breaker-retry.html&quot; _self
+  k1t0 --&gt; k1t1[&quot;Bulkhead, sidecar, strangler fig and saga&quot;]
+  click k1t1 &quot;topics/bulkhead-sidecar-strangler-saga.html&quot; _self
+  k1t1 --&gt; k1t2[&quot;Pub/sub, event-driven architecture and CQRS&quot;]
+  click k1t2 &quot;topics/pubsub-eda-cqrs.html&quot; _self
+  k1t2 --&gt; k1t3[&quot;API design: REST, GraphQL, gRPC&quot;]
+  click k1t3 &quot;topics/api-design.html&quot; _self
+  k1t3 --&gt; k1t4[&quot;Hexagonal architecture and SOLID&quot;]
+  click k1t4 &quot;topics/hexagonal-solid.html&quot; _self
+  classDef c1 fill:#dccaf5,stroke:#5d3299,color:#111
+  class k1,k1t0,k1t1,k1t2,k1t3,k1t4 c1
+  root --&gt; k2([&quot;3. AI / LLM systems &amp;amp; RAG&quot;])
+  click k2 &quot;tracks/ai-llm-systems.html&quot; _self
+  k2 --&gt; k2t0[&quot;Fine-tuning vs prompting vs RAG&quot;]
+  click k2t0 &quot;topics/finetune-vs-prompt-vs-rag.html&quot; _self
+  k2t0 --&gt; k2t1[&quot;Embeddings and vector databases&quot;]
+  click k2t1 &quot;topics/embeddings-vector-db.html&quot; _self
+  k2t1 --&gt; k2t2[&quot;Improving RAG&quot;]
+  click k2t2 &quot;topics/improving-rag.html&quot; _self
+  k2t2 --&gt; k2t3[&quot;RAG evals&quot;]
+  click k2t3 &quot;topics/rag-evals.html&quot; _self
+  k2t3 --&gt; k2t4[&quot;Beyond classic RAG&quot;]
+  click k2t4 &quot;topics/beyond-rag.html&quot; _self
+  k2t4 --&gt; k2t5[&quot;Caching in LLM and RAG apps&quot;]
+  click k2t5 &quot;topics/llm-caching.html&quot; _self
+  k2t5 --&gt; k2t6[&quot;LLM serving cost and latency&quot;]
+  click k2t6 &quot;topics/llm-serving-cost.html&quot; _self
+  k2t6 --&gt; k2t7[&quot;LLM guardrails and prompt injection&quot;]
+  click k2t7 &quot;topics/guardrails-prompt-injection.html&quot; _self
+  classDef c2 fill:#caf5e0,stroke:#329966,color:#111
+  class k2,k2t0,k2t1,k2t2,k2t3,k2t4,k2t5,k2t6,k2t7 c2
+  root --&gt; k3([&quot;4. Agentic systems &amp;amp; MCP&quot;])
+  click k3 &quot;tracks/agentic-systems.html&quot; _self
+  k3 --&gt; k3t0[&quot;How an AI agent calls a tool&quot;]
+  click k3t0 &quot;topics/agent-tool-calling.html&quot; _self
+  k3t0 --&gt; k3t1[&quot;MCP: the USB-C port for AI tools&quot;]
+  click k3t1 &quot;topics/mcp.html&quot; _self
+  k3t1 --&gt; k3t2[&quot;Agent memory and multi-agent orchestration&quot;]
+  click k3t2 &quot;topics/agent-memory-multi-agent.html&quot; _self
+  k3t2 --&gt; k3t3[&quot;Evaluating and monitoring AI agents&quot;]
+  click k3t3 &quot;topics/agent-eval-observability.html&quot; _self
+  classDef c3 fill:#f5dcca,stroke:#995d32,color:#111
+  class k3,k3t0,k3t1,k3t2,k3t3 c3
+  root --&gt; k4([&quot;5. Cloud: Azure, AWS, GCP&quot;])
+  click k4 &quot;tracks/cloud.html&quot; _self
+  k4 --&gt; k4t0[&quot;Cloud IAM across AWS, Azure and GCP&quot;]
+  click k4t0 &quot;topics/cloud-iam.html&quot; _self
+  k4t0 --&gt; k4t1[&quot;Cloud billing and cost control for AI apps&quot;]
+  click k4t1 &quot;topics/cloud-cost-control.html&quot; _self
+  k4t1 --&gt; k4t2[&quot;Cloud networking basics&quot;]
+  click k4t2 &quot;topics/cloud-networking.html&quot; _self
+  k4t2 --&gt; k4t3[&quot;Serverless containers&quot;]
+  click k4t3 &quot;topics/serverless-containers.html&quot; _self
+  k4t3 --&gt; k4t4[&quot;Kubernetes: GKE vs EKS vs AKS&quot;]
+  click k4t4 &quot;topics/kubernetes.html&quot; _self
+  k4t4 --&gt; k4t5[&quot;Bedrock vs Microsoft Foundry vs Google&amp;#x27;s Agen…&quot;]
+  click k4t5 &quot;topics/managed-ai-platforms.html&quot; _self
+  k4t5 --&gt; k4t6[&quot;Hosting an AI-built Next.js + Python app&quot;]
+  click k4t6 &quot;topics/hosting-nextjs-python.html&quot; _self
+  classDef c4 fill:#caeef5,stroke:#328799,color:#111
+  class k4,k4t0,k4t1,k4t2,k4t3,k4t4,k4t5,k4t6 c4
+  root --&gt; k5([&quot;6. Production &amp;amp; ops&quot;])
+  click k5 &quot;tracks/production-ops.html&quot; _self
+  k5 --&gt; k5t0[&quot;Logging and monitoring&quot;]
+  click k5t0 &quot;topics/logging-monitoring.html&quot; _self
+  k5t0 --&gt; k5t1[&quot;SLOs, error budgets and incidents&quot;]
+  click k5t1 &quot;topics/slos-incidents.html&quot; _self
+  k5t1 --&gt; k5t2[&quot;OAuth 2.0 and OpenID Connect&quot;]
+  click k5t2 &quot;topics/oauth-oidc.html&quot; _self
+  k5t2 --&gt; k5t3[&quot;CI/CD and infrastructure as code&quot;]
+  click k5t3 &quot;topics/cicd-iac.html&quot; _self
+  classDef c5 fill:#f5cad9,stroke:#993254,color:#111
+  class k5,k5t0,k5t1,k5t2,k5t3 c5
+  root --&gt; k6([&quot;7. FDE craft &amp;amp; interviews&quot;])
+  click k6 &quot;tracks/fde-craft.html&quot; _self
+  k6 --&gt; k6t0[&quot;FDE craft: customer discovery and scoping a p…&quot;]
+  click k6t0 &quot;topics/customer-discovery-pilot.html&quot; _self
+  k6t0 --&gt; k6t1[&quot;Technical demos and one-page design docs&quot;]
+  click k6t1 &quot;topics/demos-design-docs.html&quot; _self
+  classDef c6 fill:#f5ebca,stroke:#997f32,color:#111
+  class k6,k6t0,k6t1 c6
+  root --&gt; k7([&quot;8. Reading Java / TS code&quot;])
+  click k7 &quot;tracks/reading-code.html&quot; _self
+  k7 --&gt; k7t0[&quot;Code-level design patterns&quot;]
+  click k7t0 &quot;topics/code-design-patterns.html&quot; _self
+  k7t0 --&gt; k7t1[&quot;Reading Java and TypeScript/Next.js code&quot;]
+  click k7t1 &quot;topics/reading-java-ts.html&quot; _self
+  classDef c7 fill:#dcf5ca,stroke:#5d9932,color:#111
+  class k7,k7t0,k7t1 c7
+  root --&gt; k8([&quot;9. Computer vision in production&quot;])
+  click k8 &quot;tracks/computer-vision.html&quot; _self
+  k8 --&gt; k8t0[&quot;Computer vision in production&quot;]
+  click k8t0 &quot;topics/cv-in-production.html&quot; _self
+  classDef c8 fill:#f5caf5,stroke:#993299,color:#111
+  class k8,k8t0 c8
+</pre></div></section>
+<section><h2>Start here</h2><p>New to this? Follow the suggested order. It begins with:</p><ol class="inline"><li><a href="topics/system-design-basics.html">System design from zero</a></li><li><a href="topics/load-balancing-hashing.html">Load balancing and consistent hashing</a></li><li><a href="topics/caching.html">Caching in a real system</a></li></ol><p class="muted">…and continues through patterns, AI and agents, cloud and production, then FDE craft. <a href="path.html">See all 40 in order</a>.</p></section>
+<section><h2>Nine tracks</h2><div class="trkgrid"><article class="trk" style="--h:210"><a href="tracks/system-design.html"><strong>System design fundamentals</strong></a><span>Scaling, caching, queues, rate limiting, load balancing, databases and tenancy: the building blocks every other topic leans on.</span><ol><li><a href="topics/system-design-basics.html">System design from zero</a></li><li><a href="topics/load-balancing-hashing.html">Load balancing and consistent hashing</a></li><li><a href="topics/caching.html">Caching in a real system</a></li><li><a href="topics/message-queues.html">Message queues by use case</a></li><li><a href="topics/rate-limiting-jobs.html">Rate limiting and background jobs</a></li><li><a href="topics/choosing-a-database.html">Choosing a database</a></li><li><a href="topics/multi-tenancy.html">Multi-tenancy for SaaS and AI apps</a></li></ol><em>7 topics · <a href="tracks/system-design.html">open track →</a></em></article><article class="trk" style="--h:265"><a href="tracks/architecture-patterns.html"><strong>Engineering &amp; architecture patterns</strong></a><span>Resilience, messaging and API patterns, each as a pattern card: what, why, when, when not, trade-offs.</span><ol><li><a href="topics/gateway-breaker-retry.html">API gateway, circuit breaker, retry with backoff</a></li><li><a href="topics/bulkhead-sidecar-strangler-saga.html">Bulkhead, sidecar, strangler fig and saga</a></li><li><a href="topics/pubsub-eda-cqrs.html">Pub/sub, event-driven architecture and CQRS</a></li><li><a href="topics/api-design.html">API design: REST, GraphQL, gRPC</a></li><li><a href="topics/hexagonal-solid.html">Hexagonal architecture and SOLID</a></li></ol><em>5 topics · <a href="tracks/architecture-patterns.html">open track →</a></em></article><article class="trk" style="--h:150"><a href="tracks/ai-llm-systems.html"><strong>AI / LLM systems &amp; RAG</strong></a><span>Retrieval, embeddings, evals, serving cost, fine-tuning vs prompting and guardrails for LLM products.</span><ol><li><a href="topics/finetune-vs-prompt-vs-rag.html">Fine-tuning vs prompting vs RAG</a></li><li><a href="topics/embeddings-vector-db.html">Embeddings and vector databases</a></li><li><a href="topics/improving-rag.html">Improving RAG</a></li><li><a href="topics/rag-evals.html">RAG evals</a></li><li><a href="topics/beyond-rag.html">Beyond classic RAG</a></li><li><a href="topics/llm-caching.html">Caching in LLM and RAG apps</a></li><li><a href="topics/llm-serving-cost.html">LLM serving cost and latency</a></li><li><a href="topics/guardrails-prompt-injection.html">LLM guardrails and prompt injection</a></li></ol><em>8 topics · <a href="tracks/ai-llm-systems.html">open track →</a></em></article><article class="trk" style="--h:25"><a href="tracks/agentic-systems.html"><strong>Agentic systems &amp; MCP</strong></a><span>How agents call tools, share tools over MCP, remember, coordinate and get evaluated.</span><ol><li><a href="topics/agent-tool-calling.html">How an AI agent calls a tool</a></li><li><a href="topics/mcp.html">MCP: the USB-C port for AI tools</a></li><li><a href="topics/agent-memory-multi-agent.html">Agent memory and multi-agent orchestration</a></li><li><a href="topics/agent-eval-observability.html">Evaluating and monitoring AI agents</a></li></ol><em>4 topics · <a href="tracks/agentic-systems.html">open track →</a></em></article><article class="trk" style="--h:190"><a href="tracks/cloud.html"><strong>Cloud: Azure, AWS, GCP</strong></a><span>IAM, cost, networking, containers, Kubernetes, managed AI platforms and hosting an app end to end.</span><ol><li><a href="topics/cloud-iam.html">Cloud IAM across AWS, Azure and GCP</a></li><li><a href="topics/cloud-cost-control.html">Cloud billing and cost control for AI apps</a></li><li><a href="topics/cloud-networking.html">Cloud networking basics</a></li><li><a href="topics/serverless-containers.html">Serverless containers</a></li><li><a href="topics/kubernetes.html">Kubernetes: GKE vs EKS vs AKS</a></li><li><a href="topics/managed-ai-platforms.html">Bedrock vs Microsoft Foundry vs Google&#x27;s Agent Platform</a></li><li><a href="topics/hosting-nextjs-python.html">Hosting an AI-built Next.js + Python app</a></li></ol><em>7 topics · <a href="tracks/cloud.html">open track →</a></em></article><article class="trk" style="--h:340"><a href="tracks/production-ops.html"><strong>Production &amp; ops</strong></a><span>Observability, SLOs, incidents, CI/CD, infrastructure as code and auth.</span><ol><li><a href="topics/logging-monitoring.html">Logging and monitoring</a></li><li><a href="topics/slos-incidents.html">SLOs, error budgets and incidents</a></li><li><a href="topics/oauth-oidc.html">OAuth 2.0 and OpenID Connect</a></li><li><a href="topics/cicd-iac.html">CI/CD and infrastructure as code</a></li></ol><em>4 topics · <a href="tracks/production-ops.html">open track →</a></em></article><article class="trk" style="--h:45"><a href="tracks/fde-craft.html"><strong>FDE craft &amp; interviews</strong></a><span>Discovery, scoping pilots, demos and design docs: the non-code half of the job.</span><ol><li><a href="topics/customer-discovery-pilot.html">FDE craft: customer discovery and scoping a pilot</a></li><li><a href="topics/demos-design-docs.html">Technical demos and one-page design docs</a></li></ol><em>2 topics · <a href="tracks/fde-craft.html">open track →</a></em></article><article class="trk" style="--h:95"><a href="tracks/reading-code.html"><strong>Reading Java / TS code</strong></a><span>Recognise patterns in AI-written Java, TypeScript and Next.js code, mapped to Python.</span><ol><li><a href="topics/code-design-patterns.html">Code-level design patterns</a></li><li><a href="topics/reading-java-ts.html">Reading Java and TypeScript/Next.js code</a></li></ol><em>2 topics · <a href="tracks/reading-code.html">open track →</a></em></article><article class="trk" style="--h:300"><a href="tracks/computer-vision.html"><strong>Computer vision in production</strong></a><span>Serving, edge vs cloud and drift for vision systems.</span><ol><li><a href="topics/cv-in-production.html">Computer vision in production</a></li></ol><em>1 topic · <a href="tracks/computer-vision.html">open track →</a></em></article></div></section>
+<section><h2>By drop</h2><p class="muted">Prefer the order things were published?</p><div class="pills"><a href="drops/drop-01.html">Drop 1</a><a href="drops/drop-02.html">Drop 2</a><a href="drops/drop-03.html">Drop 3</a><a href="drops/drop-04.html">Drop 4</a><a href="drops/drop-05.html">Drop 5</a><a href="drops/drop-06.html">Drop 6</a><a href="drops/drop-07.html">Drop 7</a><a href="drops/drop-08.html">Drop 8</a><a href="drops/drop-09.html">Drop 9</a><a href="drops/drop-10.html">Drop 10</a></div></section></main>
+<footer><p>AI FDE / Architect roadmap · 40 topics from 10 concept drops (15–18 Nov 2026) · concepts, not syntax · <a href="path.html">Suggested order</a> · <a href="glossary/index.html">Glossary</a> · <a href="data/roadmap.json">Roadmap data (JSON)</a></p></footer>
+<script src="assets/site.js"></script><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = document.documentElement.dataset.theme==='dark' || (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+const narrow = matchMedia('(max-width: 720px)').matches;
+document.querySelectorAll('pre.mermaid').forEach(p=>{ if(narrow && !p.dataset.keep) p.textContent = p.textContent.replace(/^flowchart LR/,'flowchart TD'); });
+const cfg = (u)=>({startOnLoad:false, securityLevel:'loose', theme: dark?'dark':'default', flowchart:{useMaxWidth:u, htmlLabels:true, wrappingWidth:190, curve:'basis'}, themeVariables:{fontSize:'14px'}});
+mermaid.initialize(cfg(true));
+await mermaid.run({querySelector:'pre.mermaid:not([data-keep])'});
+mermaid.initialize(cfg(false));
+await mermaid.run({querySelector:'pre.mermaid[data-keep]'});
+</script>
+</body></html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Suggested order · AI FDE Roadmap</title>
+<meta name="description" content="The suggested path through all 40 topics."><meta property="og:title" content="Suggested order"><meta property="og:description" content="The suggested path through all 40 topics."><meta property="og:type" content="article">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="assets/style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><a class="brand" href="index.html"><span class="logo">◈</span> AI FDE Roadmap</a><nav><a href="index.html">Hub</a><a href="path.html" aria-current=page>Start here</a><a href="tracks/index.html">Tracks</a><a href="drops/index.html">Drops</a><a href="watch.html">Watch</a><a href="glossary/index.html">Glossary</a></nav><button id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button></header>
+<main id="main"><h1>Start here: suggested order</h1><p class="lede">Forty topics in a learning sequence: foundations first, then patterns, then AI and agents, then cloud and production, then the FDE craft. Each topic also links to the next one on the path.</p><div class="mapwrap"><pre class="mermaid" data-keep="1">flowchart LR
+  subgraph P0[&quot;Phase 1&quot;]
+    direction TB
+    p0t0[&quot;System design from zero&quot;]
+    p0t1[&quot;Load balancing and consistent hashing&quot;]
+    p0t0 --&gt; p0t1
+    p0t2[&quot;Caching in a real system&quot;]
+    p0t1 --&gt; p0t2
+    p0t3[&quot;Message queues by use case&quot;]
+    p0t2 --&gt; p0t3
+    p0t4[&quot;Rate limiting and background jobs&quot;]
+    p0t3 --&gt; p0t4
+    p0t5[&quot;Choosing a database&quot;]
+    p0t4 --&gt; p0t5
+    p0t6[&quot;Cloud IAM across AWS, Azure and GCP&quot;]
+    p0t5 --&gt; p0t6
+    p0t7[&quot;Cloud networking basics&quot;]
+    p0t6 --&gt; p0t7
+  end
+  subgraph P1[&quot;Phase 2&quot;]
+    direction TB
+    p1t0[&quot;Code-level design patterns&quot;]
+    p1t1[&quot;API gateway, circuit breaker, retry with back…&quot;]
+    p1t0 --&gt; p1t1
+    p1t2[&quot;Bulkhead, sidecar, strangler fig and saga&quot;]
+    p1t1 --&gt; p1t2
+    p1t3[&quot;Pub/sub, event-driven architecture and CQRS&quot;]
+    p1t2 --&gt; p1t3
+    p1t4[&quot;API design: REST, GraphQL, gRPC&quot;]
+    p1t3 --&gt; p1t4
+    p1t5[&quot;Hexagonal architecture and SOLID&quot;]
+    p1t4 --&gt; p1t5
+    p1t6[&quot;Reading Java and TypeScript/Next.js code&quot;]
+    p1t5 --&gt; p1t6
+  end
+  P0 --&gt; P1
+  subgraph P2[&quot;Phase 3&quot;]
+    direction TB
+    p2t0[&quot;How an AI agent calls a tool&quot;]
+    p2t1[&quot;MCP: the USB-C port for AI tools&quot;]
+    p2t0 --&gt; p2t1
+    p2t2[&quot;Embeddings and vector databases&quot;]
+    p2t1 --&gt; p2t2
+    p2t3[&quot;Improving RAG&quot;]
+    p2t2 --&gt; p2t3
+    p2t4[&quot;RAG evals&quot;]
+    p2t3 --&gt; p2t4
+    p2t5[&quot;Beyond classic RAG&quot;]
+    p2t4 --&gt; p2t5
+    p2t6[&quot;Caching in LLM and RAG apps&quot;]
+    p2t5 --&gt; p2t6
+    p2t7[&quot;LLM serving cost and latency&quot;]
+    p2t6 --&gt; p2t7
+    p2t8[&quot;Fine-tuning vs prompting vs RAG&quot;]
+    p2t7 --&gt; p2t8
+    p2t9[&quot;LLM guardrails and prompt injection&quot;]
+    p2t8 --&gt; p2t9
+    p2t10[&quot;Agent memory and multi-agent orchestration&quot;]
+    p2t9 --&gt; p2t10
+    p2t11[&quot;Evaluating and monitoring AI agents&quot;]
+    p2t10 --&gt; p2t11
+  end
+  P1 --&gt; P2
+  subgraph P3[&quot;Phase 4&quot;]
+    direction TB
+    p3t0[&quot;Cloud billing and cost control for AI apps&quot;]
+    p3t1[&quot;Logging and monitoring&quot;]
+    p3t0 --&gt; p3t1
+    p3t2[&quot;SLOs, error budgets and incidents&quot;]
+    p3t1 --&gt; p3t2
+    p3t3[&quot;Serverless containers&quot;]
+    p3t2 --&gt; p3t3
+    p3t4[&quot;Kubernetes: GKE vs EKS vs AKS&quot;]
+    p3t3 --&gt; p3t4
+    p3t5[&quot;CI/CD and infrastructure as code&quot;]
+    p3t4 --&gt; p3t5
+    p3t6[&quot;OAuth 2.0 and OpenID Connect&quot;]
+    p3t5 --&gt; p3t6
+    p3t7[&quot;Bedrock vs Microsoft Foundry vs Google&amp;#x27;s Agen…&quot;]
+    p3t6 --&gt; p3t7
+    p3t8[&quot;Multi-tenancy for SaaS and AI apps&quot;]
+    p3t7 --&gt; p3t8
+    p3t9[&quot;Hosting an AI-built Next.js + Python app&quot;]
+    p3t8 --&gt; p3t9
+  end
+  P2 --&gt; P3
+  subgraph P4[&quot;Phase 5&quot;]
+    direction TB
+    p4t0[&quot;FDE craft: customer discovery and scoping a p…&quot;]
+    p4t1[&quot;Technical demos and one-page design docs&quot;]
+    p4t0 --&gt; p4t1
+    p4t2[&quot;Computer vision in production&quot;]
+    p4t1 --&gt; p4t2
+  end
+  P3 --&gt; P4
+  click p0t0 &quot;topics/system-design-basics.html&quot; _self
+  click p0t1 &quot;topics/load-balancing-hashing.html&quot; _self
+  click p0t2 &quot;topics/caching.html&quot; _self
+  click p0t3 &quot;topics/message-queues.html&quot; _self
+  click p0t4 &quot;topics/rate-limiting-jobs.html&quot; _self
+  click p0t5 &quot;topics/choosing-a-database.html&quot; _self
+  click p0t6 &quot;topics/cloud-iam.html&quot; _self
+  click p0t7 &quot;topics/cloud-networking.html&quot; _self
+  click p1t0 &quot;topics/code-design-patterns.html&quot; _self
+  click p1t1 &quot;topics/gateway-breaker-retry.html&quot; _self
+  click p1t2 &quot;topics/bulkhead-sidecar-strangler-saga.html&quot; _self
+  click p1t3 &quot;topics/pubsub-eda-cqrs.html&quot; _self
+  click p1t4 &quot;topics/api-design.html&quot; _self
+  click p1t5 &quot;topics/hexagonal-solid.html&quot; _self
+  click p1t6 &quot;topics/reading-java-ts.html&quot; _self
+  click p2t0 &quot;topics/agent-tool-calling.html&quot; _self
+  click p2t1 &quot;topics/mcp.html&quot; _self
+  click p2t2 &quot;topics/embeddings-vector-db.html&quot; _self
+  click p2t3 &quot;topics/improving-rag.html&quot; _self
+  click p2t4 &quot;topics/rag-evals.html&quot; _self
+  click p2t5 &quot;topics/beyond-rag.html&quot; _self
+  click p2t6 &quot;topics/llm-caching.html&quot; _self
+  click p2t7 &quot;topics/llm-serving-cost.html&quot; _self
+  click p2t8 &quot;topics/finetune-vs-prompt-vs-rag.html&quot; _self
+  click p2t9 &quot;topics/guardrails-prompt-injection.html&quot; _self
+  click p2t10 &quot;topics/agent-memory-multi-agent.html&quot; _self
+  click p2t11 &quot;topics/agent-eval-observability.html&quot; _self
+  click p3t0 &quot;topics/cloud-cost-control.html&quot; _self
+  click p3t1 &quot;topics/logging-monitoring.html&quot; _self
+  click p3t2 &quot;topics/slos-incidents.html&quot; _self
+  click p3t3 &quot;topics/serverless-containers.html&quot; _self
+  click p3t4 &quot;topics/kubernetes.html&quot; _self
+  click p3t5 &quot;topics/cicd-iac.html&quot; _self
+  click p3t6 &quot;topics/oauth-oidc.html&quot; _self
+  click p3t7 &quot;topics/managed-ai-platforms.html&quot; _self
+  click p3t8 &quot;topics/multi-tenancy.html&quot; _self
+  click p3t9 &quot;topics/hosting-nextjs-python.html&quot; _self
+  click p4t0 &quot;topics/customer-discovery-pilot.html&quot; _self
+  click p4t1 &quot;topics/demos-design-docs.html&quot; _self
+  click p4t2 &quot;topics/cv-in-production.html&quot; _self
+  classDef csystemdesign fill:#cae0f5,stroke:#326599,color:#111
+  class p0t0,p0t1,p0t2,p0t3,p0t4,p0t5,p3t8 csystemdesign
+  classDef carchitecturepatterns fill:#dccaf5,stroke:#5d3299,color:#111
+  class p1t1,p1t2,p1t3,p1t4,p1t5 carchitecturepatterns
+  classDef caillmsystems fill:#caf5e0,stroke:#329966,color:#111
+  class p2t2,p2t3,p2t4,p2t5,p2t6,p2t7,p2t8,p2t9 caillmsystems
+  classDef cagenticsystems fill:#f5dcca,stroke:#995d32,color:#111
+  class p2t0,p2t1,p2t10,p2t11 cagenticsystems
+  classDef ccloud fill:#caeef5,stroke:#328799,color:#111
+  class p0t6,p0t7,p3t0,p3t3,p3t4,p3t7,p3t9 ccloud
+  classDef cproductionops fill:#f5cad9,stroke:#993254,color:#111
+  class p3t1,p3t2,p3t5,p3t6 cproductionops
+  classDef cfdecraft fill:#f5ebca,stroke:#997f32,color:#111
+  class p4t0,p4t1 cfdecraft
+  classDef creadingcode fill:#dcf5ca,stroke:#5d9932,color:#111
+  class p1t0,p1t6 creadingcode
+  classDef ccomputervision fill:#f5caf5,stroke:#993299,color:#111
+  class p4t2 ccomputervision
+</pre></div><section><h2>Phase 1: Foundations</h2><p class="muted">How systems are built to scale and stay up.</p><ol class="steps2" start="1"><li><a class="step" style="--h:210" href="topics/system-design-basics.html"><span class="num">1</span><span><strong>System design from zero</strong><br><small>System design fundamentals · Drop 1</small></span></a></li><li><a class="step" style="--h:210" href="topics/load-balancing-hashing.html"><span class="num">2</span><span><strong>Load balancing and consistent hashing</strong><br><small>System design fundamentals · Drop 9</small></span></a></li><li><a class="step" style="--h:210" href="topics/caching.html"><span class="num">3</span><span><strong>Caching in a real system</strong><br><small>System design fundamentals · Drop 1</small></span></a></li><li><a class="step" style="--h:210" href="topics/message-queues.html"><span class="num">4</span><span><strong>Message queues by use case</strong><br><small>System design fundamentals · Drop 2</small></span></a></li><li><a class="step" style="--h:210" href="topics/rate-limiting-jobs.html"><span class="num">5</span><span><strong>Rate limiting and background jobs</strong><br><small>System design fundamentals · Drop 3</small></span></a></li><li><a class="step" style="--h:210" href="topics/choosing-a-database.html"><span class="num">6</span><span><strong>Choosing a database</strong><br><small>System design fundamentals · Drop 8</small></span></a></li><li><a class="step" style="--h:190" href="topics/cloud-iam.html"><span class="num">7</span><span><strong>Cloud IAM across AWS, Azure and GCP</strong><br><small>Cloud: Azure, AWS, GCP · Drop 1</small></span></a></li><li><a class="step" style="--h:190" href="topics/cloud-networking.html"><span class="num">8</span><span><strong>Cloud networking basics</strong><br><small>Cloud: Azure, AWS, GCP · Drop 9</small></span></a></li></ol></section><section><h2>Phase 2: Patterns, APIs and reading code</h2><p class="muted">The vocabulary for directing AI and teammates.</p><ol class="steps2" start="9"><li><a class="step" style="--h:95" href="topics/code-design-patterns.html"><span class="num">9</span><span><strong>Code-level design patterns</strong><br><small>Reading Java / TS code · Drop 2</small></span></a></li><li><a class="step" style="--h:265" href="topics/gateway-breaker-retry.html"><span class="num">10</span><span><strong>API gateway, circuit breaker, retry with backoff</strong><br><small>Engineering &amp; architecture patterns · Drop 3</small></span></a></li><li><a class="step" style="--h:265" href="topics/bulkhead-sidecar-strangler-saga.html"><span class="num">11</span><span><strong>Bulkhead, sidecar, strangler fig and saga</strong><br><small>Engineering &amp; architecture patterns · Drop 4</small></span></a></li><li><a class="step" style="--h:265" href="topics/pubsub-eda-cqrs.html"><span class="num">12</span><span><strong>Pub/sub, event-driven architecture and CQRS</strong><br><small>Engineering &amp; architecture patterns · Drop 5</small></span></a></li><li><a class="step" style="--h:265" href="topics/api-design.html"><span class="num">13</span><span><strong>API design: REST, GraphQL, gRPC</strong><br><small>Engineering &amp; architecture patterns · Drop 8</small></span></a></li><li><a class="step" style="--h:265" href="topics/hexagonal-solid.html"><span class="num">14</span><span><strong>Hexagonal architecture and SOLID</strong><br><small>Engineering &amp; architecture patterns · Drop 10</small></span></a></li><li><a class="step" style="--h:95" href="topics/reading-java-ts.html"><span class="num">15</span><span><strong>Reading Java and TypeScript/Next.js code</strong><br><small>Reading Java / TS code · Drop 7</small></span></a></li></ol></section><section><h2>Phase 3: AI and agent systems</h2><p class="muted">RAG, agents, and the production concerns around LLMs.</p><ol class="steps2" start="16"><li><a class="step" style="--h:25" href="topics/agent-tool-calling.html"><span class="num">16</span><span><strong>How an AI agent calls a tool</strong><br><small>Agentic systems &amp; MCP · Drop 1</small></span></a></li><li><a class="step" style="--h:25" href="topics/mcp.html"><span class="num">17</span><span><strong>MCP: the USB-C port for AI tools</strong><br><small>Agentic systems &amp; MCP · Drop 2</small></span></a></li><li><a class="step" style="--h:150" href="topics/embeddings-vector-db.html"><span class="num">18</span><span><strong>Embeddings and vector databases</strong><br><small>AI / LLM systems &amp; RAG · Drop 8</small></span></a></li><li><a class="step" style="--h:150" href="topics/improving-rag.html"><span class="num">19</span><span><strong>Improving RAG</strong><br><small>AI / LLM systems &amp; RAG · Drop 4</small></span></a></li><li><a class="step" style="--h:150" href="topics/rag-evals.html"><span class="num">20</span><span><strong>RAG evals</strong><br><small>AI / LLM systems &amp; RAG · Drop 3</small></span></a></li><li><a class="step" style="--h:150" href="topics/beyond-rag.html"><span class="num">21</span><span><strong>Beyond classic RAG</strong><br><small>AI / LLM systems &amp; RAG · Drop 5</small></span></a></li><li><a class="step" style="--h:150" href="topics/llm-caching.html"><span class="num">22</span><span><strong>Caching in LLM and RAG apps</strong><br><small>AI / LLM systems &amp; RAG · Drop 2</small></span></a></li><li><a class="step" style="--h:150" href="topics/llm-serving-cost.html"><span class="num">23</span><span><strong>LLM serving cost and latency</strong><br><small>AI / LLM systems &amp; RAG · Drop 10</small></span></a></li><li><a class="step" style="--h:150" href="topics/finetune-vs-prompt-vs-rag.html"><span class="num">24</span><span><strong>Fine-tuning vs prompting vs RAG</strong><br><small>AI / LLM systems &amp; RAG · Drop 10</small></span></a></li><li><a class="step" style="--h:150" href="topics/guardrails-prompt-injection.html"><span class="num">25</span><span><strong>LLM guardrails and prompt injection</strong><br><small>AI / LLM systems &amp; RAG · Drop 6</small></span></a></li><li><a class="step" style="--h:25" href="topics/agent-memory-multi-agent.html"><span class="num">26</span><span><strong>Agent memory and multi-agent orchestration</strong><br><small>Agentic systems &amp; MCP · Drop 6</small></span></a></li><li><a class="step" style="--h:25" href="topics/agent-eval-observability.html"><span class="num">27</span><span><strong>Evaluating and monitoring AI agents</strong><br><small>Agentic systems &amp; MCP · Drop 9</small></span></a></li></ol></section><section><h2>Phase 4: Cloud and production</h2><p class="muted">Run it, secure it, pay for it, keep it reliable.</p><ol class="steps2" start="28"><li><a class="step" style="--h:190" href="topics/cloud-cost-control.html"><span class="num">28</span><span><strong>Cloud billing and cost control for AI apps</strong><br><small>Cloud: Azure, AWS, GCP · Drop 3</small></span></a></li><li><a class="step" style="--h:340" href="topics/logging-monitoring.html"><span class="num">29</span><span><strong>Logging and monitoring</strong><br><small>Production &amp; ops · Drop 4</small></span></a></li><li><a class="step" style="--h:340" href="topics/slos-incidents.html"><span class="num">30</span><span><strong>SLOs, error budgets and incidents</strong><br><small>Production &amp; ops · Drop 7</small></span></a></li><li><a class="step" style="--h:190" href="topics/serverless-containers.html"><span class="num">31</span><span><strong>Serverless containers</strong><br><small>Cloud: Azure, AWS, GCP · Drop 4</small></span></a></li><li><a class="step" style="--h:190" href="topics/kubernetes.html"><span class="num">32</span><span><strong>Kubernetes: GKE vs EKS vs AKS</strong><br><small>Cloud: Azure, AWS, GCP · Drop 5</small></span></a></li><li><a class="step" style="--h:340" href="topics/cicd-iac.html"><span class="num">33</span><span><strong>CI/CD and infrastructure as code</strong><br><small>Production &amp; ops · Drop 6</small></span></a></li><li><a class="step" style="--h:340" href="topics/oauth-oidc.html"><span class="num">34</span><span><strong>OAuth 2.0 and OpenID Connect</strong><br><small>Production &amp; ops · Drop 7</small></span></a></li><li><a class="step" style="--h:190" href="topics/managed-ai-platforms.html"><span class="num">35</span><span><strong>Bedrock vs Microsoft Foundry vs Google&#x27;s Agent Platform</strong><br><small>Cloud: Azure, AWS, GCP · Drop 8</small></span></a></li><li><a class="step" style="--h:210" href="topics/multi-tenancy.html"><span class="num">36</span><span><strong>Multi-tenancy for SaaS and AI apps</strong><br><small>System design fundamentals · Drop 10</small></span></a></li><li><a class="step" style="--h:190" href="topics/hosting-nextjs-python.html"><span class="num">37</span><span><strong>Hosting an AI-built Next.js + Python app</strong><br><small>Cloud: Azure, AWS, GCP · Drop 5</small></span></a></li></ol></section><section><h2>Phase 5: FDE craft and vision</h2><p class="muted">Customer-facing skills, plus computer vision in production.</p><ol class="steps2" start="38"><li><a class="step" style="--h:45" href="topics/customer-discovery-pilot.html"><span class="num">38</span><span><strong>FDE craft: customer discovery and scoping a pilot</strong><br><small>FDE craft &amp; interviews · Drop 6</small></span></a></li><li><a class="step" style="--h:45" href="topics/demos-design-docs.html"><span class="num">39</span><span><strong>Technical demos and one-page design docs</strong><br><small>FDE craft &amp; interviews · Drop 9</small></span></a></li><li><a class="step" style="--h:300" href="topics/cv-in-production.html"><span class="num">40</span><span><strong>Computer vision in production</strong><br><small>Computer vision in production · Drop 7</small></span></a></li></ol></section><p><a class="btn" href="topics/system-design-basics.html">Begin with topic 1 →</a></p></main>
+<footer><p>AI FDE / Architect roadmap · 40 topics from 10 concept drops (15–18 Nov 2026) · concepts, not syntax · <a href="path.html">Suggested order</a> · <a href="glossary/index.html">Glossary</a> · <a href="data/roadmap.json">Roadmap data (JSON)</a></p></footer>
+<script src="assets/site.js"></script><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = document.documentElement.dataset.theme==='dark' || (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+const narrow = matchMedia('(max-width: 720px)').matches;
+document.querySelectorAll('pre.mermaid').forEach(p=>{ if(narrow && !p.dataset.keep) p.textContent = p.textContent.replace(/^flowchart LR/,'flowchart TD'); });
+const cfg = (u)=>({startOnLoad:false, securityLevel:'loose', theme: dark?'dark':'default', flowchart:{useMaxWidth:u, htmlLabels:true, wrappingWidth:190, curve:'basis'}, themeVariables:{fontSize:'14px'}});
+mermaid.initialize(cfg(true));
+await mermaid.run({querySelector:'pre.mermaid:not([data-keep])'});
+mermaid.initialize(cfg(false));
+await mermaid.run({querySelector:'pre.mermaid[data-keep]'});
+</script>
+</body></html>

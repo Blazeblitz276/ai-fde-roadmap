@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>System design fundamentals · AI FDE Roadmap</title>
+<meta name="description" content="Scaling, caching, queues, rate limiting, load balancing, databases and tenancy: the building blocks every other topic leans on."><meta property="og:title" content="System design fundamentals"><meta property="og:description" content="Scaling, caching, queues, rate limiting, load balancing, databases and tenancy: the building blocks every other topic leans on."><meta property="og:type" content="article">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><a class="brand" href="../index.html"><span class="logo">◈</span> AI FDE Roadmap</a><nav><a href="../index.html">Hub</a><a href="../path.html">Start here</a><a href="../tracks/index.html" aria-current=page>Tracks</a><a href="../drops/index.html">Drops</a><a href="../watch.html">Watch</a><a href="../glossary/index.html">Glossary</a></nav><button id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button></header>
+<main id="main"><nav class="crumbs"><a href="../index.html">Hub</a> › <a href="index.html">Tracks</a> › <span>System design fundamentals</span></nav>
+<div style="--h:210"><p class="eyebrow">Track 1 of 9</p><h1>System design fundamentals</h1><p class="lede">Scaling, caching, queues, rate limiting, load balancing, databases and tenancy: the building blocks every other topic leans on.</p>
+<h2>Branch map</h2><p class="muted">Click a node to open the topic. Topics are in the order to read them.</p><div class="mapwrap"><pre class="mermaid" data-keep="1">flowchart LR
+  root([&quot;System design fundamentals&quot;])
+  n0[&quot;1. System design from zero&quot;]
+  n1[&quot;2. Load balancing and consistent hashing&quot;]
+  n2[&quot;3. Caching in a real system&quot;]
+  n3[&quot;4. Message queues by use case&quot;]
+  n4[&quot;5. Rate limiting and background jobs&quot;]
+  n5[&quot;6. Choosing a database&quot;]
+  n6[&quot;7. Multi-tenancy for SaaS and AI apps&quot;]
+  root --&gt; n0
+  n0 --&gt; n1
+  n1 --&gt; n2
+  n2 --&gt; n3
+  n3 --&gt; n4
+  n4 --&gt; n5
+  n5 --&gt; n6
+  click n0 &quot;../topics/system-design-basics.html&quot; _self
+  click n1 &quot;../topics/load-balancing-hashing.html&quot; _self
+  click n2 &quot;../topics/caching.html&quot; _self
+  click n3 &quot;../topics/message-queues.html&quot; _self
+  click n4 &quot;../topics/rate-limiting-jobs.html&quot; _self
+  click n5 &quot;../topics/choosing-a-database.html&quot; _self
+  click n6 &quot;../topics/multi-tenancy.html&quot; _self
+  classDef t fill:#cae0f5,stroke:#326599,color:#111
+  class n0,n1,n2,n3,n4,n5,n6 t
+</pre></div>
+<h2>Topics in order</h2><ol class="steps2"><li><a class="step" href="../topics/system-design-basics.html"><span class="num">1</span><span><strong>System design from zero</strong><br><span class="muted">Clients, servers, latency vs throughput, scale up vs scale out, and why stateless servers make scaling easy.</span><br><small>Drop 1 · 3 things to watch/play with · 15 glossary terms</small></span></a></li><li><a class="step" href="../topics/load-balancing-hashing.html"><span class="num">2</span><span><strong>Load balancing and consistent hashing</strong><br><span class="muted">L4 vs L7, health checks, sticky sessions and hash rings.</span><br><small>Drop 9 · 4 things to watch/play with · 16 glossary terms</small></span></a></li><li><a class="step" href="../topics/caching.html"><span class="num">3</span><span><strong>Caching in a real system</strong><br><span class="muted">Cache-aside, write-through, write-behind, TTL, eviction and invalidation, with Redis.</span><br><small>Drop 1 · 4 things to watch/play with · 15 glossary terms</small></span></a></li><li><a class="step" href="../topics/message-queues.html"><span class="num">4</span><span><strong>Message queues by use case</strong><br><span class="muted">Kafka vs RabbitMQ vs SQS / Service Bus vs Redis Streams, matched to the job.</span><br><small>Drop 2 · 4 things to watch/play with · 13 glossary terms</small></span></a></li><li><a class="step" href="../topics/rate-limiting-jobs.html"><span class="num">5</span><span><strong>Rate limiting and background jobs</strong><br><span class="muted">Token bucket, backpressure, retries and dead-letter queues.</span><br><small>Drop 3 · 3 things to watch/play with · 18 glossary terms</small></span></a></li><li><a class="step" href="../topics/choosing-a-database.html"><span class="num">6</span><span><strong>Choosing a database</strong><br><span class="muted">SQL vs NoSQL, replication, sharding, CAP/PACELC and ACID vs BASE.</span><br><small>Drop 8 · 4 things to watch/play with · 22 glossary terms</small></span></a></li><li><a class="step" href="../topics/multi-tenancy.html"><span class="num">7</span><span><strong>Multi-tenancy for SaaS and AI apps</strong><br><span class="muted">Silo vs pool vs bridge on Azure and AWS.</span><br><small>Drop 10 · 3 things to watch/play with · 14 glossary terms</small></span></a></li></ol></div><nav class="pn"><span class="prev none"></span><a class="next" href="architecture-patterns.html"><small>Next track →</small>Engineering &amp; architecture patterns</a></nav></main>
+<footer><p>AI FDE / Architect roadmap · 40 topics from 10 concept drops (15–18 Nov 2026) · concepts, not syntax · <a href="../path.html">Suggested order</a> · <a href="../glossary/index.html">Glossary</a> · <a href="../data/roadmap.json">Roadmap data (JSON)</a></p></footer>
+<script src="../assets/site.js"></script><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = document.documentElement.dataset.theme==='dark' || (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+const narrow = matchMedia('(max-width: 720px)').matches;
+document.querySelectorAll('pre.mermaid').forEach(p=>{ if(narrow && !p.dataset.keep) p.textContent = p.textContent.replace(/^flowchart LR/,'flowchart TD'); });
+const cfg = (u)=>({startOnLoad:false, securityLevel:'loose', theme: dark?'dark':'default', flowchart:{useMaxWidth:u, htmlLabels:true, wrappingWidth:190, curve:'basis'}, themeVariables:{fontSize:'14px'}});
+mermaid.initialize(cfg(true));
+await mermaid.run({querySelector:'pre.mermaid:not([data-keep])'});
+mermaid.initialize(cfg(false));
+await mermaid.run({querySelector:'pre.mermaid[data-keep]'});
+</script>
+</body></html>

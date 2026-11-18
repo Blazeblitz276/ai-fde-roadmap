@@ -1,0 +1,5131 @@
+{
+ "generated": "2026-11-18",
+ "tracks": [
+  {
+   "slug": "system-design",
+   "name": "System design fundamentals",
+   "description": "Scaling, caching, queues, rate limiting, load balancing, databases and tenancy: the building blocks every other topic leans on.",
+   "topics": [
+    "system-design-basics",
+    "load-balancing-hashing",
+    "caching",
+    "message-queues",
+    "rate-limiting-jobs",
+    "choosing-a-database",
+    "multi-tenancy"
+   ]
+  },
+  {
+   "slug": "architecture-patterns",
+   "name": "Engineering & architecture patterns",
+   "description": "Resilience, messaging and API patterns, each as a pattern card: what, why, when, when not, trade-offs.",
+   "topics": [
+    "gateway-breaker-retry",
+    "bulkhead-sidecar-strangler-saga",
+    "pubsub-eda-cqrs",
+    "api-design",
+    "hexagonal-solid"
+   ]
+  },
+  {
+   "slug": "ai-llm-systems",
+   "name": "AI / LLM systems & RAG",
+   "description": "Retrieval, embeddings, evals, serving cost, fine-tuning vs prompting and guardrails for LLM products.",
+   "topics": [
+    "finetune-vs-prompt-vs-rag",
+    "embeddings-vector-db",
+    "improving-rag",
+    "rag-evals",
+    "beyond-rag",
+    "llm-caching",
+    "llm-serving-cost",
+    "guardrails-prompt-injection"
+   ]
+  },
+  {
+   "slug": "agentic-systems",
+   "name": "Agentic systems & MCP",
+   "description": "How agents call tools, share tools over MCP, remember, coordinate and get evaluated.",
+   "topics": [
+    "agent-tool-calling",
+    "mcp",
+    "agent-memory-multi-agent",
+    "agent-eval-observability"
+   ]
+  },
+  {
+   "slug": "cloud",
+   "name": "Cloud: Azure, AWS, GCP",
+   "description": "IAM, cost, networking, containers, Kubernetes, managed AI platforms and hosting an app end to end.",
+   "topics": [
+    "cloud-iam",
+    "cloud-cost-control",
+    "cloud-networking",
+    "serverless-containers",
+    "kubernetes",
+    "managed-ai-platforms",
+    "hosting-nextjs-python"
+   ]
+  },
+  {
+   "slug": "production-ops",
+   "name": "Production & ops",
+   "description": "Observability, SLOs, incidents, CI/CD, infrastructure as code and auth.",
+   "topics": [
+    "logging-monitoring",
+    "slos-incidents",
+    "oauth-oidc",
+    "cicd-iac"
+   ]
+  },
+  {
+   "slug": "fde-craft",
+   "name": "FDE craft & interviews",
+   "description": "Discovery, scoping pilots, demos and design docs: the non-code half of the job.",
+   "topics": [
+    "customer-discovery-pilot",
+    "demos-design-docs"
+   ]
+  },
+  {
+   "slug": "reading-code",
+   "name": "Reading Java / TS code",
+   "description": "Recognise patterns in AI-written Java, TypeScript and Next.js code, mapped to Python.",
+   "topics": [
+    "code-design-patterns",
+    "reading-java-ts"
+   ]
+  },
+  {
+   "slug": "computer-vision",
+   "name": "Computer vision in production",
+   "description": "Serving, edge vs cloud and drift for vision systems.",
+   "topics": [
+    "cv-in-production"
+   ]
+  }
+ ],
+ "phases": [
+  {
+   "name": "Phase 1: Foundations",
+   "description": "How systems are built to scale and stay up.",
+   "topics": [
+    "system-design-basics",
+    "load-balancing-hashing",
+    "caching",
+    "message-queues",
+    "rate-limiting-jobs",
+    "choosing-a-database",
+    "cloud-iam",
+    "cloud-networking"
+   ]
+  },
+  {
+   "name": "Phase 2: Patterns, APIs and reading code",
+   "description": "The vocabulary for directing AI and teammates.",
+   "topics": [
+    "code-design-patterns",
+    "gateway-breaker-retry",
+    "bulkhead-sidecar-strangler-saga",
+    "pubsub-eda-cqrs",
+    "api-design",
+    "hexagonal-solid",
+    "reading-java-ts"
+   ]
+  },
+  {
+   "name": "Phase 3: AI and agent systems",
+   "description": "RAG, agents, and the production concerns around LLMs.",
+   "topics": [
+    "agent-tool-calling",
+    "mcp",
+    "embeddings-vector-db",
+    "improving-rag",
+    "rag-evals",
+    "beyond-rag",
+    "llm-caching",
+    "llm-serving-cost",
+    "finetune-vs-prompt-vs-rag",
+    "guardrails-prompt-injection",
+    "agent-memory-multi-agent",
+    "agent-eval-observability"
+   ]
+  },
+  {
+   "name": "Phase 4: Cloud and production",
+   "description": "Run it, secure it, pay for it, keep it reliable.",
+   "topics": [
+    "cloud-cost-control",
+    "logging-monitoring",
+    "slos-incidents",
+    "serverless-containers",
+    "kubernetes",
+    "cicd-iac",
+    "oauth-oidc",
+    "managed-ai-platforms",
+    "multi-tenancy",
+    "hosting-nextjs-python"
+   ]
+  },
+  {
+   "name": "Phase 5: FDE craft and vision",
+   "description": "Customer-facing skills, plus computer vision in production.",
+   "topics": [
+    "customer-discovery-pilot",
+    "demos-design-docs",
+    "cv-in-production"
+   ]
+  }
+ ],
+ "topics": [
+  {
+   "slug": "system-design-basics",
+   "title": "System design from zero: requests, latency, scaling, stateless services",
+   "short": "System design from zero",
+   "track": "system-design",
+   "drop": 1,
+   "date": "15 Nov 2026",
+   "summary": "Clients, servers, latency vs throughput, scale up vs scale out, and why stateless servers make scaling easy.",
+   "related": [
+    "load-balancing-hashing",
+    "caching",
+    "choosing-a-database"
+   ],
+   "sources": [
+    {
+     "title": "Netflix: Completing the Netflix cloud migration (archived)",
+     "site": "about.netflix.com",
+     "href": "https://web.archive.org/web/20210930145503/about.netflix.com/en/news/completing-the-netflix-cloud-migration"
+    },
+    {
+     "title": "Netflix tech blog: Lessons from the AWS outage (stateless services)",
+     "site": "netflixtechblog.com",
+     "href": "https://netflixtechblog.com/lessons-netflix-learned-from-the-aws-outage-deefe5fd0c04"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=EWS_CIxttVw",
+     "title": "Scalability Simply Explained in 10 Minutes",
+     "source": "ByteByteGo",
+     "note": "Vertical vs horizontal scaling, animated."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=FqR5vESuKe0",
+     "title": "Latency Numbers Every Programmer Should Know",
+     "source": "ByteByteGo",
+     "note": "Why latency intuition matters before you design anything."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=dvRFHG2-uYs",
+     "title": "Vertical vs Horizontal Scaling: Key Differences",
+     "source": "ByteByteGo",
+     "note": "The scale-up vs scale-out trade-off in under 5 minutes."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Client / server",
+     "definition": "The asker and the answerer. A client sends a request; a server processes it and replies."
+    },
+    {
+     "term": "Request / response",
+     "definition": "One message asking for something (e.g. HTTP GET /orders) and the reply."
+    },
+    {
+     "term": "Latency",
+     "definition": "Time for one request, usually in milliseconds (ms)."
+    },
+    {
+     "term": "Throughput",
+     "definition": "Work completed per unit of time, e.g. requests per second (RPS)."
+    },
+    {
+     "term": "Vertical scaling",
+     "definition": "Making one machine bigger."
+    },
+    {
+     "term": "Horizontal scaling",
+     "definition": "Adding more machines of the same kind."
+    },
+    {
+     "term": "Load balancer",
+     "definition": "A component that spreads incoming requests across servers and skips unhealthy ones."
+    },
+    {
+     "term": "Health check",
+     "definition": "A periodic ping the load balancer sends to see if a server is alive."
+    },
+    {
+     "term": "Autoscaling",
+     "definition": "Automatically adding or removing servers based on load."
+    },
+    {
+     "term": "Stateless / stateful",
+     "definition": "Stateless: keeps nothing about a user between requests. Stateful: does, so the user must return to the same server."
+    },
+    {
+     "term": "Session",
+     "definition": "Data about a logged-in user's visit (login, cart, chat history)."
+    },
+    {
+     "term": "Single point of failure",
+     "definition": "One component whose failure takes the whole system down."
+    },
+    {
+     "term": "Rolling deploy",
+     "definition": "Updating servers a few at a time so the service never goes fully offline."
+    },
+    {
+     "term": "Redis",
+     "definition": "A very fast in-memory data store, often used for sessions and caching."
+    },
+    {
+     "term": "SLA",
+     "definition": "Service level agreement: the promised uptime or speed."
+    }
+   ]
+  },
+  {
+   "slug": "agent-tool-calling",
+   "title": "How an AI agent calls a tool, end to end",
+   "short": "How an AI agent calls a tool",
+   "track": "agentic-systems",
+   "drop": 1,
+   "date": "15 Nov 2026",
+   "summary": "The agent loop: the model asks, your code runs, the result goes back.",
+   "related": [
+    "mcp",
+    "agent-memory-multi-agent",
+    "guardrails-prompt-injection"
+   ],
+   "sources": [
+    {
+     "title": "OpenAI: Function calling guide",
+     "site": "platform.openai.com",
+     "href": "https://platform.openai.com/docs/guides/function-calling"
+    },
+    {
+     "title": "Klarna: AI assistant handles two-thirds of chats",
+     "site": "klarna.com",
+     "href": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=oP6DS_x5K0Y",
+     "title": "What Are AI Agents & How Do They Work?",
+     "source": "ByteByteAI / ByteByteGo",
+     "note": "Short visual walk-through of the agent loop."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=D7_ipDqhtwk",
+     "title": "How We Build Effective Agents",
+     "source": "Anthropic (AI Engineer talk)",
+     "note": "Conference talk on when to use agents and how to keep them simple."
+    },
+    {
+     "type": "diagram",
+     "url": "https://www.anthropic.com/engineering/building-effective-agents",
+     "title": "Building effective agents (diagrams of workflows vs agents)",
+     "source": "Anthropic",
+     "note": "Annotated diagrams of augmented LLMs, workflows and agent loops."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "LLM",
+     "definition": "Large language model, e.g. GPT, Claude, Gemini, Grok."
+    },
+    {
+     "term": "Tool / function calling",
+     "definition": "The model replies with a structured request to run a named function instead of plain text."
+    },
+    {
+     "term": "Tool definition",
+     "definition": "Name + description + input schema that tells the model what a tool does and needs."
+    },
+    {
+     "term": "JSON schema",
+     "definition": "A standard way to describe the shape of data: fields, types, which are required."
+    },
+    {
+     "term": "Arguments",
+     "definition": "The input values the model fills in for a tool call."
+    },
+    {
+     "term": "Agent / agent loop",
+     "definition": "Code that repeatedly calls the model, runs requested tools, and feeds results back until done."
+    },
+    {
+     "term": "Human-in-the-loop (HITL)",
+     "definition": "A person approves certain actions before they happen."
+    },
+    {
+     "term": "Prompt injection",
+     "definition": "Malicious text (in a web page, email or tool result) that tries to make the model ignore its instructions."
+    },
+    {
+     "term": "Tokens",
+     "definition": "The chunks of text a model reads and writes; cost and limits are measured in them."
+    },
+    {
+     "term": "RAG",
+     "definition": "Retrieval-augmented generation: fetch relevant documents and give them to the model."
+    },
+    {
+     "term": "zod",
+     "definition": "A TypeScript library for describing and validating data shapes."
+    },
+    {
+     "term": "Annotation (@Tool)",
+     "definition": "A Java label on a method that tells a framework to treat it specially."
+    },
+    {
+     "term": "MCP",
+     "definition": "Model Context Protocol: a standard way to plug tools into any AI app."
+    }
+   ]
+  },
+  {
+   "slug": "caching",
+   "title": "Caching in a real system",
+   "short": "Caching in a real system",
+   "track": "system-design",
+   "drop": 1,
+   "date": "15 Nov 2026",
+   "summary": "Cache-aside, write-through, write-behind, TTL, eviction and invalidation, with Redis.",
+   "related": [
+    "llm-caching",
+    "choosing-a-database",
+    "rate-limiting-jobs"
+   ],
+   "sources": [
+    {
+     "title": "Meta engineering: Scaling memcache at Facebook",
+     "site": "engineering.fb.com",
+     "href": "https://engineering.fb.com/2013/04/15/core-infra/scaling-memcache-at-facebook/"
+    },
+    {
+     "title": "Paper (PDF, read sections 1-3)",
+     "site": "usenix.org",
+     "href": "https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final170.pdf"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=dGAgxozNWFE",
+     "title": "Cache Systems Every Developer Should Know",
+     "source": "ByteByteGo",
+     "note": "Where caches live from browser to database, animated."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=wh98s0XhMmQ",
+     "title": "Caching Pitfalls Every Developer Should Know",
+     "source": "ByteByteGo",
+     "note": "Stampede, penetration and avalanche explained visually."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=ccemOqDrc2I",
+     "title": "Basic Caching Techniques Explained",
+     "source": "Hussein Nasser",
+     "note": "Write-through, write-back and aside side by side."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=G1rOthIU-uo",
+     "title": "Redis in 100 Seconds",
+     "source": "Fireship",
+     "note": "The quick tour of the cache most teams reach for."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Cache hit / miss",
+     "definition": "Hit: the data was in the cache. Miss: it wasn't, so you go to the source."
+    },
+    {
+     "term": "Hit rate",
+     "definition": "Share of reads served from the cache; the main health number for a cache."
+    },
+    {
+     "term": "Redis / Memcached",
+     "definition": "Popular in-memory key-value stores used as caches."
+    },
+    {
+     "term": "Key-value store",
+     "definition": "Storage where you save and fetch a value by a unique key, like user:42."
+    },
+    {
+     "term": "Cache-aside / look-aside",
+     "definition": "The app manages the cache itself: check, load on miss, fill."
+    },
+    {
+     "term": "Write-through",
+     "definition": "Every write goes to cache and DB at the same time."
+    },
+    {
+     "term": "Write-behind",
+     "definition": "Write to cache now, to the DB later in batches."
+    },
+    {
+     "term": "TTL",
+     "definition": "Time to live: how long an entry stays before it expires."
+    },
+    {
+     "term": "Eviction, LRU, LFU",
+     "definition": "Removing entries when full; least recently used; least frequently used."
+    },
+    {
+     "term": "Invalidation",
+     "definition": "Removing or updating cached data when the original changes."
+    },
+    {
+     "term": "Stale data",
+     "definition": "A cached copy that no longer matches the source."
+    },
+    {
+     "term": "Idempotent",
+     "definition": "Doing it twice has the same effect as once (deleting a key)."
+    },
+    {
+     "term": "Thundering herd / cache stampede",
+     "definition": "Many requests miss at once and overload the database."
+    },
+    {
+     "term": "Lease",
+     "definition": "Facebook's token that stops an old value being written into the cache after a newer delete."
+    },
+    {
+     "term": "NSDI",
+     "definition": "A top academic conference on networked systems."
+    }
+   ]
+  },
+  {
+   "slug": "cloud-iam",
+   "title": "Cloud IAM: AWS, Azure and GCP side by side",
+   "short": "Cloud IAM across AWS, Azure and GCP",
+   "track": "cloud",
+   "drop": 1,
+   "date": "15 Nov 2026",
+   "summary": "Identities, roles, policies and least privilege, mapped across three clouds.",
+   "related": [
+    "cloud-cost-control",
+    "oauth-oidc",
+    "multi-tenancy"
+   ],
+   "sources": [
+    {
+     "title": "AWS: IAM security best practices",
+     "site": "docs.aws.amazon.com",
+     "href": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+    },
+    {
+     "title": "Krebs on Security: What we can learn from the Capital One hack",
+     "site": "krebsonsecurity.com",
+     "href": "https://krebsonsecurity.com/2019/08/what-we-can-learn-from-the-capital-one-hack/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=_ZCTvmaPgao",
+     "title": "AWS IAM Core Concepts You NEED to Know",
+     "source": "Be A Better Dev",
+     "note": "Users, roles and policies explained with diagrams."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=1EoiGnQq14Y",
+     "title": "Azure Managed Identities explained in plain English",
+     "source": "cloud-monk",
+     "note": "Why apps should get an identity instead of a secret."
+    },
+    {
+     "type": "diagram",
+     "url": "https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview",
+     "title": "What are managed identities for Azure resources?",
+     "source": "Microsoft Learn",
+     "note": "Official diagrams of system-assigned and user-assigned identities."
+    },
+    {
+     "type": "diagram",
+     "url": "https://cloud.google.com/iam/docs/overview",
+     "title": "IAM overview",
+     "source": "Google Cloud",
+     "note": "Official explainer of principals, roles and policies."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "IAM",
+     "definition": "Identity and Access Management: who can do what on which resources."
+    },
+    {
+     "term": "Authentication / authorization",
+     "definition": "Proving who you are / checking what you are allowed to do."
+    },
+    {
+     "term": "Least privilege",
+     "definition": "Grant only the permissions actually needed."
+    },
+    {
+     "term": "IAM role (AWS)",
+     "definition": "An identity with permissions that apps or people assume temporarily."
+    },
+    {
+     "term": "Policy",
+     "definition": "A document listing allowed (or denied) actions on resources."
+    },
+    {
+     "term": "Entra ID",
+     "definition": "Microsoft's identity directory, formerly Azure Active Directory."
+    },
+    {
+     "term": "RBAC",
+     "definition": "Role-based access control: permissions come from roles assigned to identities at a scope."
+    },
+    {
+     "term": "Scope",
+     "definition": "Where a permission applies: whole account, a project/resource group, or one resource."
+    },
+    {
+     "term": "Managed identity (Azure)",
+     "definition": "An identity Azure creates for your app so it can get tokens without secrets."
+    },
+    {
+     "term": "Service account (GCP)",
+     "definition": "GCP's identity for an app or workload."
+    },
+    {
+     "term": "STS / temporary credentials",
+     "definition": "Short-lived keys issued for a role, which expire automatically."
+    },
+    {
+     "term": "OIDC federation",
+     "definition": "Letting an outside system (e.g. GitHub Actions) prove its identity to the cloud without a stored secret."
+    },
+    {
+     "term": "Metadata service / IMDSv2",
+     "definition": "An internal endpoint where a VM gets its own info and role credentials; IMDSv2 is AWS's hardened version."
+    },
+    {
+     "term": "SSRF",
+     "definition": "Server-side request forgery: tricking a server into making a request on the attacker's behalf."
+    },
+    {
+     "term": "WAF",
+     "definition": "Web application firewall: filters malicious web traffic."
+    },
+    {
+     "term": "S3 bucket",
+     "definition": "A container for files in AWS's object storage."
+    },
+    {
+     "term": "Blast radius",
+     "definition": "How much damage one failure or compromise can cause."
+    },
+    {
+     "term": "Infrastructure as code (Terraform, Bicep, CloudFormation)",
+     "definition": "Cloud resources and permissions defined in files, reviewed and deployed like code."
+    },
+    {
+     "term": "Key Vault",
+     "definition": "Azure's service for storing secrets and keys securely (AWS: Secrets Manager; GCP: Secret Manager)."
+    }
+   ]
+  },
+  {
+   "slug": "mcp",
+   "title": "MCP: the USB-C port for AI tools (and where Azure fits)",
+   "short": "MCP: the USB-C port for AI tools",
+   "track": "agentic-systems",
+   "drop": 2,
+   "date": "16 Nov 2026",
+   "summary": "Model Context Protocol: one standard way to plug tools and data into AI apps.",
+   "related": [
+    "agent-tool-calling",
+    "oauth-oidc",
+    "guardrails-prompt-injection"
+   ],
+   "sources": [
+    {
+     "title": "MCP: official introduction (short read)",
+     "site": "modelcontextprotocol.io",
+     "href": "https://modelcontextprotocol.io/docs/getting-started/intro"
+    },
+    {
+     "title": "Connect Foundry agents to MCP servers",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/tools/model-context-protocol"
+    },
+    {
+     "title": "Anthropic: Introducing the Model Context Protocol",
+     "site": "anthropic.com",
+     "href": "https://www.anthropic.com/news/model-context-protocol"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=_d0duu3dED4",
+     "title": "Why Everyone's Talking About MCP?",
+     "source": "ByteByteGo",
+     "note": "Animated explanation of the M x N integration problem MCP solves."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=eur8dUO9mvE",
+     "title": "What is MCP? Integrate AI Agents with Databases & APIs",
+     "source": "IBM Technology",
+     "note": "Four-minute overview of hosts, clients and servers."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=cGuyrANVi4A",
+     "title": "How Model Context Protocol (MCP) actually works",
+     "source": "Google Cloud Tech",
+     "note": "Walk-through of the protocol messages."
+    },
+    {
+     "type": "diagram",
+     "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+     "title": "Introduction to MCP",
+     "source": "modelcontextprotocol.io",
+     "note": "Official architecture diagrams."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "MCP (Model Context Protocol)",
+     "definition": "An open standard for how AI apps discover and use tools and data from separate servers."
+    },
+    {
+     "term": "MCP host / client / server",
+     "definition": "Host: the AI app. Client: the connector inside it, one per server. Server: the program exposing tools, resources and prompts."
+    },
+    {
+     "term": "Tool / resource / prompt",
+     "definition": "Action the model can call / read-only data the app can load / reusable prompt template."
+    },
+    {
+     "term": "M x N integration problem",
+     "definition": "M apps times N systems means M*N custom integrations; a standard turns it into M+N."
+    },
+    {
+     "term": "Transport (stdio, Streamable HTTP)",
+     "definition": "How messages travel: through a local process's input/output, or over HTTP to a remote server."
+    },
+    {
+     "term": "Handshake",
+     "definition": "The opening exchange where both sides agree on version and capabilities."
+    },
+    {
+     "term": "Discovery (tools/list)",
+     "definition": "Asking a server at runtime what tools it offers."
+    },
+    {
+     "term": "Foundry Agent Service",
+     "definition": "Azure's managed service for building and running agents (Microsoft Foundry, formerly Azure AI Foundry)."
+    },
+    {
+     "term": "Entra ID / managed identity",
+     "definition": "Microsoft's identity directory / an identity Azure gives your app so it needs no stored secret."
+    },
+    {
+     "term": "OAuth identity passthrough",
+     "definition": "The user signs in and the agent acts with that user's own permissions."
+    },
+    {
+     "term": "VNet / private endpoint",
+     "definition": "Your private network in Azure / a way to reach a service without the public internet."
+    },
+    {
+     "term": "Tool poisoning / prompt injection",
+     "definition": "Hidden instructions in tool descriptions or data that trick the model into doing something unintended."
+    },
+    {
+     "term": "Least privilege",
+     "definition": "Give only the permissions strictly needed."
+    },
+    {
+     "term": "Goose",
+     "definition": "Block's open-source AI agent built on MCP."
+    }
+   ]
+  },
+  {
+   "slug": "llm-caching",
+   "title": "Caching in LLM and RAG apps: prompt, semantic, embedding caches",
+   "short": "Caching in LLM and RAG apps",
+   "track": "ai-llm-systems",
+   "drop": 2,
+   "date": "16 Nov 2026",
+   "summary": "Prompt caching, semantic caching and embedding caches.",
+   "related": [
+    "caching",
+    "llm-serving-cost",
+    "improving-rag"
+   ],
+   "sources": [
+    {
+     "title": "Azure: enable semantic caching for LLM APIs in API Management",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/api-management/azure-openai-enable-semantic-caching"
+    },
+    {
+     "title": "Anthropic: prompt caching (with numbers, short read)",
+     "site": "claude.com",
+     "href": "https://claude.com/resources/articles/prompt-caching"
+    },
+    {
+     "title": "Amazon Bedrock prompt caching",
+     "site": "docs.aws.amazon.com",
+     "href": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=u57EnkQaUTY",
+     "title": "What is Prompt Caching? Optimize LLM Latency",
+     "source": "IBM Technology",
+     "note": "Why repeated prompt prefixes can be reused."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=tGqvoEuoU5M",
+     "title": "Prompt Caching with LLMs",
+     "source": "Gaurav Sen",
+     "note": "Interview-style explanation of prompt caching."
+    },
+    {
+     "type": "diagram",
+     "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching",
+     "title": "Prompt caching (docs)",
+     "source": "Anthropic",
+     "note": "How cache breakpoints, TTLs and pricing work."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Token",
+     "definition": "A chunk of text (about 3/4 of a word) that models read and bill by."
+    },
+    {
+     "term": "Embedding",
+     "definition": "A list of numbers representing the meaning of text; similar meanings give nearby vectors."
+    },
+    {
+     "term": "Cosine similarity / threshold",
+     "definition": "A 0-1 score of how close two embeddings are / the minimum score you accept as 'same question'."
+    },
+    {
+     "term": "Semantic cache",
+     "definition": "A cache looked up by meaning instead of exact text."
+    },
+    {
+     "term": "Prompt (prefix) caching",
+     "definition": "Provider-side reuse of the processing of an unchanged prompt start."
+    },
+    {
+     "term": "Time to first token (TTFT)",
+     "definition": "How long before the model starts streaming its answer."
+    },
+    {
+     "term": "Cache hit / miss / hit rate",
+     "definition": "Found / not found / share of requests served from cache."
+    },
+    {
+     "term": "TTL",
+     "definition": "Time to live: how long an entry stays valid."
+    },
+    {
+     "term": "Invalidation",
+     "definition": "Removing or refreshing cached entries when the source changes."
+    },
+    {
+     "term": "Tenant",
+     "definition": "One customer organisation in a shared (multi-tenant) system."
+    },
+    {
+     "term": "API Management (APIM)",
+     "definition": "Azure's API gateway; policies run on every request passing through it."
+    },
+    {
+     "term": "Vector DB / index",
+     "definition": "Storage optimised for finding the nearest embeddings."
+    },
+    {
+     "term": "RAG",
+     "definition": "Retrieval-augmented generation: fetch relevant documents and include them in the prompt."
+    }
+   ]
+  },
+  {
+   "slug": "message-queues",
+   "title": "Message queues by use case: Kafka vs RabbitMQ vs SQS / Service Bus vs Redis Streams",
+   "short": "Message queues by use case",
+   "track": "system-design",
+   "drop": 2,
+   "date": "16 Nov 2026",
+   "summary": "Kafka vs RabbitMQ vs SQS / Service Bus vs Redis Streams, matched to the job.",
+   "related": [
+    "rate-limiting-jobs",
+    "pubsub-eda-cqrs",
+    "bulkhead-sidecar-strangler-saga"
+   ],
+   "sources": [
+    {
+     "title": "LinkedIn: Kafka at 7 trillion messages per day",
+     "site": "linkedin.com",
+     "href": "https://www.linkedin.com/blog/engineering/open-source/apache-kafka-trillion-messages"
+    },
+    {
+     "title": "AWS: What is a message queue? (short read)",
+     "site": "aws.amazon.com",
+     "href": "https://aws.amazon.com/message-queue/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=x4k1XEjNzYQ",
+     "title": "Kafka vs RabbitMQ vs Messaging Middleware vs Pulsar",
+     "source": "ByteByteGo",
+     "note": "Animated comparison of broker designs."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=UNUz1-msbOM",
+     "title": "Why is Kafka fast?",
+     "source": "ByteByteGo",
+     "note": "Sequential I/O, batching and zero-copy shown visually."
+    },
+    {
+     "type": "interactive",
+     "url": "https://softwaremill.com/kafka-visualisation/",
+     "title": "Kafka visualisation",
+     "source": "SoftwareMill",
+     "note": "Interactive: watch producers, partitions and consumer groups move messages."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=W4_aGb_MOls",
+     "title": "What is a Message Queue and when should you use one",
+     "source": "Hussein Nasser",
+     "note": "Queue vs request/response trade-offs."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Message broker",
+     "definition": "Middleware that receives messages from producers and delivers them to consumers."
+    },
+    {
+     "term": "Producer / consumer",
+     "definition": "Sender of messages / reader or worker that processes them."
+    },
+    {
+     "term": "Queue vs stream (log)",
+     "definition": "Queue: each message to one consumer, then deleted. Stream: ordered, retained events read by many."
+    },
+    {
+     "term": "Topic / partition",
+     "definition": "A named stream / a slice of it that allows parallel reading and ordering within the slice."
+    },
+    {
+     "term": "Consumer group",
+     "definition": "A set of workers sharing one reading position on a stream."
+    },
+    {
+     "term": "Retention / replay",
+     "definition": "How long events are kept / re-reading old events."
+    },
+    {
+     "term": "Acknowledgement (ack)",
+     "definition": "The consumer telling the broker 'done, delete it'."
+    },
+    {
+     "term": "Dead-letter queue (DLQ)",
+     "definition": "Where messages go after too many failed attempts, for inspection."
+    },
+    {
+     "term": "Idempotent",
+     "definition": "Safe to run twice with the same result (e.g. 'set status = paid', not 'add 100')."
+    },
+    {
+     "term": "FIFO",
+     "definition": "First in, first out: strict ordering."
+    },
+    {
+     "term": "Consumer lag / queue depth",
+     "definition": "How far behind consumers are / how many messages are waiting."
+    },
+    {
+     "term": "Change data capture (CDC)",
+     "definition": "Streaming every database change as an event."
+    },
+    {
+     "term": "Load levelling",
+     "definition": "Buffering bursts so downstream work runs at a steady pace."
+    }
+   ]
+  },
+  {
+   "slug": "code-design-patterns",
+   "title": "Code-level design patterns as pattern cards",
+   "short": "Code-level design patterns",
+   "track": "reading-code",
+   "drop": 2,
+   "date": "16 Nov 2026",
+   "summary": "Singleton, factory, strategy, adapter, decorator and observer as pattern cards.",
+   "related": [
+    "hexagonal-solid",
+    "reading-java-ts",
+    "gateway-breaker-retry"
+   ],
+   "sources": [
+    {
+     "title": "Refactoring Guru: design patterns catalogue (visual, short per pattern)",
+     "site": "refactoring.guru",
+     "href": "https://refactoring.guru/design-patterns/catalog"
+    },
+    {
+     "title": "Spring: bean scopes (singleton is default)",
+     "site": "docs.spring.io",
+     "href": "https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=tv-_1er1mWI",
+     "title": "10 Design Patterns Explained in 10 Minutes",
+     "source": "Fireship",
+     "note": "Fast visual tour of the patterns you meet in code."
+    },
+    {
+     "type": "visual",
+     "url": "https://refactoring.guru/design-patterns/catalog",
+     "title": "Design patterns catalogue (illustrated)",
+     "source": "Refactoring Guru",
+     "note": "Illustrated explanation of every classic pattern."
+    },
+    {
+     "type": "visual",
+     "url": "https://refactoring.guru/design-patterns/strategy",
+     "title": "Strategy pattern, illustrated",
+     "source": "Refactoring Guru",
+     "note": "Diagrams and real-world analogy."
+    },
+    {
+     "type": "visual",
+     "url": "https://refactoring.guru/design-patterns/observer",
+     "title": "Observer pattern, illustrated",
+     "source": "Refactoring Guru",
+     "note": "Diagrams and real-world analogy."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Design pattern",
+     "definition": "A named, reusable solution to a recurring design problem."
+    },
+    {
+     "term": "Gang of Four (GoF)",
+     "definition": "The four authors of the 1994 book that catalogued 23 classic patterns."
+    },
+    {
+     "term": "Creational / structural / behavioural",
+     "definition": "Patterns about creating objects / composing them / how they interact."
+    },
+    {
+     "term": "Interface",
+     "definition": "A contract listing methods a class must provide, without saying how."
+    },
+    {
+     "term": "Instance",
+     "definition": "One concrete object created from a class."
+    },
+    {
+     "term": "Bean (Spring)",
+     "definition": "An object created and managed by the Spring container."
+    },
+    {
+     "term": "Dependency injection",
+     "definition": "Passing an object its dependencies from outside instead of it creating them."
+    },
+    {
+     "term": "Proxy",
+     "definition": "A stand-in object that wraps the real one to add behaviour."
+    },
+    {
+     "term": "Cross-cutting concern",
+     "definition": "Behaviour needed everywhere: logging, retries, auth, caching."
+    },
+    {
+     "term": "Thread-safety",
+     "definition": "Code that behaves correctly when many requests run at the same time."
+    },
+    {
+     "term": "Higher-order function",
+     "definition": "A function that takes or returns another function (how decorators work in JS/Python)."
+    },
+    {
+     "term": "Anti-corruption layer",
+     "definition": "An adapter layer that keeps a messy external model out of your clean code."
+    },
+    {
+     "term": "Feature flag",
+     "definition": "A switch to turn behaviour on/off without redeploying."
+    }
+   ]
+  },
+  {
+   "slug": "rate-limiting-jobs",
+   "title": "Rate limiting and background jobs: token bucket, backpressure, retries, dead-letter queues",
+   "short": "Rate limiting and background jobs",
+   "track": "system-design",
+   "drop": 3,
+   "date": "16 Nov 2026",
+   "summary": "Token bucket, backpressure, retries and dead-letter queues.",
+   "related": [
+    "message-queues",
+    "gateway-breaker-retry",
+    "llm-serving-cost"
+   ],
+   "sources": [
+    {
+     "title": "Stripe: Scaling your API with rate limiters (short read)",
+     "site": "stripe.com",
+     "href": "https://stripe.com/blog/rate-limiters"
+    },
+    {
+     "title": "Azure Architecture Center: Queue-Based Load Leveling pattern",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=YXkOdWBwqaA",
+     "title": "Rate Limiter System Design: Token Bucket, Leaky Bucket, Scaling",
+     "source": "ByteByteGo",
+     "note": "Animated look at the main algorithms."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=Oxy-6MAiYPw",
+     "title": "Inside Stripe's Rate Limiter Architecture",
+     "source": "Arpit Bhayani",
+     "note": "How Stripe layers four kinds of limiter."
+    },
+    {
+     "type": "interactive",
+     "url": "https://smudge.ai/blog/ratelimit-algorithms",
+     "title": "Visualising rate limit algorithms",
+     "source": "smudge.ai",
+     "note": "Interactive simulations of fixed window, sliding window and token bucket."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Rate limiting",
+     "definition": "Capping how many requests a caller may make in a time period."
+    },
+    {
+     "term": "Token bucket",
+     "definition": "Algorithm: a bucket of tokens refills steadily; each request spends one; empty bucket = reject. Allows short bursts."
+    },
+    {
+     "term": "Burst",
+     "definition": "A short spike above the steady rate."
+    },
+    {
+     "term": "429 Too Many Requests",
+     "definition": "HTTP status meaning 'you are being rate limited'."
+    },
+    {
+     "term": "Retry-After",
+     "definition": "Response header telling the client how long to wait before trying again."
+    },
+    {
+     "term": "202 Accepted",
+     "definition": "HTTP status meaning 'received, will process later'."
+    },
+    {
+     "term": "Background job / worker",
+     "definition": "Work done outside the user's request by a separate process that pulls from a queue."
+    },
+    {
+     "term": "Backpressure",
+     "definition": "A signal that pushes back on producers to slow down when consumers are full."
+    },
+    {
+     "term": "Load shedding",
+     "definition": "Deliberately dropping low-priority requests during overload to save critical ones."
+    },
+    {
+     "term": "Visibility timeout",
+     "definition": "Time a pulled message is hidden from other workers; if not acknowledged, it reappears."
+    },
+    {
+     "term": "Acknowledge (ack / complete)",
+     "definition": "Telling the broker the message is done so it is deleted."
+    },
+    {
+     "term": "Idempotent",
+     "definition": "Doing it twice has the same effect as doing it once."
+    },
+    {
+     "term": "Dead-letter queue (DLQ)",
+     "definition": "A side queue for messages that failed too many times."
+    },
+    {
+     "term": "Poison message",
+     "definition": "A message that will always fail (e.g. corrupt file)."
+    },
+    {
+     "term": "Redrive",
+     "definition": "Moving messages from the DLQ back to the main queue after a fix."
+    },
+    {
+     "term": "maxReceiveCount / MaxDeliveryCount",
+     "definition": "SQS / Azure Service Bus setting: attempts before dead-lettering."
+    },
+    {
+     "term": "Tokens per minute (TPM)",
+     "definition": "LLM provider quota on how many tokens you can process per minute."
+    },
+    {
+     "term": "Retry storm",
+     "definition": "Many clients retrying at once, multiplying the load that caused the failure."
+    }
+   ]
+  },
+  {
+   "slug": "rag-evals",
+   "title": "RAG evals: how to prove your RAG is good",
+   "short": "RAG evals",
+   "track": "ai-llm-systems",
+   "drop": 3,
+   "date": "16 Nov 2026",
+   "summary": "Retrieval metrics, faithfulness, golden sets and calibrated LLM-as-judge.",
+   "related": [
+    "improving-rag",
+    "agent-eval-observability",
+    "finetune-vs-prompt-vs-rag"
+   ],
+   "sources": [
+    {
+     "title": "DoorDash: Path to high-quality LLM-based Dasher support automation",
+     "site": "careersatdoordash.com",
+     "href": "https://careersatdoordash.com/blog/large-language-modules-based-dasher-support-automation/"
+    },
+    {
+     "title": "Ragas: list of RAG metrics (short reads per metric)",
+     "site": "docs.ragas.io",
+     "href": "https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=7_LTU0LA374",
+     "title": "RAG Evaluation: Precision, Recall, Faithfulness, RAGAS explained",
+     "source": "Logical Lenses",
+     "note": "Metric-by-metric explanation."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=5fp6e5nhJRk",
+     "title": "RAGAS: How to Evaluate a RAG Application",
+     "source": "Mervin Praison",
+     "note": "Hands-on view of the evaluation loop."
+    },
+    {
+     "type": "diagram",
+     "url": "https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/",
+     "title": "Ragas available metrics",
+     "source": "Ragas docs",
+     "note": "Reference for retrieval and generation metrics."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Eval (evaluation)",
+     "definition": "A repeatable test that scores an AI system's outputs."
+    },
+    {
+     "term": "Golden set",
+     "definition": "A fixed, versioned list of test questions with expected answers (and source docs)."
+    },
+    {
+     "term": "Retriever / top-k",
+     "definition": "The search step / the k best chunks it returns."
+    },
+    {
+     "term": "Chunk",
+     "definition": "A piece of a document stored and searched separately."
+    },
+    {
+     "term": "Recall@k",
+     "definition": "Share of the needed information found in the top k results."
+    },
+    {
+     "term": "Precision@k",
+     "definition": "Share of the top k results that are actually relevant."
+    },
+    {
+     "term": "MRR / nDCG",
+     "definition": "Ranking scores that reward putting the right result near the top."
+    },
+    {
+     "term": "Faithfulness / groundedness",
+     "definition": "Share of the answer's claims supported by the retrieved context."
+    },
+    {
+     "term": "Hallucination",
+     "definition": "A confident claim not supported by the sources."
+    },
+    {
+     "term": "Answer relevancy",
+     "definition": "Whether the answer addresses the question asked."
+    },
+    {
+     "term": "LLM-as-judge",
+     "definition": "Using an LLM with a grading prompt to score outputs."
+    },
+    {
+     "term": "Calibration",
+     "definition": "Checking the judge against human labels and fixing it until they agree."
+    },
+    {
+     "term": "Regression test / release gate",
+     "definition": "Automated check that blocks a release if quality drops."
+    },
+    {
+     "term": "Guardrail",
+     "definition": "A check that runs on live outputs and blocks or reroutes bad ones."
+    },
+    {
+     "term": "Multi-hop question",
+     "definition": "One that needs facts from two or more documents combined."
+    },
+    {
+     "term": "SME",
+     "definition": "Subject-matter expert."
+    },
+    {
+     "term": "Flywheel",
+     "definition": "Loop where production failures improve the test set, which improves the system."
+    }
+   ]
+  },
+  {
+   "slug": "gateway-breaker-retry",
+   "title": "Architecture patterns part 1: API gateway, circuit breaker, retry with backoff",
+   "short": "API gateway, circuit breaker, retry with backoff",
+   "track": "architecture-patterns",
+   "drop": 3,
+   "date": "16 Nov 2026",
+   "summary": "The front door and the seat belts of any service that calls other services.",
+   "related": [
+    "bulkhead-sidecar-strangler-saga",
+    "api-design",
+    "rate-limiting-jobs"
+   ],
+   "sources": [
+    {
+     "title": "AWS Builders' Library: Timeouts, retries and backoff with jitter",
+     "site": "aws.amazon.com",
+     "href": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+    },
+    {
+     "title": "Azure Architecture Center: Circuit Breaker pattern",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker"
+    },
+    {
+     "title": "Netflix TechBlog: Open sourcing Zuul 2",
+     "site": "netflixtechblog.com",
+     "href": "https://netflixtechblog.com/open-sourcing-zuul-2-82ea476cb2b3"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=6ULyxuHKxg8",
+     "title": "What is API Gateway?",
+     "source": "ByteByteGo",
+     "note": "Animated tour of what a gateway does."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=RqfaTIWc3LQ",
+     "title": "Reverse Proxy vs API Gateway vs Load Balancer",
+     "source": "ByteByteGo",
+     "note": "Three often-confused components, compared."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=dJI2saoM5_k",
+     "title": "Circuit Breaker Pattern in Microservices",
+     "source": "ByteMonk",
+     "note": "Closed, open and half-open states animated."
+    },
+    {
+     "type": "visual",
+     "url": "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/",
+     "title": "Exponential Backoff And Jitter",
+     "source": "AWS Architecture Blog",
+     "note": "Charts showing why jitter beats plain backoff."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Microservices",
+     "definition": "An app split into small services that talk over the network."
+    },
+    {
+     "term": "Dependency (downstream)",
+     "definition": "A service yours calls; 'upstream' are those calling you."
+    },
+    {
+     "term": "Cascading failure",
+     "definition": "One failing service causing its callers, then their callers, to fail."
+    },
+    {
+     "term": "Cross-cutting concern",
+     "definition": "Something every service needs: auth, logging, rate limits."
+    },
+    {
+     "term": "TLS",
+     "definition": "Encryption for traffic over the network (the 's' in https)."
+    },
+    {
+     "term": "JWT",
+     "definition": "A signed token that proves who the caller is."
+    },
+    {
+     "term": "Routing",
+     "definition": "Deciding which backend gets a request (e.g. by URL path)."
+    },
+    {
+     "term": "Timeout",
+     "definition": "Maximum time you will wait for a reply before giving up."
+    },
+    {
+     "term": "Transient error",
+     "definition": "A temporary failure likely to succeed on retry."
+    },
+    {
+     "term": "Exponential backoff",
+     "definition": "Waiting longer after each failure (e.g. doubling)."
+    },
+    {
+     "term": "Jitter",
+     "definition": "Randomness added to wait times so clients don't retry at the same moment."
+    },
+    {
+     "term": "Idempotency key",
+     "definition": "A unique ID sent with a write so a repeated request is applied only once."
+    },
+    {
+     "term": "Closed / open / half-open",
+     "definition": "Circuit breaker states: normal / blocking calls / testing recovery."
+    },
+    {
+     "term": "Fallback",
+     "definition": "What you do instead when the call can't be made (cached value, pending state, backup)."
+    },
+    {
+     "term": "Fail fast",
+     "definition": "Return an error immediately rather than waiting."
+    },
+    {
+     "term": "Single point of failure",
+     "definition": "One component whose failure stops everything."
+    },
+    {
+     "term": "Service mesh",
+     "definition": "Infrastructure (sidecar proxies) that adds retries, security and metrics between services without code changes."
+    },
+    {
+     "term": "Bulkhead",
+     "definition": "Isolating resources per dependency so one can't exhaust all (part 2)."
+    }
+   ]
+  },
+  {
+   "slug": "cloud-cost-control",
+   "title": "Cloud billing and cost control for AI apps",
+   "short": "Cloud billing and cost control for AI apps",
+   "track": "cloud",
+   "drop": 3,
+   "date": "16 Nov 2026",
+   "summary": "Hierarchy, tags, budgets, anomaly alerts and AI cost traps.",
+   "related": [
+    "llm-serving-cost",
+    "cloud-iam",
+    "multi-tenancy"
+   ],
+   "sources": [
+    {
+     "title": "Airbnb Engineering: Our journey towards cloud efficiency",
+     "site": "medium.com/airbnb-engineering",
+     "href": "https://medium.com/airbnb-engineering/our-journey-towards-cloud-efficiency-9c02ba04ade8"
+    },
+    {
+     "title": "AWS: Configuring budget actions",
+     "site": "docs.aws.amazon.com",
+     "href": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-controls.html"
+    },
+    {
+     "title": "Google Cloud: Disable billing usage with notifications",
+     "site": "docs.cloud.google.com",
+     "href": "https://docs.cloud.google.com/billing/docs/how-to/disable-billing-with-notifications"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=7w88KBVesPI",
+     "title": "Azure Cost Management",
+     "source": "Adam Marczak",
+     "note": "Portal walk-through of budgets and cost analysis."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=YHUptdFtozQ",
+     "title": "FinOps and Azure",
+     "source": "John Savill's Technical Training",
+     "note": "What FinOps is and why it matters."
+    },
+    {
+     "type": "interactive",
+     "url": "https://calculator.aws/",
+     "title": "AWS Pricing Calculator",
+     "source": "Amazon Web Services",
+     "note": "Interactive: price an architecture before you build it."
+    },
+    {
+     "type": "interactive",
+     "url": "https://azure.microsoft.com/en-us/pricing/calculator/",
+     "title": "Azure pricing calculator",
+     "source": "Microsoft Azure",
+     "note": "Interactive: estimate Azure services."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Pay-as-you-go",
+     "definition": "Billed for exactly what you use, by the second, hour, GB or token."
+    },
+    {
+     "term": "Account / subscription / project",
+     "definition": "AWS / Azure / GCP container that resources and bills belong to."
+    },
+    {
+     "term": "Organizations / management groups / folders",
+     "definition": "Ways to group many accounts/subscriptions/projects under one policy and bill."
+    },
+    {
+     "term": "Tag / label",
+     "definition": "A key=value note on a resource (team=docs-ai) used to split the bill."
+    },
+    {
+     "term": "Cost allocation / chargeback",
+     "definition": "Assigning spend to teams or customers; chargeback actually bills them internally."
+    },
+    {
+     "term": "Budget",
+     "definition": "A spend target that triggers alerts (and optional actions) at thresholds."
+    },
+    {
+     "term": "Forecast",
+     "definition": "The cloud's projection of month-end spend from current usage."
+    },
+    {
+     "term": "Cost anomaly detection",
+     "definition": "Automatic alerts when spend deviates from the normal pattern."
+    },
+    {
+     "term": "Cost and Usage Report (CUR)",
+     "definition": "AWS's most detailed billing data export."
+    },
+    {
+     "term": "SCP (service control policy)",
+     "definition": "AWS Organizations rule limiting what accounts can do."
+    },
+    {
+     "term": "Azure Policy",
+     "definition": "Rules that enforce standards (e.g. 'every resource must have a team tag')."
+    },
+    {
+     "term": "Action group",
+     "definition": "Azure Monitor's list of notifications/automations to run on an alert."
+    },
+    {
+     "term": "Pub/Sub",
+     "definition": "GCP's messaging service; budgets can publish alerts to it."
+    },
+    {
+     "term": "Savings Plans / Reservations / Committed use",
+     "definition": "Discounts for promising steady usage for 1-3 years."
+    },
+    {
+     "term": "Spot instances",
+     "definition": "Spare capacity at a big discount that can be taken back at short notice."
+    },
+    {
+     "term": "PTU / provisioned throughput",
+     "definition": "Reserved LLM capacity billed per hour regardless of use."
+    },
+    {
+     "term": "Egress",
+     "definition": "Data leaving the cloud or a region; usually charged."
+    },
+    {
+     "term": "NAT gateway",
+     "definition": "Lets private resources reach the internet; charges per hour and per GB processed."
+    },
+    {
+     "term": "Unit economics",
+     "definition": "Cost per unit of value: per document, chat, customer."
+    },
+    {
+     "term": "FinOps",
+     "definition": "The practice of managing cloud cost as a shared engineering and finance responsibility."
+    },
+    {
+     "term": "IaC (Terraform, Bicep, CloudFormation)",
+     "definition": "Infrastructure defined in code files, so tags and budgets are applied consistently."
+    }
+   ]
+  },
+  {
+   "slug": "improving-rag",
+   "title": "Improving RAG: chunking, hybrid search, reranking, query rewriting, GraphRAG",
+   "short": "Improving RAG",
+   "track": "ai-llm-systems",
+   "drop": 4,
+   "date": "16 Nov 2026",
+   "summary": "Chunking, contextual retrieval, hybrid search, reranking, query rewriting and GraphRAG.",
+   "related": [
+    "rag-evals",
+    "embeddings-vector-db",
+    "beyond-rag"
+   ],
+   "sources": [
+    {
+     "title": "Anthropic: Introducing Contextual Retrieval (short read with charts)",
+     "site": "anthropic.com",
+     "href": "https://www.anthropic.com/research/contextual-retrieval"
+    },
+    {
+     "title": "LinkedIn: RAG with knowledge graphs for customer service (paper)",
+     "site": "arxiv.org",
+     "href": "https://arxiv.org/abs/2404.17723"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=ZTOtxiWb2bE",
+     "title": "Chunking Strategies Explained",
+     "source": "Redis",
+     "note": "Visual guide to splitting documents."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=Aw7iQjKAX2k",
+     "title": "GraphRAG vs. Traditional RAG",
+     "source": "IBM Technology",
+     "note": "When a knowledge graph adds accuracy."
+    },
+    {
+     "type": "interactive",
+     "url": "https://chunkviz.up.railway.app/",
+     "title": "ChunkViz",
+     "source": "chunkviz",
+     "note": "Interactive: see how different chunk sizes slice text."
+    },
+    {
+     "type": "diagram",
+     "url": "https://www.anthropic.com/news/contextual-retrieval",
+     "title": "Introducing Contextual Retrieval",
+     "source": "Anthropic",
+     "note": "Charts of failure-rate reduction from contextual embeddings, BM25 and reranking."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Chunk / chunking",
+     "definition": "A piece of a document stored for search; chunking is how you split documents into pieces."
+    },
+    {
+     "term": "Overlap",
+     "definition": "Repeating a few sentences between neighbouring chunks so ideas are not cut in half."
+    },
+    {
+     "term": "Contextual Retrieval",
+     "definition": "Anthropic's technique: prepend an LLM-written note about where a chunk sits in its document before indexing."
+    },
+    {
+     "term": "Embedding / vector search",
+     "definition": "Turning text into a list of numbers that captures meaning, and finding chunks with similar numbers."
+    },
+    {
+     "term": "BM25",
+     "definition": "Classic keyword-ranking formula that scores documents by matching words, weighting rare words more."
+    },
+    {
+     "term": "Hybrid search",
+     "definition": "Running keyword and vector search together and merging results."
+    },
+    {
+     "term": "RRF (Reciprocal Rank Fusion)",
+     "definition": "A simple way to merge ranked lists: each item scores 1/(k + rank) in each list, summed."
+    },
+    {
+     "term": "Reranker / cross-encoder",
+     "definition": "A model that reads the query and a candidate together and outputs a relevance score; slower but more accurate than vectors."
+    },
+    {
+     "term": "Top-k",
+     "definition": "The number of results kept at a stage (e.g. top 20)."
+    },
+    {
+     "term": "Query rewriting / multi-query / decomposition",
+     "definition": "Using an LLM to improve, multiply or split the user's question into better searches."
+    },
+    {
+     "term": "HyDE",
+     "definition": "Hypothetical Document Embeddings: generate a fake answer and search with it."
+    },
+    {
+     "term": "Knowledge graph",
+     "definition": "Data stored as entities (nodes) and relationships (edges)."
+    },
+    {
+     "term": "GraphRAG",
+     "definition": "RAG that retrieves from a knowledge graph or graph community summaries rather than only text chunks (Microsoft Research popularised the term)."
+    },
+    {
+     "term": "Multi-hop question",
+     "definition": "A question that needs chaining facts from several sources."
+    },
+    {
+     "term": "Recall@k, MRR, faithfulness",
+     "definition": "Eval metrics from drop 3: did we find it, how high was it ranked, is the answer supported by the context."
+    },
+    {
+     "term": "Semantic ranker",
+     "definition": "Azure AI Search's built-in reranking feature."
+    }
+   ]
+  },
+  {
+   "slug": "bulkhead-sidecar-strangler-saga",
+   "title": "Architecture patterns part 2: bulkhead, sidecar, strangler fig, saga",
+   "short": "Bulkhead, sidecar, strangler fig and saga",
+   "track": "architecture-patterns",
+   "drop": 4,
+   "date": "16 Nov 2026",
+   "summary": "Contain failure, share plumbing, replace old systems safely and keep data consistent.",
+   "related": [
+    "gateway-breaker-retry",
+    "pubsub-eda-cqrs",
+    "hexagonal-solid"
+   ],
+   "sources": [
+    {
+     "title": "Azure Architecture Center: Saga pattern",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/architecture/patterns/saga"
+    },
+    {
+     "title": "Shopify: Refactoring legacy code with the Strangler Fig pattern",
+     "site": "shopify.engineering",
+     "href": "https://shopify.engineering/refactoring-legacy-code-strangler-fig-pattern"
+    },
+    {
+     "title": "Lyft: Envoy joins the CNCF (why the sidecar)",
+     "site": "eng.lyft.com",
+     "href": "https://eng.lyft.com/envoy-joins-the-cncf-dc18baefbc22"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=R2FT5edyKOg",
+     "title": "Bulkhead Pattern: Fault Tolerant Microservices",
+     "source": "Defog Tech",
+     "note": "Animated bulkhead walk-through."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=zcJWvhzkPsw",
+     "title": "What is the Sidecar pattern and why is it used in microservices",
+     "source": "Hussein Nasser",
+     "note": "Sidecar proxies explained."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=BJiFd2KjRYs",
+     "title": "The Strangler Pattern",
+     "source": "Confluent",
+     "note": "Migrating a monolith piece by piece."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=DOFflggE_0Q",
+     "title": "Distributed Transactions: 2 Phase Commit vs Saga",
+     "source": "Hello Interview",
+     "note": "Saga with compensating steps explained."
+    },
+    {
+     "type": "diagram",
+     "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/saga",
+     "title": "Saga pattern",
+     "source": "Azure Architecture Center",
+     "note": "Official diagrams of choreography and orchestration."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Thread pool / connection pool",
+     "definition": "A fixed set of reusable workers or connections a program shares across requests."
+    },
+    {
+     "term": "Cascading failure",
+     "definition": "One component's failure overloads others, which then fail too, spreading through the system."
+    },
+    {
+     "term": "Fallback",
+     "definition": "A cheaper backup response used when the real call is unavailable."
+    },
+    {
+     "term": "Proxy",
+     "definition": "A program that sits in the middle and forwards network traffic, adding features on the way."
+    },
+    {
+     "term": "Envoy",
+     "definition": "Open-source proxy created at Lyft, the most common sidecar proxy."
+    },
+    {
+     "term": "Service mesh",
+     "definition": "A layer of sidecar proxies plus a control plane that manages all service-to-service traffic (Istio, Linkerd)."
+    },
+    {
+     "term": "Control plane / data plane",
+     "definition": "Control plane decides and distributes configuration; data plane (the proxies) carries the actual traffic."
+    },
+    {
+     "term": "mTLS",
+     "definition": "Mutual TLS: both sides of a connection prove their identity with certificates and the traffic is encrypted."
+    },
+    {
+     "term": "Dapr",
+     "definition": "Distributed Application Runtime: an open-source sidecar offering service calls, pub/sub, state and secrets via simple APIs; built into Azure Container Apps."
+    },
+    {
+     "term": "Facade",
+     "definition": "A front door that hides what is behind it and routes calls."
+    },
+    {
+     "term": "Feature flag",
+     "definition": "A switch in config that turns a code path on or off, or on for a percentage of users."
+    },
+    {
+     "term": "Dual-write / backfill",
+     "definition": "Writing to old and new stores at once during migration; copying existing historical data into the new store."
+    },
+    {
+     "term": "Distributed transaction / 2PC",
+     "definition": "Trying to commit across several databases atomically; two-phase commit is the classic, but it is slow and fragile across services."
+    },
+    {
+     "term": "Compensating action",
+     "definition": "A step that semantically undoes an earlier step (refund for charge)."
+    },
+    {
+     "term": "Orchestration vs choreography",
+     "definition": "A central coordinator tells each step what to do, vs each service reacts to events from the others."
+    },
+    {
+     "term": "Eventual consistency",
+     "definition": "Data across services may disagree briefly but converges to the correct state."
+    },
+    {
+     "term": "Outbox pattern",
+     "definition": "Write the business change and the event to publish in the same local transaction, then a relay publishes the event reliably."
+    },
+    {
+     "term": "Temporal / Cadence / Step Functions / Durable Functions",
+     "definition": "Workflow engines that persist each step so long processes survive crashes (Temporal, Uber Cadence, AWS, Azure respectively; GCP equivalent: Workflows)."
+    }
+   ]
+  },
+  {
+   "slug": "logging-monitoring",
+   "title": "Logging and monitoring: CloudWatch vs Azure Monitor vs GCP Cloud Logging",
+   "short": "Logging and monitoring",
+   "track": "production-ops",
+   "drop": 4,
+   "date": "16 Nov 2026",
+   "summary": "Logs, metrics and traces; golden signals; CloudWatch vs Azure Monitor vs GCP Cloud Logging.",
+   "related": [
+    "slos-incidents",
+    "agent-eval-observability",
+    "cicd-iac"
+   ],
+   "sources": [
+    {
+     "title": "Google SRE book: Monitoring Distributed Systems (golden signals)",
+     "site": "sre.google",
+     "href": "https://sre.google/sre-book/monitoring-distributed-systems/"
+    },
+    {
+     "title": "Uber: Schema-agnostic log analytics platform",
+     "site": "uber.com",
+     "href": "https://www.uber.com/en-US/blog/logging/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=hLvwoow3XTk",
+     "title": "OpenTelemetry: Simplifying Hybrid Cloud Monitoring",
+     "source": "IBM Technology",
+     "note": "What OTel standardises."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=-U9E1PhrM3o",
+     "title": "SRE Golden Signals Explained",
+     "source": "IBM Technology",
+     "note": "Latency, traffic, errors, saturation."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=eSutaPE80PM",
+     "title": "What is Azure Monitor?",
+     "source": "Microsoft Azure",
+     "note": "Official overview of the Azure side."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=74HPaoFTqIM",
+     "title": "The Most Important AWS Monitoring & Logging Services",
+     "source": "Be A Better Dev",
+     "note": "CloudWatch, CloudTrail and friends compared."
+    },
+    {
+     "type": "diagram",
+     "url": "https://opentelemetry.io/docs/concepts/observability-primer/",
+     "title": "Observability primer",
+     "source": "OpenTelemetry",
+     "note": "Official concepts: signals, instrumentation, context."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Observability",
+     "definition": "How well you can understand a system's internal state from what it emits."
+    },
+    {
+     "term": "Structured logging",
+     "definition": "Logs written as key-value fields (usually JSON) instead of free text."
+    },
+    {
+     "term": "Log level",
+     "definition": "Severity label: DEBUG, INFO, WARN, ERROR."
+    },
+    {
+     "term": "Metric",
+     "definition": "A number measured over time (count, gauge, histogram)."
+    },
+    {
+     "term": "p95 latency",
+     "definition": "95% of requests are faster than this value; captures the slow tail better than an average."
+    },
+    {
+     "term": "Trace / span",
+     "definition": "A trace is one request's full journey; a span is one timed step inside it."
+    },
+    {
+     "term": "Correlation ID / request ID / trace ID",
+     "definition": "An identifier passed along with a request so all its logs and spans can be linked."
+    },
+    {
+     "term": "Four golden signals",
+     "definition": "Latency, traffic, errors, saturation (Google SRE)."
+    },
+    {
+     "term": "Saturation",
+     "definition": "How full your most constrained resource is (CPU, memory, quota, queue)."
+    },
+    {
+     "term": "SLO / SLI",
+     "definition": "Service Level Objective (target, e.g. 99.5% of requests under 3 s) measured by a Service Level Indicator."
+    },
+    {
+     "term": "OpenTelemetry (OTel)",
+     "definition": "Open standard and SDKs for emitting logs, metrics and traces to any backend."
+    },
+    {
+     "term": "APM",
+     "definition": "Application Performance Monitoring: tools that combine traces, metrics and errors per app (Application Insights, X-Ray)."
+    },
+    {
+     "term": "KQL",
+     "definition": "Kusto Query Language, used in Azure Log Analytics and Application Insights."
+    },
+    {
+     "term": "Log Analytics workspace",
+     "definition": "Azure's store for logs that you query with KQL."
+    },
+    {
+     "term": "Logs Insights / Logs Explorer",
+     "definition": "The log search consoles of AWS CloudWatch and GCP Cloud Logging."
+    },
+    {
+     "term": "ELK",
+     "definition": "Elasticsearch, Logstash, Kibana: a popular self-hosted logging stack."
+    },
+    {
+     "term": "ClickHouse",
+     "definition": "A fast column-oriented analytics database."
+    },
+    {
+     "term": "Retention / sampling",
+     "definition": "How long data is kept; keeping only a fraction of traces or logs to control cost."
+    },
+    {
+     "term": "PII",
+     "definition": "Personally identifiable information (names, emails, phone numbers, IDs)."
+    },
+    {
+     "term": "Alert fatigue",
+     "definition": "Too many noisy alerts, so real ones get ignored."
+    }
+   ]
+  },
+  {
+   "slug": "serverless-containers",
+   "title": "Serverless containers: Cloud Run vs Azure Container Apps vs AWS",
+   "short": "Serverless containers",
+   "track": "cloud",
+   "drop": 4,
+   "date": "16 Nov 2026",
+   "summary": "Cloud Run vs Azure Container Apps vs ECS Express Mode / Fargate.",
+   "related": [
+    "kubernetes",
+    "hosting-nextjs-python",
+    "cloud-cost-control"
+   ],
+   "sources": [
+    {
+     "title": "AWS: App Runner availability change (ECS Express Mode recommended)",
+     "site": "docs.aws.amazon.com",
+     "href": "https://docs.aws.amazon.com/apprunner/latest/dg/apprunner-availability-change.html"
+    },
+    {
+     "title": "Google Cloud: How DZ BANK uses a Cloud Run-first approach",
+     "site": "cloud.google.com",
+     "href": "https://cloud.google.com/blog/products/serverless/how-dz-bank-uses-a-cloud-run-first-approach-to-unlock-big-savings"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=3OP-q55hOUI",
+     "title": "Cloud Run QuickStart: Docker to Serverless",
+     "source": "Fireship",
+     "note": "Fast tour of the Cloud Run model."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=0HwQfsa03K8",
+     "title": "Azure Container Apps overview",
+     "source": "Microsoft DevRadio",
+     "note": "Official intro to Container Apps."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=DVrGXjjkpig",
+     "title": "AWS EC2 on ECS vs Fargate: when to use what",
+     "source": "Be A Better Dev",
+     "note": "Where Fargate fits on AWS."
+    },
+    {
+     "type": "diagram",
+     "url": "https://cloud.google.com/run/docs/overview/what-is-cloud-run",
+     "title": "What is Cloud Run",
+     "source": "Google Cloud",
+     "note": "Official diagrams of the Cloud Run model."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Container / image",
+     "definition": "A packaged app with everything it needs to run; the image is the template, the container is a running copy."
+    },
+    {
+     "term": "Container registry",
+     "definition": "Storage for images: Artifact Registry (GCP), ACR (Azure), ECR (AWS)."
+    },
+    {
+     "term": "Serverless",
+     "definition": "You do not manage servers; the provider scales and bills by usage."
+    },
+    {
+     "term": "Scale to zero",
+     "definition": "No instances run when there is no traffic, so you pay nothing for idle time."
+    },
+    {
+     "term": "Cold start",
+     "definition": "Delay when a new instance starts (pulling the image, booting, loading models)."
+    },
+    {
+     "term": "Revision / traffic splitting",
+     "definition": "An immutable version of a deployed service; sending a percentage of traffic to each revision."
+    },
+    {
+     "term": "Fargate",
+     "definition": "AWS's serverless engine that runs ECS or EKS containers without managing EC2 instances."
+    },
+    {
+     "term": "ECS / ECS Express Mode",
+     "definition": "AWS's container orchestrator; Express Mode creates a full app stack (Fargate service, load balancer, auto scaling) from one image."
+    },
+    {
+     "term": "App Runner",
+     "definition": "AWS's earlier simple container service; closed to new customers since 30 April 2026."
+    },
+    {
+     "term": "KEDA",
+     "definition": "Kubernetes Event-Driven Autoscaling: scales on queue length and other event metrics; used inside Container Apps."
+    },
+    {
+     "term": "Knative",
+     "definition": "Open-source serverless layer for Kubernetes; Cloud Run's API is compatible with it."
+    },
+    {
+     "term": "Application Load Balancer (ALB)",
+     "definition": "AWS's HTTP load balancer that spreads requests across containers."
+    },
+    {
+     "term": "Managed identity / service account / task role",
+     "definition": "The identity a running service uses to access other cloud resources without stored keys (drop 1 IAM)."
+    },
+    {
+     "term": "VPC / private networking",
+     "definition": "A private network in the cloud so databases are not exposed to the internet."
+    },
+    {
+     "term": "Toil",
+     "definition": "Repetitive manual operational work (Google SRE term)."
+    },
+    {
+     "term": "Stateless",
+     "definition": "The service keeps no data between requests on the instance itself (drop 1)."
+    }
+   ]
+  },
+  {
+   "slug": "beyond-rag",
+   "title": "Beyond classic RAG: long context, CAG, agentic RAG, Open Knowledge Format",
+   "short": "Beyond classic RAG",
+   "track": "ai-llm-systems",
+   "drop": 5,
+   "date": "16 Nov 2026",
+   "summary": "Long context, cache-augmented generation, agentic RAG and Open Knowledge Format.",
+   "related": [
+    "improving-rag",
+    "finetune-vs-prompt-vs-rag",
+    "llm-caching"
+   ],
+   "sources": [
+    {
+     "title": "Google Cloud: Open Knowledge Format (spec v0.2 + sample bundles)",
+     "site": "github.com",
+     "href": "https://github.com/GoogleCloudPlatform/open-knowledge-format"
+    },
+    {
+     "title": "Paper: Don't Do RAG, Cache-Augmented Generation (short abstract page)",
+     "site": "arxiv.org",
+     "href": "https://arxiv.org/abs/2412.15605"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=UabBYexBD4k",
+     "title": "Is RAG Still Needed? Choosing the Best Approach for LLMs",
+     "source": "IBM Technology",
+     "note": "Long context vs RAG trade-offs."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=HdafI0t3sEY",
+     "title": "RAG vs. CAG: Solving Knowledge Gaps in AI Models",
+     "source": "IBM Technology",
+     "note": "Cache-augmented generation compared with RAG."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=0z9_MhcYvcY",
+     "title": "What is Agentic RAG?",
+     "source": "IBM Technology",
+     "note": "Agents deciding when and what to retrieve."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=-QVoIxEpFkM",
+     "title": "What is a Context Window?",
+     "source": "IBM Technology",
+     "note": "The limit that long-context approaches push on."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Context window",
+     "definition": "The maximum amount of text (in tokens) a model can read in one request."
+    },
+    {
+     "term": "Token",
+     "definition": "A small piece of text (roughly 3/4 of an English word) that models read and are billed by."
+    },
+    {
+     "term": "Long context",
+     "definition": "Putting a lot of material directly into the prompt instead of retrieving pieces."
+    },
+    {
+     "term": "KV cache",
+     "definition": "The model's internal precomputed state for text it has already read; reusing it skips re-reading that text."
+    },
+    {
+     "term": "CAG (cache-augmented generation)",
+     "definition": "Preload a bounded knowledge base into context, cache the KV state, answer without retrieval."
+    },
+    {
+     "term": "Prompt caching",
+     "definition": "A provider feature that stores a repeated prompt prefix so later calls are cheaper and faster (drop 2)."
+    },
+    {
+     "term": "Agentic RAG",
+     "definition": "RAG where an agent decides when, where and how often to retrieve, using tools."
+    },
+    {
+     "term": "Trajectory",
+     "definition": "The sequence of steps and tool calls an agent took to reach an answer."
+    },
+    {
+     "term": "OKF",
+     "definition": "Open Knowledge Format: Google Cloud's open spec for knowledge as markdown + YAML frontmatter files."
+    },
+    {
+     "term": "YAML frontmatter",
+     "definition": "A small block of key: value fields at the top of a markdown file, readable by machines."
+    },
+    {
+     "term": "Bundle",
+     "definition": "In OKF, a folder of concept files shipped together (e.g. a git repo)."
+    },
+    {
+     "term": "Provenance",
+     "definition": "Where a piece of information came from."
+    },
+    {
+     "term": "Progressive disclosure",
+     "definition": "Reading an overview first and opening details only when needed, to save context."
+    },
+    {
+     "term": "Golden set",
+     "definition": "A fixed list of questions with known good answers used to test the system (drop 3)."
+    },
+    {
+     "term": "p95 latency",
+     "definition": "The response time that 95% of requests are faster than."
+    }
+   ]
+  },
+  {
+   "slug": "pubsub-eda-cqrs",
+   "title": "Architecture patterns part 3: pub/sub, event-driven architecture, CQRS",
+   "short": "Pub/sub, event-driven architecture and CQRS",
+   "track": "architecture-patterns",
+   "drop": 5,
+   "date": "16 Nov 2026",
+   "summary": "Publishers and subscribers, events as the backbone, and separate read and write models.",
+   "related": [
+    "message-queues",
+    "bulkhead-sidecar-strangler-saga",
+    "choosing-a-database"
+   ],
+   "sources": [
+    {
+     "title": "Grab: fare storage at scale with event sourcing + CQRS (10 min read)",
+     "site": "engineering.grab.com",
+     "href": "https://engineering.grab.com/democratising-fare-storage-at-scale-using-event-sourcing"
+    },
+    {
+     "title": "LinkedIn: customizing Apache Kafka for 7 trillion messages per day",
+     "site": "linkedin.com",
+     "href": "https://www.linkedin.com/blog/engineering/open-source/apache-kafka-trillion-messages"
+    },
+    {
+     "title": "Azure Architecture Center: CQRS pattern",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=FMhbR_kQeHw",
+     "title": "What is the Publisher Subscriber Model?",
+     "source": "Gaurav Sen",
+     "note": "Whiteboard walk-through."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=rJHTK2TfZ1I",
+     "title": "What's an Event Driven System?",
+     "source": "Gaurav Sen",
+     "note": "Events vs requests."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=STKCRSUsyP0",
+     "title": "The Many Meanings of Event-Driven Architecture",
+     "source": "Martin Fowler (GOTO 2017)",
+     "note": "Conference talk separating notification, state transfer, sourcing and CQRS."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=SvjdJoNPcHs",
+     "title": "Mastering CQRS in Just 5 Minutes",
+     "source": "ByteMonk",
+     "note": "Command/query split animated."
+    },
+    {
+     "type": "diagram",
+     "url": "https://martinfowler.com/bliki/CQRS.html",
+     "title": "CQRS",
+     "source": "Martin Fowler",
+     "note": "The reference essay with diagrams."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Topic",
+     "definition": "A named channel that publishers send to and subscribers listen on."
+    },
+    {
+     "term": "Publisher / subscriber",
+     "definition": "The sender of messages / a receiver that registered interest in a topic."
+    },
+    {
+     "term": "Consumer group",
+     "definition": "A set of workers sharing one subscription; each event goes to one worker in the group, and every group gets every event."
+    },
+    {
+     "term": "Event",
+     "definition": "A message stating a fact that already happened, named in past tense (OrderPlaced)."
+    },
+    {
+     "term": "Fan-out",
+     "definition": "One message delivered to many receivers."
+    },
+    {
+     "term": "Loose coupling",
+     "definition": "Parts of a system can change or fail without forcing changes in the others."
+    },
+    {
+     "term": "Synchronous / asynchronous",
+     "definition": "Caller waits for the answer / caller continues and the work happens later."
+    },
+    {
+     "term": "CRUD",
+     "definition": "Create, Read, Update, Delete: the basic one-model-one-database approach."
+    },
+    {
+     "term": "Command / query",
+     "definition": "A request that changes state / a request that only reads."
+    },
+    {
+     "term": "Read model / projection",
+     "definition": "A copy of data reshaped for a specific screen or query, built from events."
+    },
+    {
+     "term": "Event sourcing",
+     "definition": "Storing every change as an event and deriving current state by replaying them."
+    },
+    {
+     "term": "Event store",
+     "definition": "The database that holds the event history."
+    },
+    {
+     "term": "Eventual consistency",
+     "definition": "Copies of data agree after a short delay, not instantly."
+    },
+    {
+     "term": "Idempotent",
+     "definition": "Processing the same message twice has the same effect as once (drop 3)."
+    },
+    {
+     "term": "Partition (Kafka)",
+     "definition": "A slice of a topic; events with the same key stay in order within one partition."
+    },
+    {
+     "term": "Schema registry",
+     "definition": "A central place that stores and versions the format of each event."
+    },
+    {
+     "term": "Outbox pattern",
+     "definition": "Write the event into the same database transaction as the data change, then publish it from there, so you never update one without the other."
+    },
+    {
+     "term": "DLQ",
+     "definition": "Dead-letter queue: where messages go after repeated failures (drop 3)."
+    }
+   ]
+  },
+  {
+   "slug": "kubernetes",
+   "title": "Kubernetes basics: GKE vs EKS vs AKS, and when you do not need it",
+   "short": "Kubernetes: GKE vs EKS vs AKS",
+   "track": "cloud",
+   "drop": 5,
+   "date": "16 Nov 2026",
+   "summary": "What Kubernetes is, the managed offerings, and when you do not need it.",
+   "related": [
+    "serverless-containers",
+    "hosting-nextjs-python",
+    "load-balancing-hashing"
+   ],
+   "sources": [
+    {
+     "title": "OpenAI: Scaling Kubernetes to 7,500 nodes (short read)",
+     "site": "openai.com",
+     "href": "https://openai.com/index/scaling-kubernetes-to-7500-nodes/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=PziYflu8cB8",
+     "title": "Kubernetes Explained in 100 Seconds",
+     "source": "Fireship",
+     "note": "The fastest overview."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=TlHvYWVUZyc",
+     "title": "Kubernetes Explained in 6 Minutes",
+     "source": "ByteByteGo",
+     "note": "Animated architecture tour."
+    },
+    {
+     "type": "diagram",
+     "url": "https://kubernetes.io/docs/concepts/overview/components/",
+     "title": "Kubernetes components (diagram)",
+     "source": "kubernetes.io",
+     "note": "Official diagram of the control plane and nodes."
+    },
+    {
+     "type": "visual",
+     "url": "https://www.cncf.io/phippy/",
+     "title": "Phippy: Illustrated Children's Guide to Kubernetes",
+     "source": "CNCF",
+     "note": "Story-style visual explanation."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Container",
+     "definition": "A packaged app with everything it needs to run, identical on a laptop and in the cloud."
+    },
+    {
+     "term": "Orchestration",
+     "definition": "Automatically placing, starting, healing and scaling many containers."
+    },
+    {
+     "term": "Control plane",
+     "definition": "The managing brain of a cluster (API server, scheduler, controllers, etcd)."
+    },
+    {
+     "term": "etcd",
+     "definition": "The small database where Kubernetes stores the desired and current state."
+    },
+    {
+     "term": "Desired state / reconcile",
+     "definition": "What you declared / the loop that keeps changing reality to match it."
+    },
+    {
+     "term": "Cluster, node, pod, deployment, service, ingress, HPA, namespace",
+     "definition": "See the table at the top of this topic."
+    },
+    {
+     "term": "YAML",
+     "definition": "A plain-text format of key: value lines used for configuration."
+    },
+    {
+     "term": "kubectl",
+     "definition": "The command-line tool to talk to a Kubernetes cluster."
+    },
+    {
+     "term": "Helm / chart",
+     "definition": "A packaging tool for Kubernetes apps / one package of templates."
+    },
+    {
+     "term": "GitOps / Argo CD",
+     "definition": "Keeping cluster config in git and letting a tool apply it automatically."
+    },
+    {
+     "term": "Readiness probe",
+     "definition": "A health check that tells Kubernetes when a pod can receive traffic."
+    },
+    {
+     "term": "Autopilot / Auto Mode / AKS Automatic",
+     "definition": "Hands-off cluster modes where the provider also manages nodes."
+    },
+    {
+     "term": "Workload identity",
+     "definition": "Giving a pod a cloud identity without storing keys."
+    },
+    {
+     "term": "KEDA",
+     "definition": "Event-driven autoscaler that scales pods on queue length or other events."
+    },
+    {
+     "term": "CNI / Flannel",
+     "definition": "The plugin that gives pods network addresses / one such plugin."
+    },
+    {
+     "term": "Gang scheduling / MPI",
+     "definition": "Starting all pods of a job together / a standard for many machines cooperating on one training job."
+    }
+   ]
+  },
+  {
+   "slug": "hosting-nextjs-python",
+   "title": "Hosting an AI-built Next.js + Python app end to end on Azure and AWS",
+   "short": "Hosting an AI-built Next.js + Python app",
+   "track": "cloud",
+   "drop": 5,
+   "date": "16 Nov 2026",
+   "summary": "A reference architecture on Azure and AWS, from MVP to production.",
+   "related": [
+    "serverless-containers",
+    "cloud-iam",
+    "cicd-iac"
+   ],
+   "sources": [
+    {
+     "title": "Microsoft customer story: Aon's AonGPT on Azure Container Apps (short read)",
+     "site": "microsoft.com",
+     "href": "https://www.microsoft.com/en/customers/story/25693-aon-plc-azure"
+    },
+    {
+     "title": "AWS: Amplify support for Next.js (supported and unsupported features)",
+     "site": "docs.aws.amazon.com",
+     "href": "https://docs.aws.amazon.com/amplify/latest/userguide/ssr-amplify-support.html"
+    },
+    {
+     "title": "Microsoft Learn: Next.js support on Azure Static Web Apps (preview limits)",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/static-web-apps/nextjs"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=0HwQfsa03K8",
+     "title": "Azure Container Apps overview",
+     "source": "Microsoft DevRadio",
+     "note": "Where the Python API can run on Azure."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=AiiFbsAlLaI",
+     "title": "Deploying Docker Containers on AWS ECS",
+     "source": "Piyush Garg",
+     "note": "Walk-through of the AWS container path."
+    },
+    {
+     "type": "diagram",
+     "url": "https://nextjs.org/docs/app/getting-started/deploying",
+     "title": "Deploying Next.js (docs)",
+     "source": "Next.js",
+     "note": "Official options: managed, Node server, Docker, static."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "SSR (server-side rendering)",
+     "definition": "The server builds each page's HTML on request, instead of only shipping static files."
+    },
+    {
+     "term": "Streaming",
+     "definition": "Sending the response in pieces as it is generated (how chat UIs show tokens appearing)."
+    },
+    {
+     "term": "Edge middleware",
+     "definition": "Small code that runs on CDN servers close to users before a request reaches your app."
+    },
+    {
+     "term": "FastAPI",
+     "definition": "A popular Python framework for building web APIs."
+    },
+    {
+     "term": "Managed identity / IAM role",
+     "definition": "A cloud-issued identity for your app so it can access services without stored keys."
+    },
+    {
+     "term": "Key Vault / Secrets Manager",
+     "definition": "Managed safes for passwords, keys and connection strings."
+    },
+    {
+     "term": "OIDC federation",
+     "definition": "Letting GitHub Actions prove who it is to the cloud and get short-lived credentials, with no stored secrets."
+    },
+    {
+     "term": "CI/CD",
+     "definition": "Continuous integration / continuous delivery: automatic test, build and deploy on every change."
+    },
+    {
+     "term": "IaC (Bicep, Terraform, CDK)",
+     "definition": "Infrastructure as code: describing cloud resources in files so they are repeatable and reviewable."
+    },
+    {
+     "term": "ACR / ECR",
+     "definition": "Azure Container Registry / Amazon Elastic Container Registry: where container images are stored."
+    },
+    {
+     "term": "pgvector",
+     "definition": "A Postgres extension that adds vector search."
+    },
+    {
+     "term": "Private endpoint / VNet / VPC",
+     "definition": "Private network connections so databases and AI services are not exposed to the internet."
+    },
+    {
+     "term": "CDN / WAF",
+     "definition": "Content delivery network (caches content near users) / web application firewall (blocks attacks)."
+    },
+    {
+     "term": "Cold start",
+     "definition": "Delay on the first request when a scaled-to-zero service has to start up."
+    },
+    {
+     "term": "Provisioned throughput",
+     "definition": "Reserved LLM capacity for predictable latency at a fixed price."
+    },
+    {
+     "term": "azd",
+     "definition": "Azure Developer CLI; 'azd up' provisions and deploys an app from a template."
+    }
+   ]
+  },
+  {
+   "slug": "customer-discovery-pilot",
+   "title": "FDE craft: customer discovery and scoping a pilot from MVP to production",
+   "short": "FDE craft: customer discovery and scoping a pilot",
+   "track": "fde-craft",
+   "drop": 6,
+   "date": "17 Nov 2026",
+   "summary": "Turning a vague ask into a scoped pilot, then taking it to production.",
+   "related": [
+    "demos-design-docs",
+    "finetune-vs-prompt-vs-rag",
+    "agent-eval-observability"
+   ],
+   "sources": [
+    {
+     "title": "What FDE means at OpenAI (article, ~8 min)",
+     "site": "openai.com",
+     "href": "https://openai.com/index/forward-deployed-engineering-means/"
+    },
+    {
+     "title": "A day in the life of a Palantir forward deployed software engineer",
+     "site": "blog.palantir.com",
+     "href": "https://blog.palantir.com/a-day-in-the-life-of-a-palantir-forward-deployed-software-engineer-45ef2de257b1"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=KwhgfwOSToQ",
+     "title": "Forward Deployed Engineering 101",
+     "source": "Kevin Bai (AI Engineer / FDE Pod)",
+     "note": "Talk from a former Palantir FDE."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=5OYy_UtINo4",
+     "title": "The Role of a Forward Deployed Software Engineer",
+     "source": "Palantir",
+     "note": "Palantir's own description of the role."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=APqXGyCoGW4",
+     "title": "Forward Deployed Engineering at Cursor",
+     "source": "AI Engineer",
+     "note": "How FDE work looks at an AI product company."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "FDE / FDSE",
+     "definition": "Forward deployed (software) engineer: an engineer embedded with a customer to build and deploy solutions on their real problems."
+    },
+    {
+     "term": "Deployment gap",
+     "definition": "OpenAI's term for the distance between what a model seems able to do and what people can reliably use in production."
+    },
+    {
+     "term": "Discovery",
+     "definition": "Learning the customer's workflow, pain, data and decision-makers before proposing a solution."
+    },
+    {
+     "term": "Shadowing",
+     "definition": "Watching a real user do the task in their normal work."
+    },
+    {
+     "term": "Scope / out of scope",
+     "definition": "What the project will deliver, and the explicit list of what it will not."
+    },
+    {
+     "term": "MVP",
+     "definition": "Minimum viable product: the smallest version that delivers real value end to end."
+    },
+    {
+     "term": "Pilot",
+     "definition": "A time-boxed trial with real users and data, judged against agreed metrics."
+    },
+    {
+     "term": "Pilot purgatory",
+     "definition": "When pilots keep running or get repeated but never become production systems."
+    },
+    {
+     "term": "Baseline",
+     "definition": "How the task performs today without the new system; what you compare against."
+    },
+    {
+     "term": "Golden set / eval",
+     "definition": "Fixed real examples with correct answers, used to measure quality (drop 3)."
+    },
+    {
+     "term": "Go / no-go gate",
+     "definition": "A planned decision point: continue to production, rescope, or stop."
+    },
+    {
+     "term": "Human in the loop",
+     "definition": "A person reviews or approves AI output before it takes effect."
+    },
+    {
+     "term": "Budget owner / sponsor",
+     "definition": "The person who can approve money and production rollout."
+    },
+    {
+     "term": "Precision / recall",
+     "definition": "Of what the system flagged, how much was right / of what it should have flagged, how much it caught."
+    },
+    {
+     "term": "CI",
+     "definition": "Continuous integration: automatic checks on every code change (topic 4)."
+    }
+   ]
+  },
+  {
+   "slug": "agent-memory-multi-agent",
+   "title": "Agent memory and multi-agent orchestration patterns",
+   "short": "Agent memory and multi-agent orchestration",
+   "track": "agentic-systems",
+   "drop": 6,
+   "date": "17 Nov 2026",
+   "summary": "Short- vs long-term memory and patterns for coordinating several agents.",
+   "related": [
+    "agent-tool-calling",
+    "agent-eval-observability",
+    "guardrails-prompt-injection"
+   ],
+   "sources": [
+    {
+     "title": "Anthropic: How we built our multi-agent research system (article)",
+     "site": "anthropic.com",
+     "href": "https://www.anthropic.com/research/multi-agent-research-system"
+    },
+    {
+     "title": "OpenAI: Memory and new controls for ChatGPT",
+     "site": "openai.com",
+     "href": "https://openai.com/index/memory-and-new-controls-for-chatgpt/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=BacJ6sEhqMo",
+     "title": "The Four Types of Memory Every AI Agent Needs",
+     "source": "IBM Technology",
+     "note": "Working, episodic, semantic and procedural memory."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=JTL0yp85FsE",
+     "title": "Memory for agents",
+     "source": "LangChain",
+     "note": "Conceptual video on agent memory."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=sWH0T4Zez6I",
+     "title": "Multi Agent Systems Explained",
+     "source": "IBM Technology",
+     "note": "How agents work together."
+    },
+    {
+     "type": "diagram",
+     "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+     "title": "How we built our multi-agent research system",
+     "source": "Anthropic",
+     "note": "Architecture diagrams of an orchestrator-worker system."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Agent",
+     "definition": "An LLM running in a loop that can call tools and decide its next step (drop 1)."
+    },
+    {
+     "term": "Context window",
+     "definition": "The maximum text (in tokens) a model can read in one request."
+    },
+    {
+     "term": "Token",
+     "definition": "A small piece of text that models read and are billed by."
+    },
+    {
+     "term": "Compaction / summarisation",
+     "definition": "Replacing old conversation turns with a shorter summary to save context space."
+    },
+    {
+     "term": "Semantic / episodic / procedural memory",
+     "definition": "Facts / past events / how-to knowledge."
+    },
+    {
+     "term": "Vector store",
+     "definition": "A database that finds items by meaning similarity, used for retrieval (RAG)."
+    },
+    {
+     "term": "Orchestrator (lead, supervisor)",
+     "definition": "The agent that plans and delegates to others."
+    },
+    {
+     "term": "Worker / subagent",
+     "definition": "An agent given one sub-task by the orchestrator."
+    },
+    {
+     "term": "Handoff",
+     "definition": "Passing the conversation from one agent to another specialist agent."
+    },
+    {
+     "term": "Trajectory / trace",
+     "definition": "The full record of steps and tool calls an agent took."
+    },
+    {
+     "term": "Budget cap",
+     "definition": "A hard limit on steps, agents, tokens or money for a run."
+    },
+    {
+     "term": "Memory poisoning",
+     "definition": "Planting false or malicious content in an agent's memory so it affects future sessions."
+    },
+    {
+     "term": "ADK",
+     "definition": "Google's Agent Development Kit for building agents."
+    },
+    {
+     "term": "AgentCore",
+     "definition": "AWS Bedrock's managed services for running agents (runtime, memory, identity, tools)."
+    }
+   ]
+  },
+  {
+   "slug": "guardrails-prompt-injection",
+   "title": "LLM guardrails and prompt-injection defence",
+   "short": "LLM guardrails and prompt injection",
+   "track": "ai-llm-systems",
+   "drop": 6,
+   "date": "17 Nov 2026",
+   "summary": "Defence in depth against prompt injection and unsafe output.",
+   "related": [
+    "agent-tool-calling",
+    "mcp",
+    "oauth-oidc"
+   ],
+   "sources": [
+    {
+     "title": "Simon Willison: The lethal trifecta for AI agents (short article)",
+     "site": "simonwillison.net",
+     "href": "https://simonwillison.net/2025/jun/16/the-lethal-trifecta/"
+    },
+    {
+     "title": "Microsoft Learn: Prompt Shields (user prompt + document attacks, Spotlighting)",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=jrHRe9lSqqA",
+     "title": "What Is a Prompt Injection Attack?",
+     "source": "IBM Technology",
+     "note": "Direct vs indirect injection."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=KDcayRssGbw",
+     "title": "Prompt Injection, Clearly Explained",
+     "source": "ByteByteAI / ByteByteGo",
+     "note": "Short visual explainer."
+    },
+    {
+     "type": "interactive",
+     "url": "https://gandalf.lakera.ai/",
+     "title": "Gandalf",
+     "source": "Lakera",
+     "note": "Interactive game: try to trick an LLM into leaking a password."
+    },
+    {
+     "type": "diagram",
+     "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+     "title": "The lethal trifecta for AI agents",
+     "source": "Simon Willison",
+     "note": "The diagram-backed rule for when agents become unsafe."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Guardrail",
+     "definition": "A check before or after the model that blocks, fixes or flags input or output."
+    },
+    {
+     "term": "System prompt",
+     "definition": "The developer's hidden instructions given to the model before the user's message."
+    },
+    {
+     "term": "Jailbreak",
+     "definition": "A user's attempt to make the model ignore its rules."
+    },
+    {
+     "term": "Prompt injection (indirect)",
+     "definition": "Instructions hidden in content the model reads that hijack its behaviour."
+    },
+    {
+     "term": "SQL injection",
+     "definition": "The classic web attack where user text is run as a database command; same root cause."
+    },
+    {
+     "term": "Lethal trifecta",
+     "definition": "Private data + untrusted content + external communication in one agent."
+    },
+    {
+     "term": "Exfiltration",
+     "definition": "Secretly sending stolen data out of a system."
+    },
+    {
+     "term": "PII",
+     "definition": "Personally identifiable information: names, phone numbers, IDs, addresses."
+    },
+    {
+     "term": "Least privilege",
+     "definition": "Give each component only the permissions it strictly needs (drop 1)."
+    },
+    {
+     "term": "Allow-list",
+     "definition": "An explicit list of permitted actions or destinations; everything else is blocked."
+    },
+    {
+     "term": "Spotlighting",
+     "definition": "Microsoft technique that marks/encodes documents so the model treats them as lower trust."
+    },
+    {
+     "term": "Red-teaming",
+     "definition": "Deliberately attacking your own system to find weaknesses."
+    },
+    {
+     "term": "False positive",
+     "definition": "A safe request wrongly blocked."
+    },
+    {
+     "term": "Schema validation",
+     "definition": "Checking output matches an expected structure (fields, types, allowed values)."
+    },
+    {
+     "term": "Grounding check",
+     "definition": "Verifying an answer is supported by the retrieved sources."
+    },
+    {
+     "term": "Model Armor",
+     "definition": "Google Cloud's service for screening LLM prompts and responses."
+    }
+   ]
+  },
+  {
+   "slug": "cicd-iac",
+   "title": "CI/CD and infrastructure as code: Terraform vs Bicep vs CDK",
+   "short": "CI/CD and infrastructure as code",
+   "track": "production-ops",
+   "drop": 6,
+   "date": "17 Nov 2026",
+   "summary": "Pipelines, plan-on-PR, canary releases, Terraform vs Bicep vs CDK.",
+   "related": [
+    "hosting-nextjs-python",
+    "logging-monitoring",
+    "cloud-iam"
+   ],
+   "sources": [
+    {
+     "title": "Fireship: Terraform in 100 Seconds (video, 2:17)",
+     "site": "youtube.com",
+     "href": "https://www.youtube.com/watch?v=tomUWcQ0P3k"
+    },
+    {
+     "title": "Slack Engineering: How We Use Terraform At Slack",
+     "site": "slack.engineering",
+     "href": "https://slack.engineering/how-we-use-terraform-at-slack/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=scEDHsr3APg",
+     "title": "DevOps CI/CD Explained in 100 Seconds",
+     "source": "Fireship",
+     "note": "Pipeline basics."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=tomUWcQ0P3k",
+     "title": "Terraform in 100 Seconds",
+     "source": "Fireship",
+     "note": "Declarative infrastructure in a nutshell."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=nlb8yo7SZ2I",
+     "title": "An Introduction to AWS CDK",
+     "source": "Be A Better Dev",
+     "note": "The code-first IaC option on AWS."
+    },
+    {
+     "type": "diagram",
+     "url": "https://martinfowler.com/bliki/CanaryRelease.html",
+     "title": "Canary release",
+     "source": "Martin Fowler",
+     "note": "Diagram-backed explanation of gradual rollouts."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "CI",
+     "definition": "Continuous integration: automatic build and tests on every change."
+    },
+    {
+     "term": "CD",
+     "definition": "Continuous delivery (ready to release with a click) or deployment (released automatically)."
+    },
+    {
+     "term": "Pipeline",
+     "definition": "The ordered list of automated steps a change goes through."
+    },
+    {
+     "term": "IaC",
+     "definition": "Infrastructure as code: cloud resources defined in versioned files."
+    },
+    {
+     "term": "Declarative",
+     "definition": "You describe the end state you want; the tool works out the steps."
+    },
+    {
+     "term": "HCL",
+     "definition": "HashiCorp Configuration Language, Terraform's file format."
+    },
+    {
+     "term": "ARM template",
+     "definition": "Azure Resource Manager's JSON format; Bicep compiles into it."
+    },
+    {
+     "term": "CloudFormation",
+     "definition": "AWS's native IaC service; CDK generates its templates."
+    },
+    {
+     "term": "State file",
+     "definition": "Terraform's record of what it created, compared against your files to plan changes."
+    },
+    {
+     "term": "Locking",
+     "definition": "Preventing two people from applying changes to the same state at once."
+    },
+    {
+     "term": "Drift",
+     "definition": "When real infrastructure no longer matches the IaC files (usually from console edits)."
+    },
+    {
+     "term": "Plan / apply",
+     "definition": "Preview the changes / carry them out."
+    },
+    {
+     "term": "Artifact / container image",
+     "definition": "The packaged build that gets deployed; same one in every environment."
+    },
+    {
+     "term": "Registry",
+     "definition": "Storage for container images (ECR, ACR, Artifact Registry)."
+    },
+    {
+     "term": "Staging",
+     "definition": "A production-like environment for final testing."
+    },
+    {
+     "term": "Canary release",
+     "definition": "Sending a small share of traffic to a new version first and comparing its health."
+    },
+    {
+     "term": "Rollback",
+     "definition": "Returning to the previous working version."
+    },
+    {
+     "term": "GitOps",
+     "definition": "Using git pull requests as the single way to change infrastructure and deployments."
+    },
+    {
+     "term": "BSL / OpenTofu",
+     "definition": "Terraform's 2023 source-available licence / the open-source community fork."
+    },
+    {
+     "term": "Break-glass",
+     "definition": "A controlled emergency process to bypass the normal pipeline."
+    }
+   ]
+  },
+  {
+   "slug": "oauth-oidc",
+   "title": "Auth for apps and agents: OAuth 2.0 + OpenID Connect",
+   "short": "OAuth 2.0 and OpenID Connect",
+   "track": "production-ops",
+   "drop": 7,
+   "date": "17 Nov 2026",
+   "summary": "Delegated access vs sign-in, and how apps and agents authenticate.",
+   "related": [
+    "cloud-iam",
+    "mcp",
+    "guardrails-prompt-injection"
+   ],
+   "sources": [
+    {
+     "title": "OAuth 2 Explained In Simple Terms (ByteByteGo, 4:32)",
+     "site": "youtube.com",
+     "href": "https://www.youtube.com/watch?v=ZV5yTm4pT8g"
+    },
+    {
+     "title": "Understanding authorization in MCP (tutorial)",
+     "site": "modelcontextprotocol.io",
+     "href": "https://modelcontextprotocol.io/docs/draft/tutorials/security/authorization"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=ZV5yTm4pT8g",
+     "title": "OAuth 2 Explained In Simple Terms",
+     "source": "ByteByteGo",
+     "note": "Animated authorization-code flow."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=t18YB3xDfXI",
+     "title": "An Illustrated Guide to OAuth and OpenID Connect",
+     "source": "OktaDev",
+     "note": "The classic visual walk-through."
+    },
+    {
+     "type": "interactive",
+     "url": "https://www.oauth.com/playground/",
+     "title": "OAuth 2.0 Playground",
+     "source": "oauth.com",
+     "note": "Interactive: step through the flows."
+    },
+    {
+     "type": "interactive",
+     "url": "https://jwt.io/",
+     "title": "jwt.io debugger",
+     "source": "Auth0 / Okta",
+     "note": "Interactive: decode and inspect tokens."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "AuthN / AuthZ",
+     "definition": "Authentication (who you are) / authorization (what you may do)."
+    },
+    {
+     "term": "OAuth 2.0 / 2.1",
+     "definition": "Standard for delegated access via tokens; 2.1 consolidates best practices (PKCE required, unsafe flows removed)."
+    },
+    {
+     "term": "OIDC",
+     "definition": "OpenID Connect: identity layer on OAuth that adds the ID token and standard user info."
+    },
+    {
+     "term": "IdP / authorization server",
+     "definition": "Service that logs users in and issues tokens (Entra ID, Cognito, Google Identity Platform, Okta)."
+    },
+    {
+     "term": "Client",
+     "definition": "The app or agent asking for access."
+    },
+    {
+     "term": "Resource server",
+     "definition": "The API holding the data, which checks tokens."
+    },
+    {
+     "term": "Access token",
+     "definition": "Short-lived credential sent to an API; says what the caller may do."
+    },
+    {
+     "term": "ID token",
+     "definition": "OIDC token saying who the user is; for your app, not for calling APIs."
+    },
+    {
+     "term": "Refresh token",
+     "definition": "Longer-lived credential used to get new access tokens without a new login."
+    },
+    {
+     "term": "JWT",
+     "definition": "JSON Web Token: a signed, readable token format with claims like issuer, audience, expiry."
+    },
+    {
+     "term": "Claim",
+     "definition": "A field inside a token, e.g. sub (user id), aud (audience), exp (expiry), scp (scopes)."
+    },
+    {
+     "term": "Scope",
+     "definition": "A named permission, e.g. calendar.read."
+    },
+    {
+     "term": "Audience",
+     "definition": "Which API a token is meant for; an API must reject tokens meant for others."
+    },
+    {
+     "term": "PKCE",
+     "definition": "Proof Key for Code Exchange: a one-time secret that makes a stolen authorization code useless."
+    },
+    {
+     "term": "Redirect URI",
+     "definition": "The pre-registered URL the IdP sends the user back to."
+    },
+    {
+     "term": "Consent",
+     "definition": "The screen where the user approves what the app may access."
+    },
+    {
+     "term": "Client credentials",
+     "definition": "Flow where a service authenticates as itself, no user."
+    },
+    {
+     "term": "On-behalf-of (OBO) / token exchange",
+     "definition": "Swapping a user's token for a narrower token to a downstream API, still as that user."
+    },
+    {
+     "term": "Managed identity / IAM role",
+     "definition": "Cloud-provided identity for a service, with no secret stored in code."
+    },
+    {
+     "term": "MFA / conditional access",
+     "definition": "Second factor at login / rules like only from company devices."
+    },
+    {
+     "term": "Protected Resource Metadata (RFC 9728)",
+     "definition": "A document an API publishes saying which authorization servers it trusts."
+    },
+    {
+     "term": "Bearer token",
+     "definition": "Whoever holds it can use it, so it must be short-lived and sent only in HTTPS headers."
+    }
+   ]
+  },
+  {
+   "slug": "slos-incidents",
+   "title": "SLOs, error budgets and incident handling",
+   "short": "SLOs, error budgets and incidents",
+   "track": "production-ops",
+   "drop": 7,
+   "date": "17 Nov 2026",
+   "summary": "Reliability targets, burn-rate alerts, incident roles and blameless postmortems.",
+   "related": [
+    "logging-monitoring",
+    "cicd-iac",
+    "agent-eval-observability"
+   ],
+   "sources": [
+    {
+     "title": "Example error budget policy (Google SRE Workbook, short read)",
+     "site": "sre.google",
+     "href": "https://sre.google/workbook/error-budget-policy/"
+    },
+    {
+     "title": "Implementing SLOs (Google SRE Workbook chapter)",
+     "site": "sre.google",
+     "href": "https://sre.google/workbook/implementing-slos/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=E3ReKuJ8ewA",
+     "title": "The Art of SLOs",
+     "source": "Google Cloud Tech",
+     "note": "Google's own short intro to SLOs."
+    },
+    {
+     "type": "diagram",
+     "url": "https://sre.google/workbook/implementing-slos/",
+     "title": "Implementing SLOs",
+     "source": "Google SRE Workbook",
+     "note": "Diagrams and worked examples."
+    },
+    {
+     "type": "diagram",
+     "url": "https://sre.google/workbook/alerting-on-slos/",
+     "title": "Alerting on SLOs",
+     "source": "Google SRE Workbook",
+     "note": "Burn-rate alerting explained with graphs."
+    },
+    {
+     "type": "diagram",
+     "url": "https://sre.google/workbook/postmortem-culture/",
+     "title": "Postmortem culture",
+     "source": "Google SRE Workbook",
+     "note": "What a blameless postmortem looks like."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "SRE",
+     "definition": "Site reliability engineering: running production with software engineering methods and numeric reliability targets."
+    },
+    {
+     "term": "SLI",
+     "definition": "Service level indicator: a measured ratio users feel, e.g. % of fast, successful requests."
+    },
+    {
+     "term": "SLO",
+     "definition": "Service level objective: the internal target for an SLI over a window."
+    },
+    {
+     "term": "SLA",
+     "definition": "Service level agreement: a contractual promise with penalties; looser than the SLO."
+    },
+    {
+     "term": "Error budget",
+     "definition": "1 - SLO: the amount of failure you are allowed in the window."
+    },
+    {
+     "term": "Burn rate",
+     "definition": "How fast the error budget is being used compared with an even spend."
+    },
+    {
+     "term": "Window",
+     "definition": "The time period an SLO is measured over, e.g. rolling 28 days."
+    },
+    {
+     "term": "The nines",
+     "definition": "Shorthand for availability: three nines = 99.9%."
+    },
+    {
+     "term": "p95 latency",
+     "definition": "95% of requests are faster than this value."
+    },
+    {
+     "term": "Time to first token",
+     "definition": "How long until an LLM starts streaming its answer."
+    },
+    {
+     "term": "On-call / paging",
+     "definition": "The engineer responsible for responding to urgent alerts / the urgent alert itself."
+    },
+    {
+     "term": "Incident / SEV levels",
+     "definition": "An unplanned disruption / severity scale (SEV1 most severe)."
+    },
+    {
+     "term": "Incident commander",
+     "definition": "The person coordinating the response, not necessarily fixing it."
+    },
+    {
+     "term": "Mitigation",
+     "definition": "Stopping the user impact (rollback, failover) before finding the root cause."
+    },
+    {
+     "term": "Root cause",
+     "definition": "The underlying reason the system allowed the failure."
+    },
+    {
+     "term": "Blameless postmortem",
+     "definition": "A written review that focuses on system and process fixes, not on blaming people."
+    },
+    {
+     "term": "P0",
+     "definition": "Highest-priority work item: drop everything else."
+    },
+    {
+     "term": "Release freeze",
+     "definition": "Pausing non-urgent deployments to protect stability."
+    },
+    {
+     "term": "Status page",
+     "definition": "Public page telling customers about ongoing incidents."
+    }
+   ]
+  },
+  {
+   "slug": "cv-in-production",
+   "title": "Computer vision in production: serving, edge vs cloud, monitoring drift",
+   "short": "Computer vision in production",
+   "track": "computer-vision",
+   "drop": 7,
+   "date": "17 Nov 2026",
+   "summary": "Serving styles, edge vs cloud, drift monitoring and safe model rollouts.",
+   "related": [
+    "llm-serving-cost",
+    "logging-monitoring",
+    "slos-incidents"
+   ],
+   "sources": [
+    {
+     "title": "Arkansas field trial of See & Spray (short article)",
+     "site": "uaex.uada.edu",
+     "href": "https://www.uaex.uada.edu/media-resources/news/2025/march/03-10-2025-see-and-spray-research.aspx"
+    },
+    {
+     "title": "John Deere See & Spray upgrades for 2027 (DTN)",
+     "site": "dtnpf.com",
+     "href": "https://www.dtnpf.com/agriculture/web/ag/equipment/article/2026/01/22/john-deere-rolls-upgrades-see-spray"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=ytJELX6rKV4",
+     "title": "See & Spray Ultimate: Theory of Operation",
+     "source": "John Deere",
+     "note": "Real edge computer vision working in a field."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=yqeNuOdVd5A",
+     "title": "Edge AI vs. Cloud AI",
+     "source": "Esper",
+     "note": "Where inference should run."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=uOG685WFO00",
+     "title": "ML Drift: Identifying Issues Before You Have a Problem",
+     "source": "Fiddler AI",
+     "note": "Data drift and concept drift explained."
+    },
+    {
+     "type": "diagram",
+     "url": "https://www.evidentlyai.com/ml-in-production/data-drift",
+     "title": "What is data drift in ML",
+     "source": "Evidently AI",
+     "note": "Illustrated guide to drift detection."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Inference / serving",
+     "definition": "Running a trained model to get predictions / making it available to callers."
+    },
+    {
+     "term": "Edge",
+     "definition": "Computing on or near the device that produces the data, not in a cloud data centre."
+    },
+    {
+     "term": "Endpoint",
+     "definition": "A hosted URL that runs a model on request."
+    },
+    {
+     "term": "Batch inference",
+     "definition": "Running predictions on many stored items at once on a schedule."
+    },
+    {
+     "term": "mAP",
+     "definition": "Mean average precision: a standard object-detection accuracy metric."
+    },
+    {
+     "term": "ONNX",
+     "definition": "Open Neural Network Exchange: a portable model file format."
+    },
+    {
+     "term": "TensorRT / OpenVINO",
+     "definition": "NVIDIA's / Intel's tools to compile models for fast inference on their hardware."
+    },
+    {
+     "term": "Quantisation (INT8)",
+     "definition": "Storing model numbers as 8-bit integers instead of 32-bit floats for speed and size."
+    },
+    {
+     "term": "Data drift",
+     "definition": "Inputs change compared with training data (lighting, camera, season)."
+    },
+    {
+     "term": "Concept drift",
+     "definition": "The relationship between inputs and the right answer changes (a new definition of a defect)."
+    },
+    {
+     "term": "Confidence score",
+     "definition": "The model's own probability-like score for its prediction."
+    },
+    {
+     "term": "Embedding distance",
+     "definition": "How far new images sit from training images in the model's feature space."
+    },
+    {
+     "term": "Active learning",
+     "definition": "Choosing the most useful (hard, uncertain) examples for humans to label next."
+    },
+    {
+     "term": "Model registry",
+     "definition": "A versioned store of trained models with metadata and approval status."
+    },
+    {
+     "term": "OTA update",
+     "definition": "Over-the-air: pushing new software or models to devices remotely."
+    },
+    {
+     "term": "Fleet",
+     "definition": "All the deployed devices you manage."
+    },
+    {
+     "term": "Precision / recall",
+     "definition": "Of what you flagged, how much was right / of what was really there, how much you caught."
+    },
+    {
+     "term": "Golden set",
+     "definition": "A fixed, trusted labelled test set every new model must pass (drop 3)."
+    }
+   ]
+  },
+  {
+   "slug": "reading-java-ts",
+   "title": "Reading Java and TypeScript/Next.js code, mapped to Python",
+   "short": "Reading Java and TypeScript/Next.js code",
+   "track": "reading-code",
+   "drop": 7,
+   "date": "17 Nov 2026",
+   "summary": "A Rosetta stone from Python to Spring and Next.js.",
+   "related": [
+    "code-design-patterns",
+    "hexagonal-solid",
+    "api-design"
+   ],
+   "sources": [
+    {
+     "title": "How Netflix Really Uses Java (InfoQ talk + transcript)",
+     "site": "infoq.com",
+     "href": "https://www.infoq.com/presentations/netflix-java/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=LSEYdU8Dp9Y",
+     "title": "What is Spring Boot? (explained from scratch)",
+     "source": "Visual Computer Science",
+     "note": "Animated overview of Spring Boot."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=xYv3tBvJavM",
+     "title": "Spring Boot Deep Dive",
+     "source": "ByteMonk",
+     "note": "How Spring Boot simplifies Java apps."
+    },
+    {
+     "type": "diagram",
+     "url": "https://nextjs.org/docs/app/getting-started/server-and-client-components",
+     "title": "Server and Client Components",
+     "source": "Next.js docs",
+     "note": "Diagrams of where code runs."
+    },
+    {
+     "type": "interactive",
+     "url": "https://react.dev/learn/thinking-in-react",
+     "title": "Thinking in React",
+     "source": "react.dev",
+     "note": "Interactive sandboxes walking through a component tree."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Spring Boot",
+     "definition": "The most common Java framework for web services; sets up servers, config and wiring for you."
+    },
+    {
+     "term": "Annotation",
+     "definition": "A Java @Label on a class or method that tells the framework how to treat it; like a Python decorator."
+    },
+    {
+     "term": "Controller",
+     "definition": "Code that receives HTTP requests and returns responses."
+    },
+    {
+     "term": "Service",
+     "definition": "Code holding business rules."
+    },
+    {
+     "term": "Repository",
+     "definition": "Code that reads and writes the database."
+    },
+    {
+     "term": "Dependency injection (DI)",
+     "definition": "Giving an object the things it needs from outside rather than creating them inside; makes testing and swapping easy."
+    },
+    {
+     "term": "DTO / record / entity",
+     "definition": "Plain data object sent over the wire / Java's compact data class / class mapped to a database table."
+    },
+    {
+     "term": "JPA / Prisma / SQLAlchemy",
+     "definition": "Libraries that map code objects to database tables (ORMs) in Java / TypeScript / Python."
+    },
+    {
+     "term": "Interface",
+     "definition": "A contract listing methods a class must provide."
+    },
+    {
+     "term": "Next.js App Router",
+     "definition": "Next.js routing where folders under app/ become URLs."
+    },
+    {
+     "term": "page.tsx / layout.tsx / route.ts",
+     "definition": "A page / a shared wrapper around pages / an API endpoint."
+    },
+    {
+     "term": "Server component",
+     "definition": "React component that runs on the server and can access databases and secrets."
+    },
+    {
+     "term": "Client component",
+     "definition": "React component marked with the use client directive; runs in the browser for interactivity."
+    },
+    {
+     "term": "Server action",
+     "definition": "A server function a Next.js form or button can call directly."
+    },
+    {
+     "term": "Props / state / hooks",
+     "definition": "Component inputs / data that changes over time / functions like useState and useEffect."
+    },
+    {
+     "term": "Middleware",
+     "definition": "Code that runs before requests reach routes, often for auth redirects."
+    },
+    {
+     "term": "Promise / CompletableFuture",
+     "definition": "A value that will arrive later (TypeScript / Java)."
+    },
+    {
+     "term": "pom.xml / package.json",
+     "definition": "Java Maven / Node project files listing dependencies and scripts."
+    },
+    {
+     "term": "GraphQL / gRPC",
+     "definition": "Alternative API styles to REST: the client picks fields / fast binary calls between services."
+    }
+   ]
+  },
+  {
+   "slug": "choosing-a-database",
+   "title": "Choosing a database: SQL vs NoSQL, consistency and CAP",
+   "short": "Choosing a database",
+   "track": "system-design",
+   "drop": 8,
+   "date": "17 Nov 2026",
+   "summary": "SQL vs NoSQL, replication, sharding, CAP/PACELC and ACID vs BASE.",
+   "related": [
+    "caching",
+    "pubsub-eda-cqrs",
+    "multi-tenancy"
+   ],
+   "sources": [
+    {
+     "title": "CAP Theorem Simplified (ByteByteGo, 5:32)",
+     "site": "youtube.com",
+     "href": "https://www.youtube.com/watch?v=BHqjEjzAicA"
+    },
+    {
+     "title": "How Discord Stores Trillions of Messages",
+     "site": "discord.com",
+     "href": "https://discord.com/blog/how-discord-stores-trillions-of-messages"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=kkeFE6iRfMM",
+     "title": "How To Choose The Right Database?",
+     "source": "ByteByteGo",
+     "note": "Animated decision guide."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=BHqjEjzAicA",
+     "title": "CAP Theorem Simplified",
+     "source": "ByteByteGo",
+     "note": "The trade-off in 5 minutes."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=O3PwuzCvAjI",
+     "title": "How Discord Stores TRILLIONS of Messages",
+     "source": "ByteByteGo",
+     "note": "The real-world story behind the topic's example."
+    },
+    {
+     "type": "diagram",
+     "url": "https://jepsen.io/consistency",
+     "title": "Consistency models map",
+     "source": "Jepsen",
+     "note": "The reference map of consistency models."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Relational / SQL",
+     "definition": "Database of tables with a fixed schema, queried with SQL, supporting joins and transactions."
+    },
+    {
+     "term": "NoSQL",
+     "definition": "Umbrella term for non-relational stores: key-value, document, wide-column, graph."
+    },
+    {
+     "term": "Schema",
+     "definition": "The declared structure of data (tables, columns, types)."
+    },
+    {
+     "term": "Join",
+     "definition": "Combining rows from two tables by a shared field."
+    },
+    {
+     "term": "Transaction",
+     "definition": "A group of changes that succeed or fail together."
+    },
+    {
+     "term": "ACID",
+     "definition": "Atomic, Consistent, Isolated, Durable: the guarantees of a classic transaction."
+    },
+    {
+     "term": "BASE",
+     "definition": "Basically Available, Soft state, Eventually consistent: the scale-first alternative."
+    },
+    {
+     "term": "Replication / replica",
+     "definition": "Keeping copies of data on several machines / one of those copies."
+    },
+    {
+     "term": "Leader (primary)",
+     "definition": "The copy that accepts writes."
+    },
+    {
+     "term": "Replication lag",
+     "definition": "Delay before a replica sees a write."
+    },
+    {
+     "term": "Eventual consistency",
+     "definition": "Copies may disagree briefly but converge if writes stop."
+    },
+    {
+     "term": "Strong consistency",
+     "definition": "Every read sees the latest committed write."
+    },
+    {
+     "term": "Partition key / sharding",
+     "definition": "The field used to split data across machines / the act of splitting it."
+    },
+    {
+     "term": "Hot partition",
+     "definition": "One partition receiving far more traffic than others, overloading its machine."
+    },
+    {
+     "term": "CAP theorem",
+     "definition": "During a network Partition a distributed store must choose Consistency or Availability."
+    },
+    {
+     "term": "PACELC",
+     "definition": "Extends CAP: Else (normal times) you trade Latency vs Consistency."
+    },
+    {
+     "term": "Wide-column store",
+     "definition": "NoSQL design (Cassandra, Bigtable) with rows grouped by partition and sorted inside it."
+    },
+    {
+     "term": "Garbage collection (GC) pause",
+     "definition": "Moment a Java-style runtime stops work to free memory, causing latency spikes."
+    },
+    {
+     "term": "Request coalescing",
+     "definition": "Merging identical concurrent requests into one backend query."
+    },
+    {
+     "term": "Polyglot persistence",
+     "definition": "Using different databases for different needs in one system."
+    },
+    {
+     "term": "ORM",
+     "definition": "Library mapping code objects to tables (JPA, Prisma, SQLAlchemy)."
+    },
+    {
+     "term": "Migration",
+     "definition": "A versioned script that changes the schema."
+    }
+   ]
+  },
+  {
+   "slug": "embeddings-vector-db",
+   "title": "Embeddings and vector databases",
+   "short": "Embeddings and vector databases",
+   "track": "ai-llm-systems",
+   "drop": 8,
+   "date": "17 Nov 2026",
+   "summary": "Vectors for meaning, ANN indexes, and choosing a store.",
+   "related": [
+    "improving-rag",
+    "rag-evals",
+    "llm-serving-cost"
+   ],
+   "sources": [
+    {
+     "title": "Two years of vector search at Notion: 10x scale, 1/10th cost",
+     "site": "notion.com",
+     "href": "https://www.notion.com/blog/two-years-of-vector-search-at-notion"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=gl1r1XV0SLw",
+     "title": "What is a Vector Database?",
+     "source": "IBM Technology",
+     "note": "Semantic search and vector stores."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+     "title": "Transformers, the tech behind LLMs",
+     "source": "3Blue1Brown",
+     "note": "Beautifully animated; includes how words become vectors."
+    },
+    {
+     "type": "interactive",
+     "url": "https://projector.tensorflow.org/",
+     "title": "Embedding Projector",
+     "source": "TensorFlow",
+     "note": "Interactive: explore embeddings in 3D."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=cZyTZ-EMskI",
+     "title": "Vector Database Search: HNSW Algorithm Explained",
+     "source": "Redis",
+     "note": "How approximate nearest-neighbour search finds neighbours fast."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Embedding",
+     "definition": "A vector of numbers representing meaning, produced by a model."
+    },
+    {
+     "term": "Vector / dimension",
+     "definition": "An ordered list of numbers / how many numbers it has."
+    },
+    {
+     "term": "Cosine similarity / dot product",
+     "definition": "Ways to measure how close two vectors are."
+    },
+    {
+     "term": "Nearest neighbour / top k",
+     "definition": "The k stored vectors closest to the query."
+    },
+    {
+     "term": "ANN",
+     "definition": "Approximate nearest neighbour: fast search that may miss a few true neighbours."
+    },
+    {
+     "term": "HNSW",
+     "definition": "Hierarchical Navigable Small World: a graph-based ANN index."
+    },
+    {
+     "term": "IVF",
+     "definition": "Inverted file index: clusters vectors and searches only nearby clusters."
+    },
+    {
+     "term": "DiskANN / ScaNN",
+     "definition": "Microsoft's disk-friendly ANN algorithm / Google's ANN library."
+    },
+    {
+     "term": "Recall",
+     "definition": "Share of truly relevant items that the search actually returned."
+    },
+    {
+     "term": "Chunk",
+     "definition": "A piece of a document stored and embedded separately."
+    },
+    {
+     "term": "Metadata filter",
+     "definition": "Condition on stored fields (tenant, ACL, date) applied during search."
+    },
+    {
+     "term": "ACL",
+     "definition": "Access control list: who may see an item."
+    },
+    {
+     "term": "Namespace / tenant",
+     "definition": "A separated slice of the index / one customer or workspace."
+    },
+    {
+     "term": "Hybrid search / BM25 / RRF",
+     "definition": "Vector + keyword search / the classic keyword ranking formula / reciprocal rank fusion, a way to merge two ranked lists."
+    },
+    {
+     "term": "Reranker",
+     "definition": "A model that re-scores retrieved results more precisely."
+    },
+    {
+     "term": "pgvector",
+     "definition": "PostgreSQL extension adding a vector column type and similarity search."
+    },
+    {
+     "term": "Object storage",
+     "definition": "Cheap file-like storage such as S3, Blob Storage, Cloud Storage."
+    },
+    {
+     "term": "p50 latency",
+     "definition": "Median response time: half of requests are faster."
+    },
+    {
+     "term": "CLIP-style model",
+     "definition": "A model that embeds images and text into the same space."
+    },
+    {
+     "term": "AWS EMR",
+     "definition": "Amazon's managed big-data processing service (Spark, Hadoop)."
+    }
+   ]
+  },
+  {
+   "slug": "managed-ai-platforms",
+   "title": "Managed AI platforms: Amazon Bedrock vs Microsoft Foundry vs Google Agent Platform",
+   "short": "Bedrock vs Microsoft Foundry vs Google's Agent Platform",
+   "track": "cloud",
+   "drop": 8,
+   "date": "17 Nov 2026",
+   "summary": "Managed AI platforms side by side.",
+   "related": [
+    "hosting-nextjs-python",
+    "cloud-cost-control",
+    "mcp"
+   ],
+   "sources": [
+    {
+     "title": "DoorDash generative AI contact center on Amazon Bedrock (AWS case study)",
+     "site": "aws.amazon.com",
+     "href": "https://aws.amazon.com/solutions/case-studies/doordash-bedrock-case-study/"
+    },
+    {
+     "title": "Vertex AI name changes (Gemini Enterprise Agent Platform docs)",
+     "site": "docs.cloud.google.com",
+     "href": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/vertex-ai-name-changes"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=_vdK5PgcNvc",
+     "title": "Introducing Amazon Bedrock",
+     "source": "Amazon Web Services",
+     "note": "Official intro (2023, so names have moved on)."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=GD7MnIwAxYM",
+     "title": "Introducing Azure AI Foundry",
+     "source": "Microsoft Mechanics",
+     "note": "Official intro (Foundry was renamed from Azure AI Foundry)."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=Rl9Gz1Yf6wM",
+     "title": "What is Vertex AI",
+     "source": "Google Cloud",
+     "note": "Official intro (Vertex AI has since been renamed)."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Foundation model",
+     "definition": "A large pre-trained model (LLM or multimodal) used for many tasks."
+    },
+    {
+     "term": "Model catalog / Model Garden",
+     "definition": "The list of models a platform offers."
+    },
+    {
+     "term": "Serverless (pay-per-token) vs provisioned throughput",
+     "definition": "Pay per use with shared capacity vs reserved capacity with guaranteed speed."
+    },
+    {
+     "term": "Token",
+     "definition": "A chunk of text (roughly three-quarters of a word) that models read and bill by."
+    },
+    {
+     "term": "Knowledge base",
+     "definition": "Managed RAG: ingestion, chunking, embeddings and a vector store."
+    },
+    {
+     "term": "Agent runtime",
+     "definition": "Managed hosting for agents with sessions, memory and tool access."
+    },
+    {
+     "term": "AgentCore",
+     "definition": "AWS's set of managed services for running agents (runtime, memory, gateway, identity)."
+    },
+    {
+     "term": "Guardrails",
+     "definition": "Filters and policies on inputs and outputs (harmful content, PII, prompt injection)."
+    },
+    {
+     "term": "Evals",
+     "definition": "Automated tests of model or agent quality on a fixed set of examples."
+    },
+    {
+     "term": "Quota / throttling",
+     "definition": "Limit on requests or tokens per minute / being slowed or rejected when you exceed it."
+    },
+    {
+     "term": "Private endpoint / PrivateLink / VPC Service Controls",
+     "definition": "Ways to reach cloud services without the public internet / to fence data inside a perimeter."
+    },
+    {
+     "term": "Data residency",
+     "definition": "Requirement that data stays in a given country or region."
+    },
+    {
+     "term": "Lock-in",
+     "definition": "Cost of switching away from a vendor's specific features."
+    },
+    {
+     "term": "Amazon Connect",
+     "definition": "AWS's cloud contact-center (phone and chat) service."
+    },
+    {
+     "term": "PII",
+     "definition": "Personally identifiable information."
+    },
+    {
+     "term": "Fallback model",
+     "definition": "A cheaper or more available model used when the main one fails or is throttled."
+    }
+   ]
+  },
+  {
+   "slug": "api-design",
+   "title": "API design: REST vs GraphQL vs gRPC, versioning, idempotency keys",
+   "short": "API design: REST, GraphQL, gRPC",
+   "track": "architecture-patterns",
+   "drop": 8,
+   "date": "17 Nov 2026",
+   "summary": "Choosing an API style, versioning and idempotency keys.",
+   "related": [
+    "gateway-breaker-retry",
+    "reading-java-ts",
+    "hexagonal-solid"
+   ],
+   "sources": [
+    {
+     "title": "Top 6 Most Popular API Architecture Styles (ByteByteGo, 4:20)",
+     "site": "youtube.com",
+     "href": "https://www.youtube.com/watch?v=4vLxWqE94l4"
+    },
+    {
+     "title": "Designing robust and predictable APIs with idempotency (Stripe)",
+     "site": "stripe.com",
+     "href": "https://stripe.com/blog/idempotency"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=yWzKJPw_VzM",
+     "title": "What Is GraphQL? REST vs. GraphQL",
+     "source": "ByteByteGo",
+     "note": "Animated comparison."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=gnchfOojMk4",
+     "title": "What is RPC? gRPC Introduction",
+     "source": "ByteByteGo",
+     "note": "How gRPC differs from REST."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=J2IcD9FZvZU",
+     "title": "Designing Idempotent API Endpoints for Payments at Stripe",
+     "source": "Arpit Bhayani",
+     "note": "Idempotency keys in practice."
+    },
+    {
+     "type": "diagram",
+     "url": "https://stripe.com/blog/idempotency",
+     "title": "Designing robust and predictable APIs with idempotency",
+     "source": "Stripe",
+     "note": "The source article behind the pattern."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "API",
+     "definition": "Application programming interface: the contract for how software talks to software."
+    },
+    {
+     "term": "REST",
+     "definition": "Style built on resources (URLs) and HTTP verbs."
+    },
+    {
+     "term": "HTTP verbs",
+     "definition": "GET read, POST create, PUT replace, PATCH partial update, DELETE remove."
+    },
+    {
+     "term": "GraphQL",
+     "definition": "Query language where the client requests exactly the fields it needs from one endpoint."
+    },
+    {
+     "term": "gRPC",
+     "definition": "Google-originated remote procedure call framework using protobuf over HTTP/2."
+    },
+    {
+     "term": "Protocol buffers (protobuf)",
+     "definition": "Compact binary data format with a typed schema (.proto files)."
+    },
+    {
+     "term": "HTTP/2",
+     "definition": "Newer HTTP version supporting many parallel streams over one connection."
+    },
+    {
+     "term": "Webhook",
+     "definition": "An HTTP call the provider makes to your URL when an event happens."
+    },
+    {
+     "term": "OpenAPI",
+     "definition": "Standard machine-readable description of a REST API."
+    },
+    {
+     "term": "Idempotent",
+     "definition": "Doing it twice has the same effect as doing it once."
+    },
+    {
+     "term": "Idempotency key",
+     "definition": "Client-generated unique id that lets the server recognise retries."
+    },
+    {
+     "term": "UUID (V4)",
+     "definition": "A random 128-bit identifier, practically unique."
+    },
+    {
+     "term": "Exponential backoff / jitter",
+     "definition": "Waiting longer after each failure / adding randomness to the wait."
+    },
+    {
+     "term": "Breaking change",
+     "definition": "A change that makes existing clients fail (removing or renaming fields)."
+    },
+    {
+     "term": "Deprecation",
+     "definition": "Marking something as going away, with a timeline."
+    },
+    {
+     "term": "Over / under-fetching",
+     "definition": "Getting more data than needed / needing several calls to get enough."
+    },
+    {
+     "term": "N+1 problem",
+     "definition": "One query for a list plus one extra query per item: slow at scale."
+    },
+    {
+     "term": "Cursor pagination",
+     "definition": "Paging through results with an opaque 'continue from here' token."
+    },
+    {
+     "term": "CDN",
+     "definition": "Content delivery network: caches responses close to users."
+    },
+    {
+     "term": "Interceptor / filter / middleware",
+     "definition": "Code that runs around every request (auth, logging, idempotency)."
+    }
+   ]
+  },
+  {
+   "slug": "load-balancing-hashing",
+   "title": "Load balancing and consistent hashing",
+   "short": "Load balancing and consistent hashing",
+   "track": "system-design",
+   "drop": 9,
+   "date": "17 Nov 2026",
+   "summary": "L4 vs L7, health checks, sticky sessions and hash rings.",
+   "related": [
+    "system-design-basics",
+    "kubernetes",
+    "choosing-a-database"
+   ],
+   "sources": [
+    {
+     "title": "Consistent Hashing Explained (ByteByteGo guide, short read)",
+     "site": "bytebytego.com",
+     "href": "https://bytebytego.com/guides/consistent-hashing/"
+    },
+    {
+     "title": "How Discord Scaled Elixir to 5,000,000 Concurrent Users",
+     "site": "discord.com",
+     "href": "https://discord.com/blog/how-discord-scaled-elixir-to-5-000-000-concurrent-users"
+    }
+   ],
+   "watch": [
+    {
+     "type": "interactive",
+     "url": "https://samwho.dev/load-balancing/",
+     "title": "Load Balancing",
+     "source": "Sam Rose (samwho.dev)",
+     "note": "Interactive visual essay: watch algorithms distribute requests."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=dBmxNsS3BGE",
+     "title": "Top 6 Load Balancing Algorithms",
+     "source": "ByteByteGo",
+     "note": "Animated algorithm tour."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=UF9Iqmg94tk",
+     "title": "Consistent Hashing",
+     "source": "ByteByteGo",
+     "note": "The hash ring, drawn out."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=zaRkONvyGr8",
+     "title": "What is CONSISTENT HASHING and Where is it used?",
+     "source": "Gaurav Sen",
+     "note": "Whiteboard walk-through."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Load balancer",
+     "definition": "A component that spreads requests across a pool of servers and skips unhealthy ones."
+    },
+    {
+     "term": "L4 / L7",
+     "definition": "Network layers: L4 sees only addresses and ports; L7 sees the HTTP request itself."
+    },
+    {
+     "term": "TLS termination",
+     "definition": "The balancer decrypts HTTPS so servers behind it receive plain requests."
+    },
+    {
+     "term": "WAF",
+     "definition": "Web application firewall: blocks common attacks at the L7 balancer."
+    },
+    {
+     "term": "Health check",
+     "definition": "A regular probe (such as GET /health) that decides whether a server gets traffic."
+    },
+    {
+     "term": "Connection draining",
+     "definition": "Letting in-flight requests finish before removing a server."
+    },
+    {
+     "term": "Round robin / least connections",
+     "definition": "Take turns / send to the least busy server."
+    },
+    {
+     "term": "Sticky session (affinity)",
+     "definition": "Pinning a user to one server, usually with a cookie."
+    },
+    {
+     "term": "Hash",
+     "definition": "A function that turns any input into a fixed-size number, the same input always giving the same number."
+    },
+    {
+     "term": "Hash ring",
+     "definition": "The circle of hash values on which servers and keys are placed."
+    },
+    {
+     "term": "Virtual node",
+     "definition": "One of many positions a physical server occupies on the ring."
+    },
+    {
+     "term": "Hot key",
+     "definition": "One key so popular it overloads its owning node."
+    },
+    {
+     "term": "Thundering herd / cache stampede",
+     "definition": "Many requests hitting the database at once because caches missed together."
+    },
+    {
+     "term": "Guild",
+     "definition": "Discord's internal name for a server (community)."
+    },
+    {
+     "term": "Elixir / Erlang VM",
+     "definition": "A language and runtime built for huge numbers of lightweight concurrent processes."
+    },
+    {
+     "term": "Service mesh / Envoy",
+     "definition": "A layer of proxies (sidecars, drop 4) that handles routing, retries and balancing between services."
+    }
+   ]
+  },
+  {
+   "slug": "agent-eval-observability",
+   "title": "Agent evaluation and observability",
+   "short": "Evaluating and monitoring AI agents",
+   "track": "agentic-systems",
+   "drop": 9,
+   "date": "17 Nov 2026",
+   "summary": "Trace trees, offline and online evals, deploy gates.",
+   "related": [
+    "rag-evals",
+    "logging-monitoring",
+    "agent-memory-multi-agent"
+   ],
+   "sources": [
+    {
+     "title": "Agent tracing overview (Microsoft Foundry docs)",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/foundry/observability/concepts/trace-agent-concept"
+    },
+    {
+     "title": "How Rippling built production AI in 6 months with Deep Agents and LangSmith",
+     "site": "langchain.com",
+     "href": "https://www.langchain.com/blog/how-rippling-went-ai-native-across-every-product-in-6-months-with-deep-agents-and-langsmith"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=FDVdLrloFOw",
+     "title": "Observability and Evals for AI Agents",
+     "source": "LangChain",
+     "note": "Simple breakdown of traces and evals."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=JsCCrBF7F1g",
+     "title": "LLM Observability, Evaluation, Experimentation Platform",
+     "source": "Arize (AI Engineer talk)",
+     "note": "Conference talk on tracing and evaluation."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=uA4pBu8leyU",
+     "title": "Datadog LLM Observability",
+     "source": "Datadog",
+     "note": "Tracing an LLM app in a real tool."
+    },
+    {
+     "type": "diagram",
+     "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+     "title": "Demystifying evals for AI agents",
+     "source": "Anthropic",
+     "note": "Illustrated guide to graders, transcripts and eval design."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Observability",
+     "definition": "Being able to understand what a system did from its outputs (logs, metrics, traces)."
+    },
+    {
+     "term": "Trace / span",
+     "definition": "A trace is one request's whole journey; a span is one step in it, with start, end and details."
+    },
+    {
+     "term": "OpenTelemetry (OTel)",
+     "definition": "The open standard and SDKs for emitting traces, metrics and logs to any back end."
+    },
+    {
+     "term": "GenAI semantic conventions",
+     "definition": "OTel's agreed names for AI spans and fields (model, tokens, agent, tool)."
+    },
+    {
+     "term": "OTLP",
+     "definition": "OpenTelemetry's wire protocol for sending telemetry."
+    },
+    {
+     "term": "Trajectory",
+     "definition": "The sequence of steps and tool calls an agent took."
+    },
+    {
+     "term": "Golden dataset",
+     "definition": "A curated set of inputs with expected outcomes used for testing."
+    },
+    {
+     "term": "Offline / online eval",
+     "definition": "Testing on a fixed set before release / grading live traffic after release."
+    },
+    {
+     "term": "LLM-as-judge",
+     "definition": "Using a model to score outputs; must be checked against human labels (calibrated)."
+    },
+    {
+     "term": "Regression",
+     "definition": "Something that used to work and now fails after a change."
+    },
+    {
+     "term": "LLMOps",
+     "definition": "Operating LLM apps in production: tracing, evals, deployment, monitoring, feedback."
+    },
+    {
+     "term": "Drift",
+     "definition": "Quality changing over time because inputs, data or models changed."
+    },
+    {
+     "term": "Supervisor agent / sub-agent",
+     "definition": "An orchestrating agent that delegates to specialised agents (drop 6)."
+    },
+    {
+     "term": "Sandbox",
+     "definition": "A safe copy of a system for testing with realistic data."
+    },
+    {
+     "term": "PII redaction",
+     "definition": "Removing personal data (names, emails, ids) before storing it."
+    },
+    {
+     "term": "Application Insights / CloudWatch / Cloud Trace",
+     "definition": "The Azure / AWS / GCP services that store and visualise telemetry."
+    },
+    {
+     "term": "AgentCore Observability",
+     "definition": "AWS's agent tracing and dashboards inside Amazon Bedrock AgentCore."
+    },
+    {
+     "term": "EKS",
+     "definition": "Amazon's managed Kubernetes (drop 5)."
+    }
+   ]
+  },
+  {
+   "slug": "cloud-networking",
+   "title": "Cloud networking basics: VPC / VNet, subnets, private endpoints, DNS, NAT",
+   "short": "Cloud networking basics",
+   "track": "cloud",
+   "drop": 9,
+   "date": "17 Nov 2026",
+   "summary": "VPC/VNet, subnets, NAT, private endpoints and private DNS.",
+   "related": [
+    "cloud-iam",
+    "serverless-containers",
+    "multi-tenancy"
+   ],
+   "sources": [
+    {
+     "title": "Building the Next Evolution of Cloud Networks at Slack",
+     "site": "slack.engineering",
+     "href": "https://slack.engineering/building-the-next-evolution-of-cloud-networks-at-slack/"
+    },
+    {
+     "title": "Whitecastle: a retrospective",
+     "site": "slack.engineering",
+     "href": "https://slack.engineering/building-the-next-evolution-of-cloud-networks-at-slack-a-retrospective/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "visual",
+     "url": "https://howdns.works/",
+     "title": "How DNS works (comic)",
+     "source": "howdns.works",
+     "note": "Illustrated comic of a DNS lookup."
+    },
+    {
+     "type": "interactive",
+     "url": "https://cidr.xyz/",
+     "title": "CIDR visualiser",
+     "source": "cidr.xyz",
+     "note": "Interactive: see what an address range contains."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=5NMcM4zJPM4",
+     "title": "Networking Services: Virtual Network, VPN Gateway",
+     "source": "Adam Marczak",
+     "note": "Azure networking explained."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=70VeggbI39U",
+     "title": "AWS Virtual Private Cloud (VPC) Explained",
+     "source": "5 Minutes Engineering",
+     "note": "Quick AWS VPC tour."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=vVDql7IKneg",
+     "title": "Azure Private Endpoint & Private Link in plain English",
+     "source": "cloud-monk",
+     "note": "Private endpoints with diagrams."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "VPC / VNet",
+     "definition": "Your private network inside a cloud provider (AWS and GCP / Azure names)."
+    },
+    {
+     "term": "Subnet",
+     "definition": "A smaller block of addresses inside the VPC, usually public or private."
+    },
+    {
+     "term": "CIDR (/16, /24)",
+     "definition": "Notation for an address range; smaller suffix = bigger range (/16 is about 65,000 addresses, /24 is 256)."
+    },
+    {
+     "term": "Private IP",
+     "definition": "An address only reachable inside the network (10.x, 172.16-31.x, 192.168.x)."
+    },
+    {
+     "term": "Route table",
+     "definition": "Rules telling traffic where to go next for each destination."
+    },
+    {
+     "term": "Security group / NSG",
+     "definition": "Firewall rules attached to resources or subnets."
+    },
+    {
+     "term": "NAT gateway",
+     "definition": "Lets private servers make outbound internet calls without being reachable from outside."
+    },
+    {
+     "term": "Private endpoint / PrivateLink / Private Service Connect",
+     "definition": "A private IP inside your network for a managed service."
+    },
+    {
+     "term": "DNS / private DNS zone",
+     "definition": "The internet's phone book / a private version that maps names to private IPs."
+    },
+    {
+     "term": "Peering",
+     "definition": "A direct private link between two networks; not transitive."
+    },
+    {
+     "term": "Transit Gateway / Virtual WAN / Network Connectivity Center",
+     "definition": "Central hubs that connect many networks."
+    },
+    {
+     "term": "Hub and spoke",
+     "definition": "Topology with shared services in a hub and each app in its own spoke."
+    },
+    {
+     "term": "Landing zone",
+     "definition": "A pre-built, governed cloud setup (accounts, networks, policies) teams deploy into."
+    },
+    {
+     "term": "VPN / ExpressRoute / Direct Connect / Interconnect",
+     "definition": "Encrypted tunnel / dedicated private lines from an office or data centre to the cloud."
+    },
+    {
+     "term": "Availability zone",
+     "definition": "A separate data centre within a region."
+    },
+    {
+     "term": "Managed identity",
+     "definition": "An Azure identity for an app, so no passwords in code (drop 1, drop 7)."
+    }
+   ]
+  },
+  {
+   "slug": "demos-design-docs",
+   "title": "FDE craft: technical demos and one-page design docs",
+   "short": "Technical demos and one-page design docs",
+   "track": "fde-craft",
+   "drop": 9,
+   "date": "17 Nov 2026",
+   "summary": "How to run a demo that lands and write the one-page doc that follows.",
+   "related": [
+    "customer-discovery-pilot",
+    "slos-incidents",
+    "hexagonal-solid"
+   ],
+   "sources": [
+    {
+     "title": "Design Docs at Google (Malte Ubl, short article)",
+     "site": "industrialempathy.com",
+     "href": "https://www.industrialempathy.com/posts/design-docs-at-google"
+    },
+    {
+     "title": "Deploying full-spectrum AI in days: how AIP Bootcamps work",
+     "site": "blog.palantir.com",
+     "href": "https://blog.palantir.com/deploying-full-spectrum-ai-in-days-how-aip-bootcamps-work-21829ec8d560"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=Cxl_3ANnE0A",
+     "title": "How to give a kick-ass demo",
+     "source": "Ignite Sydney",
+     "note": "Short talk on demo craft."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=bgHL41e7vgI",
+     "title": "What Is A Design Doc In Software Engineering? (full example)",
+     "source": "Clément Mihailescu",
+     "note": "A worked example."
+    },
+    {
+     "type": "diagram",
+     "url": "https://www.industrialempathy.com/posts/design-docs-at-google/",
+     "title": "Design Docs at Google",
+     "source": "Malte Ubl",
+     "note": "The source essay."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "FDE",
+     "definition": "Forward-deployed engineer: an engineer embedded with customers to build and deploy solutions on their problems."
+    },
+    {
+     "term": "Pilot / proof of value",
+     "definition": "A limited real deployment to prove the solution works and is worth paying for."
+    },
+    {
+     "term": "Stakeholder",
+     "definition": "Anyone affected by or able to block the project (sponsor, users, IT, security, legal)."
+    },
+    {
+     "term": "Design doc",
+     "definition": "A short document describing a proposed design and its trade-offs before building."
+    },
+    {
+     "term": "Goals / non-goals",
+     "definition": "What the project will achieve / what it explicitly will not do."
+    },
+    {
+     "term": "Cross-cutting concerns",
+     "definition": "Things that affect the whole system: security, privacy, cost, reliability."
+    },
+    {
+     "term": "ADR",
+     "definition": "Architecture Decision Record: a short note recording one decision and why."
+    },
+    {
+     "term": "Success metric",
+     "definition": "The measurable result that decides if the pilot worked."
+    },
+    {
+     "term": "Happy path",
+     "definition": "The scenario where everything goes right."
+    },
+    {
+     "term": "Feature flag",
+     "definition": "A switch that turns behaviour on or off without redeploying."
+    },
+    {
+     "term": "Preview deployment",
+     "definition": "An automatic temporary copy of the app for one branch or change."
+    },
+    {
+     "term": "Seed data / masked data",
+     "definition": "Sample data loaded for testing / real data with sensitive fields hidden."
+    },
+    {
+     "term": "AIP",
+     "definition": "Palantir's Artificial Intelligence Platform."
+    },
+    {
+     "term": "Go-to-market",
+     "definition": "How a company sells and delivers its product to customers."
+    }
+   ]
+  },
+  {
+   "slug": "finetune-vs-prompt-vs-rag",
+   "title": "Fine-tuning vs prompting vs RAG: when each one is the right tool",
+   "short": "Fine-tuning vs prompting vs RAG",
+   "track": "ai-llm-systems",
+   "drop": 10,
+   "date": "18 Nov 2026",
+   "summary": "Choose the lightest lever that works.",
+   "related": [
+    "rag-evals",
+    "improving-rag",
+    "beyond-rag"
+   ],
+   "sources": [
+    {
+     "title": "Customizing models for legal professionals (Harvey, OpenAI customer story)",
+     "site": "openai.com",
+     "href": "https://openai.com/index/harvey/"
+    },
+    {
+     "title": "Morgan Stanley uses AI evals to shape the future of financial services",
+     "site": "openai.com",
+     "href": "https://openai.com/index/morgan-stanley/"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=zYGDpG-pTho",
+     "title": "RAG vs Fine-Tuning vs Prompt Engineering",
+     "source": "IBM Technology",
+     "note": "Three levers compared."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=00Q0G84kq3M",
+     "title": "RAG vs. Fine Tuning",
+     "source": "IBM Technology",
+     "note": "When each makes sense."
+    },
+    {
+     "type": "diagram",
+     "url": "https://platform.openai.com/docs/guides/optimizing-llm-accuracy",
+     "title": "Optimizing LLM accuracy (docs)",
+     "source": "OpenAI",
+     "note": "The prompting / RAG / fine-tuning decision diagram."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Prompt / system prompt",
+     "definition": "The text instructions sent to the model; the system prompt is the fixed part that sets rules."
+    },
+    {
+     "term": "Few-shot examples",
+     "definition": "A handful of worked input/output examples placed in the prompt."
+    },
+    {
+     "term": "RAG",
+     "definition": "Retrieval-augmented generation: search your documents, add the hits to the prompt, then generate."
+    },
+    {
+     "term": "Chunk / top-k",
+     "definition": "A small piece of a document / the k most relevant pieces returned by search."
+    },
+    {
+     "term": "Fine-tuning",
+     "definition": "Further training a model on your own examples so its weights change."
+    },
+    {
+     "term": "Weights",
+     "definition": "The billions of numbers inside a model that encode what it has learned."
+    },
+    {
+     "term": "SFT",
+     "definition": "Supervised fine-tuning: training on example prompts with ideal answers."
+    },
+    {
+     "term": "Preference tuning (DPO / RLHF)",
+     "definition": "Training on pairs of better/worse answers so the model prefers the better style."
+    },
+    {
+     "term": "Catastrophic forgetting",
+     "definition": "A tuned model getting worse at general things it used to do well."
+    },
+    {
+     "term": "Eval set (golden set)",
+     "definition": "A fixed list of test questions with expected answers used to measure quality."
+    },
+    {
+     "term": "JSONL",
+     "definition": "A file with one JSON record per line; the usual format for training examples."
+    },
+    {
+     "term": "Deployment name",
+     "definition": "The name under which a specific model version is hosted and called on Azure and other clouds."
+    },
+    {
+     "term": "Base model",
+     "definition": "The general model before your customisation."
+    }
+   ]
+  },
+  {
+   "slug": "hexagonal-solid",
+   "title": "Clean / hexagonal architecture and SOLID as pattern cards",
+   "short": "Hexagonal architecture and SOLID",
+   "track": "architecture-patterns",
+   "drop": 10,
+   "date": "18 Nov 2026",
+   "summary": "Ports and adapters plus SOLID as a review checklist.",
+   "related": [
+    "code-design-patterns",
+    "api-design",
+    "bulkhead-sidecar-strangler-saga"
+   ],
+   "sources": [
+    {
+     "title": "Ready for changes with Hexagonal Architecture (Netflix Tech Blog)",
+     "site": "netflixtechblog.com",
+     "href": "https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=bDWApqAUjEI",
+     "title": "Hexagonal Architecture: What You Need To Know",
+     "source": "Alex Hyett",
+     "note": "Simple explanation with diagrams."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=pTB30aXS77U",
+     "title": "Uncle Bob's SOLID Principles Made Easy",
+     "source": "ArjanCodes",
+     "note": "SOLID walked through in Python, so it maps to familiar code."
+    },
+    {
+     "type": "diagram",
+     "url": "https://alistair.cockburn.us/hexagonal-architecture/",
+     "title": "Hexagonal architecture",
+     "source": "Alistair Cockburn",
+     "note": "The original description."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Hexagonal architecture / ports and adapters",
+     "definition": "Business core surrounded by interfaces (ports) that interchangeable adapters implement."
+    },
+    {
+     "term": "Clean / onion architecture",
+     "definition": "Close relatives: concentric layers where dependencies only point inward to the domain."
+    },
+    {
+     "term": "Port",
+     "definition": "An interface the core defines: either an entry (use case) or a need (repository, LLM client)."
+    },
+    {
+     "term": "Adapter",
+     "definition": "Code that connects a port to a real technology (Postgres, Azure OpenAI, HTTP)."
+    },
+    {
+     "term": "Driving vs driven adapter",
+     "definition": "Driving adapters call into the core (controllers); driven adapters are called by the core (databases, APIs)."
+    },
+    {
+     "term": "Domain / entity",
+     "definition": "The business concepts and their rules (Claim, Policy)."
+    },
+    {
+     "term": "Use case / interactor",
+     "definition": "One business action, such as SubmitClaim."
+    },
+    {
+     "term": "Repository",
+     "definition": "An interface for saving and loading domain objects, hiding the database."
+    },
+    {
+     "term": "Dependency injection",
+     "definition": "Passing a class the objects it needs instead of letting it create them."
+    },
+    {
+     "term": "Composition root",
+     "definition": "The one place at startup where concrete adapters are wired to ports."
+    },
+    {
+     "term": "Monolith / microservice",
+     "definition": "One big deployable app / small independently deployed services."
+    },
+    {
+     "term": "God class",
+     "definition": "A class that does far too much; the opposite of single responsibility."
+    },
+    {
+     "term": "Big ball of mud",
+     "definition": "Code with no clear structure where everything depends on everything."
+    }
+   ]
+  },
+  {
+   "slug": "llm-serving-cost",
+   "title": "LLM serving cost and latency: tokens, streaming, batching, model routing, provisioned throughput",
+   "short": "LLM serving cost and latency",
+   "track": "ai-llm-systems",
+   "drop": 10,
+   "date": "18 Nov 2026",
+   "summary": "Tokens, TTFT, streaming, batching, model routing and provisioned throughput.",
+   "related": [
+    "llm-caching",
+    "cloud-cost-control",
+    "rate-limiting-jobs"
+   ],
+   "sources": [
+    {
+     "title": "vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention",
+     "site": "vllm.ai",
+     "href": "https://vllm.ai/blog/2023-06-20-vllm"
+    },
+    {
+     "title": "RouteLLM: open-source framework for cost-effective LLM routing (LMSYS)",
+     "site": "lmsys.org",
+     "href": "https://www.lmsys.org/blog/2024-07-01-routellm/"
+    },
+    {
+     "title": "Provisioned throughput for Foundry Models (Microsoft Learn)",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/provisioned-throughput"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=McLdlg5Gc9s",
+     "title": "What is vLLM? Efficient AI Inference",
+     "source": "IBM Technology",
+     "note": "PagedAttention and continuous batching."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=9tvJ_GYJA-o",
+     "title": "Mastering LLM Inference Optimization",
+     "source": "AI Engineer",
+     "note": "Conference talk on cost-effective deployment."
+    },
+    {
+     "type": "interactive",
+     "url": "https://tiktokenizer.vercel.app/",
+     "title": "Tiktokenizer",
+     "source": "tiktokenizer",
+     "note": "Interactive: see how text becomes tokens."
+    },
+    {
+     "type": "diagram",
+     "url": "https://blog.vllm.ai/2023/06/20/vllm.html",
+     "title": "vLLM: Easy, fast and cheap LLM serving with PagedAttention",
+     "source": "vLLM blog",
+     "note": "Animated diagrams of PagedAttention."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Token",
+     "definition": "A chunk of text (roughly 3/4 of an English word) that models read, write and bill by."
+    },
+    {
+     "term": "Input / output tokens",
+     "definition": "Tokens you send (prompt + context) / tokens the model generates."
+    },
+    {
+     "term": "Time to first token (TTFT)",
+     "definition": "Delay before the first word of the answer appears."
+    },
+    {
+     "term": "Prefill / decode",
+     "definition": "The model's two phases: reading the whole prompt / generating one token at a time."
+    },
+    {
+     "term": "KV cache",
+     "definition": "The model's working memory of earlier tokens, stored on the GPU during generation."
+    },
+    {
+     "term": "Streaming / SSE",
+     "definition": "Sending the answer piece by piece as it is generated; server-sent events is the usual web mechanism."
+    },
+    {
+     "term": "Continuous batching",
+     "definition": "Letting many requests share each GPU step, adding new ones as others finish."
+    },
+    {
+     "term": "PagedAttention",
+     "definition": "vLLM's technique of storing the KV cache in small blocks, like memory pages, to fit more requests."
+    },
+    {
+     "term": "vLLM",
+     "definition": "A popular open-source engine for serving LLMs on your own GPUs."
+    },
+    {
+     "term": "Batch API",
+     "definition": "A provider endpoint that runs many requests offline at a discount with slower turnaround."
+    },
+    {
+     "term": "Model routing / AI gateway",
+     "definition": "Choosing a model per request / the proxy layer that does routing, quotas and logging."
+    },
+    {
+     "term": "PAYG",
+     "definition": "Pay-as-you-go: pay per token on shared capacity."
+    },
+    {
+     "term": "Provisioned throughput / PTU",
+     "definition": "Reserved model capacity billed per hour; PTU is Azure's unit for it."
+    },
+    {
+     "term": "TPM",
+     "definition": "Tokens per minute, the usual way to size capacity and quotas."
+    },
+    {
+     "term": "429",
+     "definition": "The HTTP 'too many requests' error you get when throttled."
+    },
+    {
+     "term": "MT Bench",
+     "definition": "A public benchmark of multi-turn chat questions used to compare models."
+    }
+   ]
+  },
+  {
+   "slug": "multi-tenancy",
+   "title": "Multi-tenancy for SaaS and AI apps: silo vs pool vs bridge on Azure and AWS",
+   "short": "Multi-tenancy for SaaS and AI apps",
+   "track": "system-design",
+   "drop": 10,
+   "date": "18 Nov 2026",
+   "summary": "Silo vs pool vs bridge on Azure and AWS.",
+   "related": [
+    "cloud-iam",
+    "choosing-a-database",
+    "cloud-networking"
+   ],
+   "sources": [
+    {
+     "title": "SaaS Tenant Isolation Strategies: the bridge model (AWS whitepaper)",
+     "site": "docs.aws.amazon.com",
+     "href": "https://docs.aws.amazon.com/whitepapers/latest/saas-tenant-isolation-strategies/the-bridge-model.html"
+    },
+    {
+     "title": "Tenancy models for a multitenant solution (Azure Architecture Center)",
+     "site": "learn.microsoft.com",
+     "href": "https://learn.microsoft.com/en-us/azure/architecture/guide/multitenant/considerations/tenancy-models"
+    },
+    {
+     "title": "Platform Multitenant Architecture (Salesforce Architects)",
+     "site": "architect.salesforce.com",
+     "href": "https://architect.salesforce.com/docs/architect/fundamentals/guide/platform-multitenant-architecture.html"
+    }
+   ],
+   "watch": [
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=e8k6TynqGFs",
+     "title": "Multi-tenant Architecture for SaaS",
+     "source": "CodeOpinion",
+     "note": "Overview of tenancy models."
+    },
+    {
+     "type": "video",
+     "url": "https://www.youtube.com/watch?v=IhrBgoVIoT4",
+     "title": "Multi-tenancy architecture",
+     "source": "Hussein Nasser",
+     "note": "Backend Engineering Show episode."
+    },
+    {
+     "type": "diagram",
+     "url": "https://learn.microsoft.com/en-us/azure/architecture/guide/multitenant/overview",
+     "title": "Architect multitenant solutions on Azure",
+     "source": "Azure Architecture Center",
+     "note": "Official guide with diagrams."
+    }
+   ],
+   "glossary": [
+    {
+     "term": "Tenant",
+     "definition": "One customer organisation using a shared product."
+    },
+    {
+     "term": "Multi-tenancy",
+     "definition": "One deployment of software serving many tenants."
+    },
+    {
+     "term": "Tenant isolation",
+     "definition": "Controls that keep tenants' data and performance separate."
+    },
+    {
+     "term": "Silo / pool / bridge",
+     "definition": "Dedicated per tenant / fully shared / a mix of both (AWS terms)."
+    },
+    {
+     "term": "Noisy neighbour",
+     "definition": "A tenant whose heavy use slows down others on shared resources."
+    },
+    {
+     "term": "Row-level security (RLS)",
+     "definition": "A database feature that automatically filters rows to the current tenant."
+    },
+    {
+     "term": "Partition key",
+     "definition": "The field (often tenant_id) a database uses to spread and group data."
+    },
+    {
+     "term": "Deployment Stamps",
+     "definition": "An Azure pattern of repeating identical copies of the full stack, each serving a group of tenants."
+    },
+    {
+     "term": "Subscription / account",
+     "definition": "Azure's and AWS's billing and isolation boundaries for resources."
+    },
+    {
+     "term": "Data residency",
+     "definition": "A requirement that data stays in a specific country or region."
+    },
+    {
+     "term": "Metering",
+     "definition": "Recording each tenant's usage so you can bill and track cost."
+    },
+    {
+     "term": "Token quota / rate limit",
+     "definition": "A cap on how many LLM tokens or requests a tenant can use per period."
+    },
+    {
+     "term": "OrgID",
+     "definition": "Salesforce's identifier for a customer org, used to tag and partition all its data."
+    },
+    {
+     "term": "Metadata-driven",
+     "definition": "Customer customisations stored as configuration data rather than separate code or schemas."
+    }
+   ]
+  }
+ ]
+}

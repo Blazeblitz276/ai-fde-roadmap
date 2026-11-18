@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FDE craft &amp; interviews · AI FDE Roadmap</title>
+<meta name="description" content="Discovery, scoping pilots, demos and design docs: the non-code half of the job."><meta property="og:title" content="FDE craft &amp; interviews"><meta property="og:description" content="Discovery, scoping pilots, demos and design docs: the non-code half of the job."><meta property="og:type" content="article">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><a class="brand" href="../index.html"><span class="logo">◈</span> AI FDE Roadmap</a><nav><a href="../index.html">Hub</a><a href="../path.html">Start here</a><a href="../tracks/index.html" aria-current=page>Tracks</a><a href="../drops/index.html">Drops</a><a href="../watch.html">Watch</a><a href="../glossary/index.html">Glossary</a></nav><button id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button></header>
+<main id="main"><nav class="crumbs"><a href="../index.html">Hub</a> › <a href="index.html">Tracks</a> › <span>FDE craft &amp; interviews</span></nav>
+<div style="--h:45"><p class="eyebrow">Track 7 of 9</p><h1>FDE craft &amp; interviews</h1><p class="lede">Discovery, scoping pilots, demos and design docs: the non-code half of the job.</p>
+<h2>Branch map</h2><p class="muted">Click a node to open the topic. Topics are in the order to read them.</p><div class="mapwrap"><pre class="mermaid" data-keep="1">flowchart LR
+  root([&quot;FDE craft &amp;amp; interviews&quot;])
+  n0[&quot;1. FDE craft: customer discovery and scoping a p…&quot;]
+  n1[&quot;2. Technical demos and one-page design docs&quot;]
+  root --&gt; n0
+  n0 --&gt; n1
+  click n0 &quot;../topics/customer-discovery-pilot.html&quot; _self
+  click n1 &quot;../topics/demos-design-docs.html&quot; _self
+  classDef t fill:#f5ebca,stroke:#997f32,color:#111
+  class n0,n1 t
+</pre></div>
+<h2>Topics in order</h2><ol class="steps2"><li><a class="step" href="../topics/customer-discovery-pilot.html"><span class="num">1</span><span><strong>FDE craft: customer discovery and scoping a pilot</strong><br><span class="muted">Turning a vague ask into a scoped pilot, then taking it to production.</span><br><small>Drop 6 · 3 things to watch/play with · 15 glossary terms</small></span></a></li><li><a class="step" href="../topics/demos-design-docs.html"><span class="num">2</span><span><strong>Technical demos and one-page design docs</strong><br><span class="muted">How to run a demo that lands and write the one-page doc that follows.</span><br><small>Drop 9 · 3 things to watch/play with · 14 glossary terms</small></span></a></li></ol></div><nav class="pn"><a class="prev" href="production-ops.html"><small>← Previous track</small>Production &amp; ops</a><a class="next" href="reading-code.html"><small>Next track →</small>Reading Java / TS code</a></nav></main>
+<footer><p>AI FDE / Architect roadmap · 40 topics from 10 concept drops (15–18 Nov 2026) · concepts, not syntax · <a href="../path.html">Suggested order</a> · <a href="../glossary/index.html">Glossary</a> · <a href="../data/roadmap.json">Roadmap data (JSON)</a></p></footer>
+<script src="../assets/site.js"></script><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = document.documentElement.dataset.theme==='dark' || (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+const narrow = matchMedia('(max-width: 720px)').matches;
+document.querySelectorAll('pre.mermaid').forEach(p=>{ if(narrow && !p.dataset.keep) p.textContent = p.textContent.replace(/^flowchart LR/,'flowchart TD'); });
+const cfg = (u)=>({startOnLoad:false, securityLevel:'loose', theme: dark?'dark':'default', flowchart:{useMaxWidth:u, htmlLabels:true, wrappingWidth:190, curve:'basis'}, themeVariables:{fontSize:'14px'}});
+mermaid.initialize(cfg(true));
+await mermaid.run({querySelector:'pre.mermaid:not([data-keep])'});
+mermaid.initialize(cfg(false));
+await mermaid.run({querySelector:'pre.mermaid[data-keep]'});
+</script>
+</body></html>

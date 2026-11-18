@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Production &amp; ops · AI FDE Roadmap</title>
+<meta name="description" content="Observability, SLOs, incidents, CI/CD, infrastructure as code and auth."><meta property="og:title" content="Production &amp; ops"><meta property="og:description" content="Observability, SLOs, incidents, CI/CD, infrastructure as code and auth."><meta property="og:type" content="article">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><a class="brand" href="../index.html"><span class="logo">◈</span> AI FDE Roadmap</a><nav><a href="../index.html">Hub</a><a href="../path.html">Start here</a><a href="../tracks/index.html" aria-current=page>Tracks</a><a href="../drops/index.html">Drops</a><a href="../watch.html">Watch</a><a href="../glossary/index.html">Glossary</a></nav><button id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button></header>
+<main id="main"><nav class="crumbs"><a href="../index.html">Hub</a> › <a href="index.html">Tracks</a> › <span>Production &amp; ops</span></nav>
+<div style="--h:340"><p class="eyebrow">Track 6 of 9</p><h1>Production &amp; ops</h1><p class="lede">Observability, SLOs, incidents, CI/CD, infrastructure as code and auth.</p>
+<h2>Branch map</h2><p class="muted">Click a node to open the topic. Topics are in the order to read them.</p><div class="mapwrap"><pre class="mermaid" data-keep="1">flowchart LR
+  root([&quot;Production &amp;amp; ops&quot;])
+  n0[&quot;1. Logging and monitoring&quot;]
+  n1[&quot;2. SLOs, error budgets and incidents&quot;]
+  n2[&quot;3. OAuth 2.0 and OpenID Connect&quot;]
+  n3[&quot;4. CI/CD and infrastructure as code&quot;]
+  root --&gt; n0
+  n0 --&gt; n1
+  n1 --&gt; n2
+  n2 --&gt; n3
+  click n0 &quot;../topics/logging-monitoring.html&quot; _self
+  click n1 &quot;../topics/slos-incidents.html&quot; _self
+  click n2 &quot;../topics/oauth-oidc.html&quot; _self
+  click n3 &quot;../topics/cicd-iac.html&quot; _self
+  classDef t fill:#f5cad9,stroke:#993254,color:#111
+  class n0,n1,n2,n3 t
+</pre></div>
+<h2>Topics in order</h2><ol class="steps2"><li><a class="step" href="../topics/logging-monitoring.html"><span class="num">1</span><span><strong>Logging and monitoring</strong><br><span class="muted">Logs, metrics and traces; golden signals; CloudWatch vs Azure Monitor vs GCP Cloud Logging.</span><br><small>Drop 4 · 5 things to watch/play with · 20 glossary terms</small></span></a></li><li><a class="step" href="../topics/slos-incidents.html"><span class="num">2</span><span><strong>SLOs, error budgets and incidents</strong><br><span class="muted">Reliability targets, burn-rate alerts, incident roles and blameless postmortems.</span><br><small>Drop 7 · 4 things to watch/play with · 19 glossary terms</small></span></a></li><li><a class="step" href="../topics/oauth-oidc.html"><span class="num">3</span><span><strong>OAuth 2.0 and OpenID Connect</strong><br><span class="muted">Delegated access vs sign-in, and how apps and agents authenticate.</span><br><small>Drop 7 · 4 things to watch/play with · 22 glossary terms</small></span></a></li><li><a class="step" href="../topics/cicd-iac.html"><span class="num">4</span><span><strong>CI/CD and infrastructure as code</strong><br><span class="muted">Pipelines, plan-on-PR, canary releases, Terraform vs Bicep vs CDK.</span><br><small>Drop 6 · 4 things to watch/play with · 20 glossary terms</small></span></a></li></ol></div><nav class="pn"><a class="prev" href="cloud.html"><small>← Previous track</small>Cloud: Azure, AWS, GCP</a><a class="next" href="fde-craft.html"><small>Next track →</small>FDE craft &amp; interviews</a></nav></main>
+<footer><p>AI FDE / Architect roadmap · 40 topics from 10 concept drops (15–18 Nov 2026) · concepts, not syntax · <a href="../path.html">Suggested order</a> · <a href="../glossary/index.html">Glossary</a> · <a href="../data/roadmap.json">Roadmap data (JSON)</a></p></footer>
+<script src="../assets/site.js"></script><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = document.documentElement.dataset.theme==='dark' || (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+const narrow = matchMedia('(max-width: 720px)').matches;
+document.querySelectorAll('pre.mermaid').forEach(p=>{ if(narrow && !p.dataset.keep) p.textContent = p.textContent.replace(/^flowchart LR/,'flowchart TD'); });
+const cfg = (u)=>({startOnLoad:false, securityLevel:'loose', theme: dark?'dark':'default', flowchart:{useMaxWidth:u, htmlLabels:true, wrappingWidth:190, curve:'basis'}, themeVariables:{fontSize:'14px'}});
+mermaid.initialize(cfg(true));
+await mermaid.run({querySelector:'pre.mermaid:not([data-keep])'});
+mermaid.initialize(cfg(false));
+await mermaid.run({querySelector:'pre.mermaid[data-keep]'});
+</script>
+</body></html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI / LLM systems &amp; RAG · AI FDE Roadmap</title>
+<meta name="description" content="Retrieval, embeddings, evals, serving cost, fine-tuning vs prompting and guardrails for LLM products."><meta property="og:title" content="AI / LLM systems &amp; RAG"><meta property="og:description" content="Retrieval, embeddings, evals, serving cost, fine-tuning vs prompting and guardrails for LLM products."><meta property="og:type" content="article">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><a class="brand" href="../index.html"><span class="logo">◈</span> AI FDE Roadmap</a><nav><a href="../index.html">Hub</a><a href="../path.html">Start here</a><a href="../tracks/index.html" aria-current=page>Tracks</a><a href="../drops/index.html">Drops</a><a href="../watch.html">Watch</a><a href="../glossary/index.html">Glossary</a></nav><button id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button></header>
+<main id="main"><nav class="crumbs"><a href="../index.html">Hub</a> › <a href="index.html">Tracks</a> › <span>AI / LLM systems &amp; RAG</span></nav>
+<div style="--h:150"><p class="eyebrow">Track 3 of 9</p><h1>AI / LLM systems &amp; RAG</h1><p class="lede">Retrieval, embeddings, evals, serving cost, fine-tuning vs prompting and guardrails for LLM products.</p>
+<h2>Branch map</h2><p class="muted">Click a node to open the topic. Topics are in the order to read them.</p><div class="mapwrap"><pre class="mermaid" data-keep="1">flowchart LR
+  root([&quot;AI / LLM systems &amp;amp; RAG&quot;])
+  n0[&quot;1. Fine-tuning vs prompting vs RAG&quot;]
+  n1[&quot;2. Embeddings and vector databases&quot;]
+  n2[&quot;3. Improving RAG&quot;]
+  n3[&quot;4. RAG evals&quot;]
+  n4[&quot;5. Beyond classic RAG&quot;]
+  n5[&quot;6. Caching in LLM and RAG apps&quot;]
+  n6[&quot;7. LLM serving cost and latency&quot;]
+  n7[&quot;8. LLM guardrails and prompt injection&quot;]
+  root --&gt; n0
+  n0 --&gt; n1
+  n1 --&gt; n2
+  n2 --&gt; n3
+  n3 --&gt; n4
+  n4 --&gt; n5
+  n5 --&gt; n6
+  n6 --&gt; n7
+  click n0 &quot;../topics/finetune-vs-prompt-vs-rag.html&quot; _self
+  click n1 &quot;../topics/embeddings-vector-db.html&quot; _self
+  click n2 &quot;../topics/improving-rag.html&quot; _self
+  click n3 &quot;../topics/rag-evals.html&quot; _self
+  click n4 &quot;../topics/beyond-rag.html&quot; _self
+  click n5 &quot;../topics/llm-caching.html&quot; _self
+  click n6 &quot;../topics/llm-serving-cost.html&quot; _self
+  click n7 &quot;../topics/guardrails-prompt-injection.html&quot; _self
+  classDef t fill:#caf5e0,stroke:#329966,color:#111
+  class n0,n1,n2,n3,n4,n5,n6,n7 t
+</pre></div>
+<h2>Topics in order</h2><ol class="steps2"><li><a class="step" href="../topics/finetune-vs-prompt-vs-rag.html"><span class="num">1</span><span><strong>Fine-tuning vs prompting vs RAG</strong><br><span class="muted">Choose the lightest lever that works.</span><br><small>Drop 10 · 3 things to watch/play with · 13 glossary terms</small></span></a></li><li><a class="step" href="../topics/embeddings-vector-db.html"><span class="num">2</span><span><strong>Embeddings and vector databases</strong><br><span class="muted">Vectors for meaning, ANN indexes, and choosing a store.</span><br><small>Drop 8 · 4 things to watch/play with · 20 glossary terms</small></span></a></li><li><a class="step" href="../topics/improving-rag.html"><span class="num">3</span><span><strong>Improving RAG</strong><br><span class="muted">Chunking, contextual retrieval, hybrid search, reranking, query rewriting and GraphRAG.</span><br><small>Drop 4 · 4 things to watch/play with · 16 glossary terms</small></span></a></li><li><a class="step" href="../topics/rag-evals.html"><span class="num">4</span><span><strong>RAG evals</strong><br><span class="muted">Retrieval metrics, faithfulness, golden sets and calibrated LLM-as-judge.</span><br><small>Drop 3 · 3 things to watch/play with · 17 glossary terms</small></span></a></li><li><a class="step" href="../topics/beyond-rag.html"><span class="num">5</span><span><strong>Beyond classic RAG</strong><br><span class="muted">Long context, cache-augmented generation, agentic RAG and Open Knowledge Format.</span><br><small>Drop 5 · 4 things to watch/play with · 15 glossary terms</small></span></a></li><li><a class="step" href="../topics/llm-caching.html"><span class="num">6</span><span><strong>Caching in LLM and RAG apps</strong><br><span class="muted">Prompt caching, semantic caching and embedding caches.</span><br><small>Drop 2 · 3 things to watch/play with · 13 glossary terms</small></span></a></li><li><a class="step" href="../topics/llm-serving-cost.html"><span class="num">7</span><span><strong>LLM serving cost and latency</strong><br><span class="muted">Tokens, TTFT, streaming, batching, model routing and provisioned throughput.</span><br><small>Drop 10 · 4 things to watch/play with · 16 glossary terms</small></span></a></li><li><a class="step" href="../topics/guardrails-prompt-injection.html"><span class="num">8</span><span><strong>LLM guardrails and prompt injection</strong><br><span class="muted">Defence in depth against prompt injection and unsafe output.</span><br><small>Drop 6 · 4 things to watch/play with · 16 glossary terms</small></span></a></li></ol></div><nav class="pn"><a class="prev" href="architecture-patterns.html"><small>← Previous track</small>Engineering &amp; architecture patterns</a><a class="next" href="agentic-systems.html"><small>Next track →</small>Agentic systems &amp; MCP</a></nav></main>
+<footer><p>AI FDE / Architect roadmap · 40 topics from 10 concept drops (15–18 Nov 2026) · concepts, not syntax · <a href="../path.html">Suggested order</a> · <a href="../glossary/index.html">Glossary</a> · <a href="../data/roadmap.json">Roadmap data (JSON)</a></p></footer>
+<script src="../assets/site.js"></script><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = document.documentElement.dataset.theme==='dark' || (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+const narrow = matchMedia('(max-width: 720px)').matches;
+document.querySelectorAll('pre.mermaid').forEach(p=>{ if(narrow && !p.dataset.keep) p.textContent = p.textContent.replace(/^flowchart LR/,'flowchart TD'); });
+const cfg = (u)=>({startOnLoad:false, securityLevel:'loose', theme: dark?'dark':'default', flowchart:{useMaxWidth:u, htmlLabels:true, wrappingWidth:190, curve:'basis'}, themeVariables:{fontSize:'14px'}});
+mermaid.initialize(cfg(true));
+await mermaid.run({querySelector:'pre.mermaid:not([data-keep])'});
+mermaid.initialize(cfg(false));
+await mermaid.run({querySelector:'pre.mermaid[data-keep]'});
+</script>
+</body></html>

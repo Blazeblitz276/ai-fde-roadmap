@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Engineering &amp; architecture patterns · AI FDE Roadmap</title>
+<meta name="description" content="Resilience, messaging and API patterns, each as a pattern card: what, why, when, when not, trade-offs."><meta property="og:title" content="Engineering &amp; architecture patterns"><meta property="og:description" content="Resilience, messaging and API patterns, each as a pattern card: what, why, when, when not, trade-offs."><meta property="og:type" content="article">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><a class="brand" href="../index.html"><span class="logo">◈</span> AI FDE Roadmap</a><nav><a href="../index.html">Hub</a><a href="../path.html">Start here</a><a href="../tracks/index.html" aria-current=page>Tracks</a><a href="../drops/index.html">Drops</a><a href="../watch.html">Watch</a><a href="../glossary/index.html">Glossary</a></nav><button id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button></header>
+<main id="main"><nav class="crumbs"><a href="../index.html">Hub</a> › <a href="index.html">Tracks</a> › <span>Engineering &amp; architecture patterns</span></nav>
+<div style="--h:265"><p class="eyebrow">Track 2 of 9</p><h1>Engineering &amp; architecture patterns</h1><p class="lede">Resilience, messaging and API patterns, each as a pattern card: what, why, when, when not, trade-offs.</p>
+<h2>Branch map</h2><p class="muted">Click a node to open the topic. Topics are in the order to read them.</p><div class="mapwrap"><pre class="mermaid" data-keep="1">flowchart LR
+  root([&quot;Engineering &amp;amp; architecture patterns&quot;])
+  n0[&quot;1. API gateway, circuit breaker, retry with back…&quot;]
+  n1[&quot;2. Bulkhead, sidecar, strangler fig and saga&quot;]
+  n2[&quot;3. Pub/sub, event-driven architecture and CQRS&quot;]
+  n3[&quot;4. API design: REST, GraphQL, gRPC&quot;]
+  n4[&quot;5. Hexagonal architecture and SOLID&quot;]
+  root --&gt; n0
+  n0 --&gt; n1
+  n1 --&gt; n2
+  n2 --&gt; n3
+  n3 --&gt; n4
+  click n0 &quot;../topics/gateway-breaker-retry.html&quot; _self
+  click n1 &quot;../topics/bulkhead-sidecar-strangler-saga.html&quot; _self
+  click n2 &quot;../topics/pubsub-eda-cqrs.html&quot; _self
+  click n3 &quot;../topics/api-design.html&quot; _self
+  click n4 &quot;../topics/hexagonal-solid.html&quot; _self
+  classDef t fill:#dccaf5,stroke:#5d3299,color:#111
+  class n0,n1,n2,n3,n4 t
+</pre></div>
+<h2>Topics in order</h2><ol class="steps2"><li><a class="step" href="../topics/gateway-breaker-retry.html"><span class="num">1</span><span><strong>API gateway, circuit breaker, retry with backoff</strong><br><span class="muted">The front door and the seat belts of any service that calls other services.</span><br><small>Drop 3 · 4 things to watch/play with · 18 glossary terms</small></span></a></li><li><a class="step" href="../topics/bulkhead-sidecar-strangler-saga.html"><span class="num">2</span><span><strong>Bulkhead, sidecar, strangler fig and saga</strong><br><span class="muted">Contain failure, share plumbing, replace old systems safely and keep data consistent.</span><br><small>Drop 4 · 5 things to watch/play with · 18 glossary terms</small></span></a></li><li><a class="step" href="../topics/pubsub-eda-cqrs.html"><span class="num">3</span><span><strong>Pub/sub, event-driven architecture and CQRS</strong><br><span class="muted">Publishers and subscribers, events as the backbone, and separate read and write models.</span><br><small>Drop 5 · 5 things to watch/play with · 18 glossary terms</small></span></a></li><li><a class="step" href="../topics/api-design.html"><span class="num">4</span><span><strong>API design: REST, GraphQL, gRPC</strong><br><span class="muted">Choosing an API style, versioning and idempotency keys.</span><br><small>Drop 8 · 4 things to watch/play with · 20 glossary terms</small></span></a></li><li><a class="step" href="../topics/hexagonal-solid.html"><span class="num">5</span><span><strong>Hexagonal architecture and SOLID</strong><br><span class="muted">Ports and adapters plus SOLID as a review checklist.</span><br><small>Drop 10 · 3 things to watch/play with · 13 glossary terms</small></span></a></li></ol></div><nav class="pn"><a class="prev" href="system-design.html"><small>← Previous track</small>System design fundamentals</a><a class="next" href="ai-llm-systems.html"><small>Next track →</small>AI / LLM systems &amp; RAG</a></nav></main>
+<footer><p>AI FDE / Architect roadmap · 40 topics from 10 concept drops (15–18 Nov 2026) · concepts, not syntax · <a href="../path.html">Suggested order</a> · <a href="../glossary/index.html">Glossary</a> · <a href="../data/roadmap.json">Roadmap data (JSON)</a></p></footer>
+<script src="../assets/site.js"></script><script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = document.documentElement.dataset.theme==='dark' || (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+const narrow = matchMedia('(max-width: 720px)').matches;
+document.querySelectorAll('pre.mermaid').forEach(p=>{ if(narrow && !p.dataset.keep) p.textContent = p.textContent.replace(/^flowchart LR/,'flowchart TD'); });
+const cfg = (u)=>({startOnLoad:false, securityLevel:'loose', theme: dark?'dark':'default', flowchart:{useMaxWidth:u, htmlLabels:true, wrappingWidth:190, curve:'basis'}, themeVariables:{fontSize:'14px'}});
+mermaid.initialize(cfg(true));
+await mermaid.run({querySelector:'pre.mermaid:not([data-keep])'});
+mermaid.initialize(cfg(false));
+await mermaid.run({querySelector:'pre.mermaid[data-keep]'});
+</script>
+</body></html>
