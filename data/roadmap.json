@@ -5127,5 +5127,22 @@
     }
    ]
   }
+ ],
+ "experiences": [
+  {
+   "slug": "forecastforge-hackathon",
+   "title": "ForecastForge AI: AI-based demand forecasting for car sales (hackathon, Nov–Dec 2026)",
+   "url": "experiences/forecastforge-hackathon.html",
+   "status": "in progress",
+   "started": "19 Nov 2026",
+   "summary": "Hackathon decision journal: defining demand, choosing an evaluation horizon and a clean-room boundary.",
+   "topics": [
+    "customer-discovery-pilot",
+    "demos-design-docs",
+    "agent-eval-observability",
+    "agent-tool-calling",
+    "guardrails-prompt-injection"
+   ]
+  }
  ]
 }

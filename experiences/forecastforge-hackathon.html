@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ForecastForge AI: AI-based demand forecasting for car sales (hackathon, Nov–Dec 2026) · AI FDE Roadmap</title>
+<meta name="description" content="A hackathon decision journal: defining demand, choosing an evaluation horizon and keeping a clean-room boundary, with the FDE skill each decision taught."><meta property="og:title" content="ForecastForge AI: AI-based demand forecasting for car sales (hackathon, Nov–Dec 2026)"><meta property="og:description" content="A hackathon decision journal: defining demand, choosing an evaluation horizon and keeping a clean-room boundary, with the FDE skill each decision taught."><meta property="og:type" content="article">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../assets/style.css">
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><a class="brand" href="../index.html"><span class="logo">◈</span> AI FDE Roadmap</a><nav><a href="../index.html">Hub</a><a href="../path.html">Start here</a><a href="../tracks/index.html">Tracks</a><a href="../drops/index.html">Drops</a><a href="../experiences/index.html" aria-current=page>Experiences</a><a href="../watch.html">Watch</a><a href="../glossary/index.html">Glossary</a></nav><button id="theme" aria-label="Toggle light and dark theme" title="Toggle theme">◐</button></header>
+<main id="main">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Hub</a> › <a href="index.html">Experiences</a> › <span>ForecastForge AI</span></nav>
+<article class="topic" style="--h:25">
+<p class="eyebrow">Experience · Hackathon · Nov–Dec 2026</p>
+<h1>ForecastForge AI: AI-based demand forecasting for car sales</h1>
+<div class="callout tone-warning"><strong class="lead">Status: in progress, updated daily.</strong><div>Last updated 19 Nov 2026. Proof of concept due 3 Dec 2026. New decisions and lessons are appended to the <a href="#timeline">timeline</a> and written up below as they are made.</div></div>
+<div class="callout lead-box"><strong class="lead">The brief</strong><div>Hackathon topic: &ldquo;AI-based demand forecasting for car sales&rdquo;. The product is an agentic pipeline: a research agent finds public sources for data gaps; the system fetches and archives them with the URL, fetch date and content hash; extracts values with their source location; validates and publishes versioned data; forecasts against honest baselines and flags large errors; and sends changes to a human review screen. A conversational agent answers questions over forecasts and evidence, and a core feature forecasts a newly launched model from comparable analog models.</div></div>
+<details class="toc" open><summary>On this page</summary><nav><a href="#timeline">Timeline</a><a href="#framing">Project framing</a><a href="#q1-demand">Q1: Demand</a><a href="#q2-horizon">Q2: Horizon</a><a href="#roadmap-links">Roadmap topics this touches</a><a href="#sources">Public sources</a></nav></details>
+<section id="timeline" class="k-main"><h2>Timeline</h2>
+<p class="muted">Newest entries are added at the end of the list.</p>
+<ol class="steps" id="timeline-list">
+<li><strong>19 Nov 2026 · Framing.</strong> Scope, grounding rule and a 20-question decision list. <a href="#framing">Read →</a></li>
+<li><strong>19 Nov 2026 · Q1 decided.</strong> Demand defined as sales plus constraints plus unconverted intent; score sales, show demand. <a href="#q1-demand">Read →</a></li>
+<li><strong>19 Nov 2026 · Q2 opened.</strong> Scoring horizon: one month headline versus months 1 to 3. <a href="#q2-horizon">Read →</a></li>
+<!-- NEW TIMELINE ENTRIES: append new &lt;li&gt; items above this line -->
+</ol></section>
+<section id="framing" class="k-main"><h2>Project framing and ground rules <span class="chip" style="--h:150">Decided</span></h2><p class="src">19 Nov 2026</p>
+<dl class="props">
+<div><dt>Context</dt><dd>A public hackathon, topic &ldquo;AI-based demand forecasting for car sales&rdquo;, with a proof of concept due 3 Dec 2026. The project builds on lessons from earlier internal forecasting work, and planning is run with an AI coding agent: a skill-driven flow of setup, grill-with-docs, research, prototype, spec, then tickets. Before any code, the agent produces a questionnaire of 20 open decisions in 9 groups (scope, data, ingestion, forecasting, agents, UI, evaluation, quality, packaging).</dd></div>
+<div><dt>Options</dt><dd>(A) Start building and decide as problems appear. (B) Write down every open decision first, each with options, trade-offs, a recommended default and the document it feeds, then answer them one at a time. (C) Reuse the earlier internal code and figures as a head start.</dd></div>
+<div><dt>Decision</dt><dd>Option B for process and a hard no on C. Stack leaning: Python, FastAPI and Pydantic; React and Vite; LangGraph for orchestration and human-review interrupts; DuckDB, Parquet and SQLite for data and run state; an OpenAI-compatible LLM client that can switch between hosted providers such as OpenRouter and NVIDIA NIM through configuration. New-model launch forecasting is a core feature, not a stretch goal.</dd></div>
+<div><dt>Basis</dt><dd><strong>Grounding rule:</strong> every forecasting figure must come from public data or a run inside this project. Earlier work may guide direction as general lessons only: no numbers, names, configurations or code carry over. The first data are public Mazda U.S. sales and model-year releases plus the FuelEconomy.gov dataset.</dd></div>
+<div><dt>Implication</dt><dd>Decisions made in the open are cheaper to change than decisions buried in code. The clean-room rule keeps the project publishable and removes any doubt about where a number came from. The cost is that the project starts with less data than a reuse would have given.</dd></div>
+</dl>
+<div class="callout tone-success"><strong class="lead">FDE skill learned</strong><ul><li><strong>Clean-room boundary.</strong> When you reuse a past client or employer engagement, carry over lessons, not artefacts. Write the rule down at the start so every downstream document respects it.</li><li><strong>Decision-first planning.</strong> Before writing code, list every open decision with its options, trade-offs, a recommended default and the document it feeds. Vague scope becomes reviewable choices, and the questionnaire doubles as the first design doc. <a href="../topics/demos-design-docs.html">Roadmap topic: Technical demos and one-page design docs →</a></li></ul></div></section>
+<section id="q1-demand" class="k-main"><h2>Q1: What do we mean by &ldquo;demand&rdquo;? <span class="chip" style="--h:150">Decided</span></h2><p class="src">19 Nov 2026</p>
+<dl class="props">
+<div><dt>Context</dt><dd>The topic says demand forecasting, but the only public ground truth is reported monthly unit sales. Nobody publishes demand directly.</dd></div>
+<div><dt>Options</dt><dd>(A) Forecast reported sales and call it a demand proxy. (B) Model unconstrained demand separately. (A + B-lite) Score sales only, and add a clearly labelled, unscored demand view built from public signals.</dd></div>
+<div><dt>Decision</dt><dd>A + B-lite. Working definition: <strong>demand = observed sales + sales lost to constraints (stock-outs, launch delays) + intent that has not converted yet.</strong> Only observed sales are scored. The demand view is shown with stated assumptions. Each signal enters as a dated feature and is tested by ablation on the same blind backtest origins.</dd></div>
+<div><dt>Basis</dt><dd>Public signals checked on 19 Nov 2026: <ul><li><strong>Cox Automotive vAuto Live Market View:</strong> monthly national new-vehicle inventory, days&rsquo; supply, sales and listing price (CSV), with brand and model days&rsquo; supply in the monthly articles. Low days&rsquo; supply suggests sales were capped by stock.</li><li><strong>U. Michigan Surveys of Consumers, Table 37:</strong> monthly &ldquo;good or bad time to buy a vehicle&rdquo;, broken down by age, income and education. Table 38 gives the reasons.</li><li><strong>NY Fed SCE Household Spending Survey:</strong> percent chance of buying a car in the next four months, published every four months.</li><li><strong>Google Trends</strong> per nameplate, filterable by U.S. state, as a localised interest signal.</li></ul>Mazda U.S. press releases supply the sales ground truth and launch dates.</dd></div>
+<div><dt>Implication</dt><dd>Judges get an honest, on-topic demand story while the scored claim stays verifiable. The price is more ingestion adapters and careful point-in-time handling: each input must have been public by the forecast date, so survey and inventory releases need vintages, not just latest values.</dd></div>
+</dl>
+<div class="callout tone-success"><strong class="lead">FDE skill learned</strong><ul><li><strong>Translate the client&rsquo;s word into a measurable target.</strong> &ldquo;Demand&rdquo; in a brief usually cannot be observed directly. Define it, separate what you can score from what you can only estimate, and label the estimate. <a href="../topics/customer-discovery-pilot.html">Roadmap topic: Customer discovery and scoping a pilot →</a></li><li><strong>Proxy plus signals.</strong> Use the observable outcome as ground truth, and add leading and constraint indicators as features you can falsify through ablation on the same blind test. <a href="../topics/agent-eval-observability.html">Roadmap topic: Agent evaluation and observability →</a></li></ul></div></section>
+<section id="q2-horizon" class="k-main"><h2>Q2: How far ahead do we score the forecast? <span class="chip" style="--h:40">Open</span></h2><p class="src">19 Nov 2026</p>
+<dl class="props">
+<div><dt>Context</dt><dd>A horizon is how far ahead the forecast looks. Scoring one month ahead means that at the end of October you predict November and compare it with the reported figure. Every extra scored month costs test points: with 12 blind origins a one-month horizon gives 12 scored forecasts, while requiring months 1 to 3 leaves the latest origins only partly scorable. Errors also grow with horizon. Planners allocate and order stock months ahead, so a one-month-only forecast is less useful for planning.</dd></div>
+<div><dt>Options</dt><dd>(A) Score one month ahead as the headline, and report months 2 and 3 as secondary, unscored metrics. (B) Require months 1 to 3 to be scored.</dd></div>
+<div><dt>Decision</dt><dd>Open. The recommended default is A with secondary metrics; the deciding question is who the demo is for. A data-science audience values a clean, rigorous one-month score. A business audience values usefulness two to three months out.</dd></div>
+<div><dt>Basis</dt><dd>Trade-off between statistical cleanliness (more scored origins) and planning relevance (longer horizons). Reporting months 2 and 3 as evidence without letting them decide the win is a possible middle path.</dd></div>
+<div><dt>Implication</dt><dd>To be recorded once decided. Either way, the scored horizon must be fixed before any tuning so the headline result cannot be cherry-picked.</dd></div>
+</dl>
+<div class="callout tone-success"><strong class="lead">FDE skill learned</strong><ul><li><strong>Design the evaluation around the decision it supports.</strong> Pick the metric and horizon from how the result will be used and by whom, then lock the protocol before tuning. More test points and more realistic horizons pull in opposite directions; state which one you chose and why. <a href="../topics/agent-eval-observability.html">Roadmap topic: Agent evaluation and observability →</a></li></ul></div></section>
+<!-- NEW DECISION SECTIONS: append new decision sections above this line -->
+<section id="roadmap-links" class="k-main"><h2>Roadmap topics this touches</h2>
+<p>Topics from the roadmap that this project exercises, and will be written up against as it progresses.</p>
+<ul>
+<li><a href="../topics/customer-discovery-pilot.html">Customer discovery and scoping a pilot</a>: turning &ldquo;demand&rdquo; into a measurable target.</li>
+<li><a href="../topics/demos-design-docs.html">Technical demos and one-page design docs</a>: the decision questionnaire, and the judge demo.</li>
+<li><a href="../topics/agent-eval-observability.html">Agent evaluation and observability</a>: blind backtests, ablations and scoring discovery by an answer key.</li>
+<li><a href="../topics/agent-tool-calling.html">How an AI agent calls a tool</a>: the research and investigation agents fetching sources and running challenger forecasts.</li>
+<li><a href="../topics/guardrails-prompt-injection.html">LLM guardrails and prompt injection</a>: web pages and ticket text are treated as data, never as instructions.</li>
+</ul></section>
+<section id="sources" class="k-main sources"><h2>Public sources</h2>
+<ul>
+<li>Mazda U.S. sales and model-year press releases (Mazda USA Media site)</li>
+<li><a href="https://www.fueleconomy.gov/feg/download.shtml" rel="noopener">FuelEconomy.gov vehicle dataset</a></li>
+<li><a href="https://www.coxautoinc.com/insights/" rel="noopener">Cox Automotive: vAuto Live Market View and monthly new-vehicle inventory reports</a></li>
+<li><a href="https://data.sca.isr.umich.edu/" rel="noopener">University of Michigan Surveys of Consumers: Table 37 (vehicle buying conditions) and Table 38 (reasons)</a></li>
+<li><a href="https://www.newyorkfed.org/microeconomics/sce/household-spending" rel="noopener">NY Fed Survey of Consumer Expectations, Household Spending Survey</a></li>
+<li><a href="https://trends.google.com/" rel="noopener">Google Trends</a></li>
+</ul></section>
+<div class="pn"><a href="index.html">← All experiences<small>Experiences hub</small></a><a class="next" href="../topics/agent-eval-observability.html">Related topic<small>Agent evaluation and observability →</small></a></div>
+</article>
+</main>
+<footer><p>AI FDE / Architect roadmap · 40 topics from 10 concept drops (15–18 Nov 2026) · concepts, not syntax · <a href="../path.html">Suggested order</a> · <a href="../experiences/index.html">Experiences</a> · <a href="../glossary/index.html">Glossary</a> · <a href="../data/roadmap.json">Roadmap data (JSON)</a></p></footer>
+<script src="../assets/site.js"></script>
+</body></html>

@@ -9,7 +9,7 @@ if(q){q.addEventListener('input',function(){
   if(v.length<2){res.hidden=true;return}
   (data?Promise.resolve(data):fetch('data/search.json').then(function(r){return r.json()}).then(function(d){data=d;return d})).then(function(d){
     var hits=d.filter(function(x){return (x.t+' '+x.d).toLowerCase().indexOf(v)>-1}).slice(0,12);
-    res.innerHTML=hits.length?hits.map(function(h){return '<li><a href="'+h.u+'">'+h.t.replace(/</g,'&lt;')+' <small>'+(h.k==='topic'?'Topic':'Glossary term')+' · '+h.d.replace(/</g,'&lt;').slice(0,100)+'</small></a></li>'}).join(''):'<li><a href="#">No matches</a></li>';
+    res.innerHTML=hits.length?hits.map(function(h){return '<li><a href="'+h.u+'">'+h.t.replace(/</g,'&lt;')+' <small>'+(h.k==='topic'?'Topic':h.k==='experience'?'Experience':'Glossary term')+' · '+h.d.replace(/</g,'&lt;').slice(0,100)+'</small></a></li>'}).join(''):'<li><a href="#">No matches</a></li>';
     res.hidden=false;});
 });}
 })();
