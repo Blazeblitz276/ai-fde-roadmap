@@ -5135,13 +5135,20 @@
    "url": "experiences/forecastforge-hackathon.html",
    "status": "in progress",
    "started": "19 Nov 2026",
-   "summary": "Hackathon decision journal: defining demand, choosing an evaluation horizon and a clean-room boundary.",
+   "summary": "Hackathon decision journal (updated 20 Nov 2026): defining demand, a three-month scoring horizon, the pivot to public Kia sales data, leak-free evaluation design, a versioned vehicle attribute table and a public data source registry.",
+   "updated": "20 Nov 2026",
    "topics": [
     "customer-discovery-pilot",
     "demos-design-docs",
     "agent-eval-observability",
     "agent-tool-calling",
-    "guardrails-prompt-injection"
+    "guardrails-prompt-injection",
+    "agent-memory-multi-agent",
+    "rate-limiting-jobs",
+    "slos-incidents",
+    "gateway-breaker-retry",
+    "serverless-containers",
+    "llm-serving-cost"
    ]
   }
  ]
