@@ -5135,8 +5135,8 @@
    "url": "experiences/forecastforge-hackathon.html",
    "status": "in progress",
    "started": "19 Nov 2026",
-   "summary": "Hackathon decision journal (updated 26 Nov 2026): defining demand, a three-month scoring horizon, the pivot to public Kia sales data, leak-free evaluation design, a versioned vehicle attribute table, a public data source registry, a role-aware dashboard design with a packaged agent workflow, validating collected data against sales history before EDA, a seasonal forecast rebuild, a launch simulator design, one-shot confirmation, merging parallel agent tracks, and an ask-don't-assume questionnaire backed by a reproduced evidence pack.",
-   "updated": "26 Nov 2026",
+   "summary": "Hackathon decision journal (updated 27 Nov 2026): defining demand, a three-month scoring horizon, the pivot to public Kia sales data, leak-free evaluation design, a versioned vehicle attribute table, a public data source registry, a role-aware dashboard design with a packaged agent workflow, validating collected data against sales history before EDA, a seasonal forecast rebuild, a launch simulator design, one-shot confirmation, merging parallel agent tracks, an ask-don't-assume questionnaire backed by a reproduced evidence pack, and a multi-step strategy check.",
+   "updated": "27 Nov 2026",
    "topics": [
     "customer-discovery-pilot",
     "demos-design-docs",
